@@ -1,0 +1,14 @@
+\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\caption{Descripción de los casos de prueba del módulo Northwest} \label{tab:casos_prueba} \\
+\hline
+\textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY                                                                                       \\} \\ \hline
+\endfirsthead
+\hline
+\textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
+\endhead
+TC5-NW & 2024-10-17 & Asegurarse de que el formulario de entrada de datos sea intuitivo y que los campos obligatorios estén correctamente validados. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Datos válidos e inválidos en el formulario de entrada, incluyendo campos vacíos y datos no numéricos en los campos de oferta y demand. & ALTA                                                                                           \\ \\ \hline
+\textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
+S1-5-NW & Intentar enviar el formulario con algunos campos vacíos. & 2024-10-17 & El sistema debe mostrar mensajes de error específicos indicando que los campos obligatorios están vacíos. & FAIL. El sistema no muestra mensaje de error específicos y no se indican que los campos son obligatorios. \\ \hline
+S2-5-NW & Ingresar datos no numéricos en los campos de oferta y demanda y enviar el formulario. & 2024-10-17 & El sistema debe mostrar mensajes de error específicos indicando que los valores en oferta y demanda deben ser numéricos. & FAIL. El sistema no muestra mensaje de error y no indica que los valores necesiten ser numéricos. \\ \hline
+S3-5-NW & Ingresar datos válidos en todos los campos y enviar el formulario, sin demanda y oferta. & 2024-10-17 & El sistema debe lanzar un mensaje de error por que los datos de demanda y oferta debería ser obligatorios. & FAIL. El sistema si permite enviar los datos pero no necesariamente lo hace de forma correcta no hay un mensaje de error cuando los datos obligatorios  de demanda y oferta son vacios. \\ \hline
+\end{longtable}

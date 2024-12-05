@@ -1,0 +1,16 @@
+\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\caption{Descripción de los casos de prueba del módulo Northwest} \label{tab:casos_prueba} \\
+\hline
+\textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY } \\ \hline
+\endfirsthead
+\hline
+\textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
+\endhead
+TC3-NW & 2024-10-17 & Asegurarse de que las opciones de maximizar y minimizar generan soluciones diferentes. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Los pesos asignados deben ser valores numéricos válidos y compatibles con El sistema. Matriz de costos predefinida con valores conocidos. & ALTA \\ \hline
+\textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
+S1-3-NW & Configurar la matriz de costos con valores específicos. & 2024-10-17 & El sistema debe aceptar la matriz de costos sin errores y mostrar los valores correctamente. & PASS. El sistema acepta la matriz de costos sin errores y muestra los valores correctamente. \\ \hline
+S2-3-NW & Seleccionar la opción de maximización y calcular la solución. & 2024-10-17 & El sistema debe calcular la solución utilizando la opción de maximización y mostrar el resultado sin errores. & PASS. El sistema calcula la solución utilizando la opción de maximización y no muestra ningún resultado sin errores. Pero tampoco avisa si hubiera algún problema con los datos. \\ \hline
+S3-3-NW & Visualizar y verificar la solución obtenida en el modo de maximización. & 2024-10-17 & La solución obtenida debe estar claramente visible y accesible en la interfaz. & PASS. La solución es claramente visible y es accesible en el interfaz \\ \hline
+S4-3-NW & Seleccionar la opción de minimización y calcular la solución. & 2024-10-17 & El sistema debe calcular la solución utilizando la opción de minimización y mostrar el resultado sin errores. & PASS. El sistema si calcula la solución utilizando las opciones de minimización. \\ \hline
+S5-3-NW & Visualizar y comparar ambas soluciones. & 2024-10-17 & La solución obtenida con la opción de maximización debe ser diferente de la obtenida con la opción de minimización, reflejando el cambio en el criterio de optimización. & PASS. El sistema obtiene una solución maxima, pero no refleja tan claramente el cambio. \\ \hline
+\end{longtable}
