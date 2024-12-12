@@ -19,7 +19,7 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    //sign Up
+    //Sign Up
     this.signUpButton = this.page.locator("#Register");
     this.usernameField = this.page.locator("#usernameField");
     this.emailField = this.page.locator("#emailField");
@@ -29,7 +29,7 @@ export class HomePage {
     this.signUpPopup = this.page.locator(
       "body > div.swal2-container.swal2-center.swal2-backdrop-show > div"
     );
-    //sign In
+    //Sign In
     this.signInButton = this.page.locator("#login");
     this.signInUsernameField = this.page.locator("#loginUsernameField");
     this.signInPasswordField = this.page.locator("#loginPasswordField");
@@ -40,7 +40,7 @@ export class HomePage {
     await this.page.goto(this.url);
   }
 
-  //sing Up
+  //Sing Up
   async clickSignUpButton() {
     await this.signUpButton.waitFor({ state: "visible" });
     await this.signUpButton.click();
@@ -58,7 +58,6 @@ export class HomePage {
   }
 
   async quickSignUp(username: string, email: string, password: string) {
-    await this.goto();
     await this.clickSignUpButton();
     await this.fillForm(username, email, password);
     await this.clickSignUpSubmitButton();
@@ -80,7 +79,6 @@ export class HomePage {
   }
 
   async quickSignIn(username: string, password: string) {
-    await this.goto();
     await this.clickSignInButton();
     await this.fillSignInForm(username, password);
     await this.clickSignInSubmitButton();

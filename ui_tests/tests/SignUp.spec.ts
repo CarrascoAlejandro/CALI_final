@@ -23,13 +23,11 @@ test("Sign up with valid data", async ({ page }) => {
 
 test("quick sign up and sign in", async ({ page }) => {
   const homePage = new HomePage(page);
+  await homePage.goto();
   const username = generateRandomUsername();
   const email = generateRandomEmail();
   const password = generateRandomPassword();
   await homePage.quickSignUp(username, email, password);
-  await homePage.signUpPopup.waitFor({ state: "visible" });
-  await homePage.clickSignInButton();
-  await homePage.signInUsernameField.fill(username);
-  await homePage.signInPasswordField.fill(password);
-  await homePage.clickSignInSubmitButton();
+  await homePage.signUpPopup.waitFor({ state: "hidden" });
+  await homePage.quickSignIn(username, password);
 });
