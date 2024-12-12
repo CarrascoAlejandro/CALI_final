@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { GrafosHomePage } from "../pages/grafosHome.page";
+import { HomePage } from "../pages/home.page";
 import {
   generateRandomUsername,
   generateRandomEmail,
@@ -7,7 +7,7 @@ import {
 } from "../util/generateRandom";
 
 test("Sign up with valid data", async ({ page }) => {
-  const homePage = new GrafosHomePage(page);
+  const homePage = new HomePage(page);
   await homePage.goto();
   await homePage.clickSingUpButton();
   const username = generateRandomUsername();
@@ -22,7 +22,7 @@ test("Sign up with valid data", async ({ page }) => {
 });
 
 test("quick sign up", async ({ page }) => {
-  const homePage = new GrafosHomePage(page);
+  const homePage = new HomePage(page);
   await homePage.quickSignUp(
     generateRandomUsername(),
     generateRandomEmail(),

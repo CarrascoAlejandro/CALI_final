@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 
-export class GrafosHomePage {
+export class HomePage {
   readonly url = "http://localhost:5173/";
   readonly page: Page;
   //Sing Up
