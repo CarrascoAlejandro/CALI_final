@@ -9,24 +9,27 @@ import {
 test("Sign up with valid data", async ({ page }) => {
   const homePage = new HomePage(page);
   await homePage.goto();
-  await homePage.clickSingUpButton();
+  await homePage.clickSignUpButton();
   const username = generateRandomUsername();
   const email = generateRandomEmail();
   const password = generateRandomPassword();
   await homePage.fillForm(username, email, password);
-  await homePage.clickSingUpSubmitButton();
-  await homePage.singUpPopup.waitFor({ state: "visible" });
-  await expect(homePage.singUpPopup).toContainText(
+  await homePage.clickSignUpSubmitButton();
+  await homePage.signUpPopup.waitFor({ state: "visible" });
+  await expect(homePage.signUpPopup).toContainText(
     `Usuario ${username} registrado correctamente.`
   );
 });
 
-test("quick sign up", async ({ page }) => {
+test("quick sign up and sign in", async ({ page }) => {
   const homePage = new HomePage(page);
-  await homePage.quickSignUp(
-    generateRandomUsername(),
-    generateRandomEmail(),
-    generateRandomPassword()
-  );
-  await homePage.singUpPopup.waitFor({ state: "visible" });
+  const username = generateRandomUsername();
+  const email = generateRandomEmail();
+  const password = generateRandomPassword();
+  await homePage.quickSignUp(username, email, password);
+  await homePage.signUpPopup.waitFor({ state: "visible" });
+  await homePage.clickSignInButton();
+  await homePage.signInUsernameField.fill(username);
+  await homePage.signInPasswordField.fill(password);
+  await homePage.clickSignInSubmitButton();
 });
