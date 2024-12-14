@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "69c4b540-a157-423e-95fe-5ec461a1ff7f",
+		"_postman_id": "d7080d3b-9803-4fec-994a-7b279c37f902",
 		"name": "ALGO-endpointTesting",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "29459627"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29459619"
 	},
 	"item": [
 		{
@@ -61,7 +61,16 @@
 						}
 					}
 				},
-				"url": "{{url}}/users/create"
+				"url": {
+					"raw": "{{url}}/users/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"create"
+					]
+				}
 			},
 			"response": []
 		},
@@ -122,7 +131,16 @@
 						}
 					}
 				},
-				"url": "{{url}}/users/login"
+				"url": {
+					"raw": "{{url}}/users/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
 			},
 			"response": []
 		},
@@ -737,9 +755,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "{{access_token}}"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [],
@@ -752,7 +774,16 @@
 						}
 					}
 				},
-				"url": "{{url}}/algorithms/johnsonCriticalPath"
+				"url": {
+					"raw": "{{url}}/algorithms/johnsonCriticalPath",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"algorithms",
+						"johnsonCriticalPath"
+					]
+				}
 			},
 			"response": []
 		},
@@ -761,9 +792,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQc3JYNC1xMmVaTjU5YmliOXNxbmV5QTRkYU5UWVNFZUM0UU1CV21ZdHd3In0.eyJleHAiOjE3Mjk5OTQ4NTAsImlhdCI6MTcyOTk5MzA1MCwianRpIjoiMjFkY2MxZTgtMzA1Ni00NDBkLThmZWYtODUzYWZhY2NiZWU3IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL2tleWNsb2FrdGMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZWVhZjRmYjUtYjdlYy00M2E5LWExOTgtMzY1MDc4NDRmMzMyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZmlsZS1zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6IjVlMmYzMDA2LThhNDgtNGQ2YS1hZGE5LTdjYTQ0MDM5ODliMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZXljbG9ha3RjIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNWUyZjMwMDYtOGE0OC00ZDZhLWFkYTktN2NhNDQwMzk4OWIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhbmEiLCJlbWFpbCI6ImFuYUB1Y2IuZWR1LmJvIn0.RAKZTzrIOVzr6byMry_zV5cC9GWPIcYCj8kuqSwPFFkPoFVbaODc73l_DWCaY0HGwNsU1z6J8r26HRRX-HzaIRoa4S9wTi8GMWLvvaL-jFUChTzats41iIp21_9l_1qhkuD4C-ouDYDMQG9ASCTMGL53B5RKZ9mMjdzQQrdxdVfJ_fOl7bNMUKzsPtTH3HCdDo-VnFkK-nZPofMMgsa9vzQuqH9CmGnAVGYBqp8t3wpaIY97_dfRzbAate_ys4znxHE3H-GfWLt0ly7ozfWm7RK0Z_4wEX2k-D_My1S_mKqPdQ5wV-_nMHGGZZf9DL0Cu9O1mlvmaSl4WRPwUWdI4Q"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQc3JYNC1xMmVaTjU5YmliOXNxbmV5QTRkYU5UWVNFZUM0UU1CV21ZdHd3In0.eyJleHAiOjE3Mjk5OTQ4NTAsImlhdCI6MTcyOTk5MzA1MCwianRpIjoiMjFkY2MxZTgtMzA1Ni00NDBkLThmZWYtODUzYWZhY2NiZWU3IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL2tleWNsb2FrdGMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZWVhZjRmYjUtYjdlYy00M2E5LWExOTgtMzY1MDc4NDRmMzMyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZmlsZS1zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6IjVlMmYzMDA2LThhNDgtNGQ2YS1hZGE5LTdjYTQ0MDM5ODliMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZXljbG9ha3RjIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNWUyZjMwMDYtOGE0OC00ZDZhLWFkYTktN2NhNDQwMzk4OWIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhbmEiLCJlbWFpbCI6ImFuYUB1Y2IuZWR1LmJvIn0.RAKZTzrIOVzr6byMry_zV5cC9GWPIcYCj8kuqSwPFFkPoFVbaODc73l_DWCaY0HGwNsU1z6J8r26HRRX-HzaIRoa4S9wTi8GMWLvvaL-jFUChTzats41iIp21_9l_1qhkuD4C-ouDYDMQG9ASCTMGL53B5RKZ9mMjdzQQrdxdVfJ_fOl7bNMUKzsPtTH3HCdDo-VnFkK-nZPofMMgsa9vzQuqH9CmGnAVGYBqp8t3wpaIY97_dfRzbAate_ys4znxHE3H-GfWLt0ly7ozfWm7RK0Z_4wEX2k-D_My1S_mKqPdQ5wV-_nMHGGZZf9DL0Cu9O1mlvmaSl4WRPwUWdI4Q",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [],
@@ -776,7 +811,16 @@
 						}
 					}
 				},
-				"url": "{{url}}/algorithms/johnsonCriticalPath"
+				"url": {
+					"raw": "{{url}}/algorithms/johnsonCriticalPath",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"algorithms",
+						"johnsonCriticalPath"
+					]
+				}
 			},
 			"response": []
 		},
@@ -785,9 +829,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQc3JYNC1xMmVaTjU5YmliOXNxbmV5QTRkYU5UWVNFZUM0UU1CV21ZdHd3In0.eyJleHAiOjE3Mjk5OTQ4NTAsImlhdCI6MTcyOTk5MzA1MCwianRpIjoiMjFkY2MxZTgtMzA1Ni00NDBkLThmZWYtODUzYWZhY2NiZWU3IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL2tleWNsb2FrdGMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZWVhZjRmYjUtYjdlYy00M2E5LWExOTgtMzY1MDc4NDRmMzMyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZmlsZS1zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6IjVlMmYzMDA2LThhNDgtNGQ2YS1hZGE5LTdjYTQ0MDM5ODliMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZXljbG9ha3RjIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNWUyZjMwMDYtOGE0OC00ZDZhLWFkYTktN2NhNDQwMzk4OWIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhbmEiLCJlbWFpbCI6ImFuYUB1Y2IuZWR1LmJvIn0.RAKZTzrIOVzr6byMry_zV5cC9GWPIcYCj8kuqSwPFFkPoFVbaODc73l_DWCaY0HGwNsU1z6J8r26HRRX-HzaIRoa4S9wTi8GMWLvvaL-jFUChTzats41iIp21_9l_1qhkuD4C-ouDYDMQG9ASCTMGL53B5RKZ9mMjdzQQrdxdVfJ_fOl7bNMUKzsPtTH3HCdDo-VnFkK-nZPofMMgsa9vzQuqH9CmGnAVGYBqp8t3wpaIY97_dfRzbAate_ys4znxHE3H-GfWLt0ly7ozfWm7RK0Z_4wEX2k-D_My1S_mKqPdQ5wV-_nMHGGZZf9DL0Cu9O1mlvmaSl4WRPwUWdI4Q"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQc3JYNC1xMmVaTjU5YmliOXNxbmV5QTRkYU5UWVNFZUM0UU1CV21ZdHd3In0.eyJleHAiOjE3Mjk5OTQ4NTAsImlhdCI6MTcyOTk5MzA1MCwianRpIjoiMjFkY2MxZTgtMzA1Ni00NDBkLThmZWYtODUzYWZhY2NiZWU3IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL2tleWNsb2FrdGMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZWVhZjRmYjUtYjdlYy00M2E5LWExOTgtMzY1MDc4NDRmMzMyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZmlsZS1zZXJ2aWNlIiwic2Vzc2lvbl9zdGF0ZSI6IjVlMmYzMDA2LThhNDgtNGQ2YS1hZGE5LTdjYTQ0MDM5ODliMiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1rZXljbG9ha3RjIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNWUyZjMwMDYtOGE0OC00ZDZhLWFkYTktN2NhNDQwMzk4OWIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhbmEiLCJlbWFpbCI6ImFuYUB1Y2IuZWR1LmJvIn0.RAKZTzrIOVzr6byMry_zV5cC9GWPIcYCj8kuqSwPFFkPoFVbaODc73l_DWCaY0HGwNsU1z6J8r26HRRX-HzaIRoa4S9wTi8GMWLvvaL-jFUChTzats41iIp21_9l_1qhkuD4C-ouDYDMQG9ASCTMGL53B5RKZ9mMjdzQQrdxdVfJ_fOl7bNMUKzsPtTH3HCdDo-VnFkK-nZPofMMgsa9vzQuqH9CmGnAVGYBqp8t3wpaIY97_dfRzbAate_ys4znxHE3H-GfWLt0ly7ozfWm7RK0Z_4wEX2k-D_My1S_mKqPdQ5wV-_nMHGGZZf9DL0Cu9O1mlvmaSl4WRPwUWdI4Q",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [],
@@ -800,7 +848,16 @@
 						}
 					}
 				},
-				"url": "{{url}}/algorithms/johnsonCriticalPath"
+				"url": {
+					"raw": "{{url}}/algorithms/johnsonCriticalPath",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"algorithms",
+						"johnsonCriticalPath"
+					]
+				}
 			},
 			"response": []
 		},
@@ -1353,9 +1410,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "{{access_token}}"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [],
@@ -1936,9 +1997,13 @@
 			"request": {
 				"auth": {
 					"type": "bearer",
-					"bearer": {
-						"token": "{{access_token}}"
-					}
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
 				},
 				"method": "POST",
 				"header": [],
@@ -1965,6 +2030,615 @@
 							"key": "maximize",
 							"value": "false"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adjacency Matriz",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const json1 = `{\r",
+							"  \"nodes\": {\r",
+							"    \"node1\": {\r",
+							"      \"id\": \"node1\",\r",
+							"      \"name\": \"Nodo 1\",\r",
+							"      \"x\": -23.534423828125,\r",
+							"      \"y\": -192.046875\r",
+							"    },\r",
+							"    \"node2\": {\r",
+							"      \"id\": \"node2\",\r",
+							"      \"name\": \"Nodo 2\",\r",
+							"      \"x\": -20.534423828125,\r",
+							"      \"y\": -40.046875\r",
+							"    },\r",
+							"    \"node3\": {\r",
+							"      \"id\": \"node3\",\r",
+							"      \"name\": \"Nodo 3\",\r",
+							"      \"x\": -25.534423828125,\r",
+							"      \"y\": 93.953125\r",
+							"    },\r",
+							"    \"node4\": {\r",
+							"      \"id\": \"node4\",\r",
+							"      \"name\": \"Nodo 4\",\r",
+							"      \"x\": 194.465576171875,\r",
+							"      \"y\": -203.046875\r",
+							"    },\r",
+							"    \"node5\": {\r",
+							"      \"id\": \"node5\",\r",
+							"      \"name\": \"Nodo 5\",\r",
+							"      \"x\": 187.465576171875,\r",
+							"      \"y\": -53.046875\r",
+							"    },\r",
+							"    \"node6\": {\r",
+							"      \"id\": \"node6\",\r",
+							"      \"name\": \"Nodo 6\",\r",
+							"      \"x\": 193.465576171875,\r",
+							"      \"y\": 68.953125\r",
+							"    }\r",
+							"  },\r",
+							"  \"edges\": {\r",
+							"    \"edge1\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 9\r",
+							"    },\r",
+							"    \"edge2\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 9\r",
+							"    },\r",
+							"    \"edge3\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 9\r",
+							"    },\r",
+							"    \"edge4\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 6\r",
+							"    },\r",
+							"    \"edge5\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 9\r",
+							"    },\r",
+							"    \"edge6\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 2\r",
+							"    },\r",
+							"    \"edge7\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 5\r",
+							"    },\r",
+							"    \"edge8\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 9\r",
+							"    },\r",
+							"    \"edge9\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 4\r",
+							"    }\r",
+							"  },\r",
+							"  \"layouts\": {\r",
+							"    \"nodes\": {\r",
+							"      \"node1\": {\r",
+							"        \"x\": -81.934,\r",
+							"        \"y\": -200.047\r",
+							"      },\r",
+							"      \"node2\": {\r",
+							"        \"x\": -85.334,\r",
+							"        \"y\": -44.847\r",
+							"      },\r",
+							"      \"node3\": {\r",
+							"        \"x\": -85.534,\r",
+							"        \"y\": 120.353\r",
+							"      },\r",
+							"      \"node4\": {\r",
+							"        \"x\": 207.466,\r",
+							"        \"y\": -199.247\r",
+							"      },\r",
+							"      \"node5\": {\r",
+							"        \"x\": 207.666,\r",
+							"        \"y\": -42.647\r",
+							"      },\r",
+							"      \"node6\": {\r",
+							"        \"x\": 208.866,\r",
+							"        \"y\": 124.753\r",
+							"      }\r",
+							"    }\r",
+							"  }\r",
+							"}`;\r",
+							"const json2 = `{\r",
+							"  \"nodes\": {\r",
+							"    \"node1\": {\r",
+							"      \"id\": \"node1\",\r",
+							"      \"name\": \"Nodo 1\",\r",
+							"      \"x\": -23.534423828125,\r",
+							"      \"y\": -192.046875\r",
+							"    },\r",
+							"    \"node2\": {\r",
+							"      \"id\": \"node2\",\r",
+							"      \"name\": \"Nodo 2\",\r",
+							"      \"x\": -20.534423828125,\r",
+							"      \"y\": -40.046875\r",
+							"    },\r",
+							"    \"node3\": {\r",
+							"      \"id\": \"node3\",\r",
+							"      \"name\": \"Nodo 3\",\r",
+							"      \"x\": -25.534423828125,\r",
+							"      \"y\": 93.953125\r",
+							"    },\r",
+							"    \"node4\": {\r",
+							"      \"id\": \"node4\",\r",
+							"      \"name\": \"Nodo 4\",\r",
+							"      \"x\": 194.465576171875,\r",
+							"      \"y\": -203.046875\r",
+							"    },\r",
+							"    \"node5\": {\r",
+							"      \"id\": \"node5\",\r",
+							"      \"name\": \"Nodo 5\",\r",
+							"      \"x\": 187.465576171875,\r",
+							"      \"y\": -53.046875\r",
+							"    },\r",
+							"    \"node6\": {\r",
+							"      \"id\": \"node6\",\r",
+							"      \"name\": \"Nodo 6\",\r",
+							"      \"x\": 193.465576171875,\r",
+							"      \"y\": 68.953125\r",
+							"    }\r",
+							"  },\r",
+							"  \"edges\": {\r",
+							"    \"edge1\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 4\r",
+							"    },\r",
+							"    \"edge2\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 6\r",
+							"    },\r",
+							"    \"edge3\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 3\r",
+							"    },\r",
+							"    \"edge4\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 7\r",
+							"    },\r",
+							"    \"edge5\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 5\r",
+							"    },\r",
+							"    \"edge6\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 8\r",
+							"    },\r",
+							"    \"edge7\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 2\r",
+							"    },\r",
+							"    \"edge8\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 4\r",
+							"    },\r",
+							"    \"edge9\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 6\r",
+							"    }\r",
+							"  },\r",
+							"  \"layouts\": {\r",
+							"    \"nodes\": {\r",
+							"      \"node1\": {\r",
+							"        \"x\": -81.934,\r",
+							"        \"y\": -200.047\r",
+							"      },\r",
+							"      \"node2\": {\r",
+							"        \"x\": -85.334,\r",
+							"        \"y\": -44.847\r",
+							"      },\r",
+							"      \"node3\": {\r",
+							"        \"x\": -85.534,\r",
+							"        \"y\": 120.353\r",
+							"      },\r",
+							"      \"node4\": {\r",
+							"        \"x\": 207.466,\r",
+							"        \"y\": -199.247\r",
+							"      },\r",
+							"      \"node5\": {\r",
+							"        \"x\": 207.666,\r",
+							"        \"y\": -42.647\r",
+							"      },\r",
+							"      \"node6\": {\r",
+							"        \"x\": 208.866,\r",
+							"        \"y\": 124.753\r",
+							"      }\r",
+							"    }\r",
+							"  }\r",
+							"}`;\r",
+							"\r",
+							"const json3 = `{\r",
+							"  \"nodes\": {\r",
+							"    \"node1\": {\r",
+							"      \"id\": \"node1\",\r",
+							"      \"name\": \"Nodo 1\",\r",
+							"      \"x\": -23.534423828125,\r",
+							"      \"y\": -192.046875\r",
+							"    },\r",
+							"    \"node2\": {\r",
+							"      \"id\": \"node2\",\r",
+							"      \"name\": \"Nodo 2\",\r",
+							"      \"x\": -20.534423828125,\r",
+							"      \"y\": -40.046875\r",
+							"    },\r",
+							"    \"node3\": {\r",
+							"      \"id\": \"node3\",\r",
+							"      \"name\": \"Nodo 3\",\r",
+							"      \"x\": -25.534423828125,\r",
+							"      \"y\": 93.953125\r",
+							"    },\r",
+							"    \"node4\": {\r",
+							"      \"id\": \"node4\",\r",
+							"      \"name\": \"Nodo 4\",\r",
+							"      \"x\": 194.465576171875,\r",
+							"      \"y\": -203.046875\r",
+							"    },\r",
+							"    \"node5\": {\r",
+							"      \"id\": \"node5\",\r",
+							"      \"name\": \"Nodo 5\",\r",
+							"      \"x\": 187.465576171875,\r",
+							"      \"y\": -53.046875\r",
+							"    },\r",
+							"    \"node6\": {\r",
+							"      \"id\": \"node6\",\r",
+							"      \"name\": \"Nodo 6\",\r",
+							"      \"x\": 193.465576171875,\r",
+							"      \"y\": 68.953125\r",
+							"    }\r",
+							"  },\r",
+							"  \"edges\": {\r",
+							"    \"edge1\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 1\r",
+							"    },\r",
+							"    \"edge2\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 3\r",
+							"    },\r",
+							"    \"edge3\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 5\r",
+							"    },\r",
+							"    \"edge4\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 5\r",
+							"    },\r",
+							"    \"edge5\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 4\r",
+							"    },\r",
+							"    \"edge6\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 2\r",
+							"    },\r",
+							"    \"edge7\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 4\r",
+							"    },\r",
+							"    \"edge8\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 6\r",
+							"    },\r",
+							"    \"edge9\": {\r",
+							"      \"source\": \"node3\",\r",
+							"      \"target\": \"node6\",\r",
+							"      \"label\": 7\r",
+							"    }\r",
+							"  },\r",
+							"  \"layouts\": {\r",
+							"    \"nodes\": {\r",
+							"      \"node1\": {\r",
+							"        \"x\": -81.934,\r",
+							"        \"y\": -200.047\r",
+							"      },\r",
+							"      \"node2\": {\r",
+							"        \"x\": -85.334,\r",
+							"        \"y\": -44.847\r",
+							"      },\r",
+							"      \"node3\": {\r",
+							"        \"x\": -85.534,\r",
+							"        \"y\": 120.353\r",
+							"      },\r",
+							"      \"node4\": {\r",
+							"        \"x\": 207.466,\r",
+							"        \"y\": -199.247\r",
+							"      },\r",
+							"      \"node5\": {\r",
+							"        \"x\": 207.666,\r",
+							"        \"y\": -42.647\r",
+							"      },\r",
+							"      \"node6\": {\r",
+							"        \"x\": 208.866,\r",
+							"        \"y\": 124.753\r",
+							"      }\r",
+							"    }\r",
+							"  }\r",
+							"}`;\r",
+							"\r",
+							"const json4 = `{\r",
+							"  \"nodes\": {\r",
+							"    \"node1\": {\r",
+							"      \"id\": \"node1\",\r",
+							"      \"name\": \"Nodo 1\",\r",
+							"      \"x\": -23.534423828125,\r",
+							"      \"y\": -192.046875\r",
+							"    },\r",
+							"    \"node2\": {\r",
+							"      \"id\": \"node2\",\r",
+							"      \"name\": \"Nodo 2\",\r",
+							"      \"x\": -20.534423828125,\r",
+							"      \"y\": -40.046875\r",
+							"    },\r",
+							"    \"node4\": {\r",
+							"      \"id\": \"node4\",\r",
+							"      \"name\": \"Nodo 4\",\r",
+							"      \"x\": 194.465576171875,\r",
+							"      \"y\": -203.046875\r",
+							"    },\r",
+							"    \"node5\": {\r",
+							"      \"id\": \"node5\",\r",
+							"      \"name\": \"Nodo 5\",\r",
+							"      \"x\": 187.465576171875,\r",
+							"      \"y\": -53.046875\r",
+							"    }\r",
+							"  },\r",
+							"  \"edges\": {\r",
+							"    \"edge1\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 2\r",
+							"    },\r",
+							"    \"edge2\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 7\r",
+							"    },\r",
+							"    \"edge4\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 8\r",
+							"    },\r",
+							"    \"edge5\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 2\r",
+							"    }\r",
+							"  },\r",
+							"  \"layouts\": {\r",
+							"    \"nodes\": {\r",
+							"      \"node1\": {\r",
+							"        \"x\": -81.934,\r",
+							"        \"y\": -200.047\r",
+							"      },\r",
+							"      \"node2\": {\r",
+							"        \"x\": -85.334,\r",
+							"        \"y\": -44.847\r",
+							"      },\r",
+							"      \"node4\": {\r",
+							"        \"x\": 207.466,\r",
+							"        \"y\": -199.247\r",
+							"      },\r",
+							"      \"node5\": {\r",
+							"        \"x\": 207.666,\r",
+							"        \"y\": -42.647\r",
+							"      }\r",
+							"    }\r",
+							"  }\r",
+							"}`;\r",
+							"\r",
+							"const json5 = `{\r",
+							"  \"nodes\": {\r",
+							"    \"node1\": {\r",
+							"      \"id\": \"node1\",\r",
+							"      \"name\": \"Nodo 1\",\r",
+							"      \"x\": -23.534423828125,\r",
+							"      \"y\": -192.046875\r",
+							"    },\r",
+							"    \"node2\": {\r",
+							"      \"id\": \"node2\",\r",
+							"      \"name\": \"Nodo 2\",\r",
+							"      \"x\": -20.534423828125,\r",
+							"      \"y\": -40.046875\r",
+							"    },\r",
+							"    \"node4\": {\r",
+							"      \"id\": \"node4\",\r",
+							"      \"name\": \"Nodo 4\",\r",
+							"      \"x\": 194.465576171875,\r",
+							"      \"y\": -203.046875\r",
+							"    },\r",
+							"    \"node5\": {\r",
+							"      \"id\": \"node5\",\r",
+							"      \"name\": \"Nodo 5\",\r",
+							"      \"x\": 187.465576171875,\r",
+							"      \"y\": -53.046875\r",
+							"    }\r",
+							"  },\r",
+							"  \"edges\": {\r",
+							"    \"edge1\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 5\r",
+							"    },\r",
+							"    \"edge2\": {\r",
+							"      \"source\": \"node1\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 4\r",
+							"    },\r",
+							"    \"edge4\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node4\",\r",
+							"      \"label\": 5\r",
+							"    },\r",
+							"    \"edge5\": {\r",
+							"      \"source\": \"node2\",\r",
+							"      \"target\": \"node5\",\r",
+							"      \"label\": 7\r",
+							"    }\r",
+							"  },\r",
+							"  \"layouts\": {\r",
+							"    \"nodes\": {\r",
+							"      \"node1\": {\r",
+							"        \"x\": -81.934,\r",
+							"        \"y\": -200.047\r",
+							"      },\r",
+							"      \"node2\": {\r",
+							"        \"x\": -85.334,\r",
+							"        \"y\": -44.847\r",
+							"      },\r",
+							"      \"node4\": {\r",
+							"        \"x\": 207.466,\r",
+							"        \"y\": -199.247\r",
+							"      },\r",
+							"      \"node5\": {\r",
+							"        \"x\": 207.666,\r",
+							"        \"y\": -42.647\r",
+							"      }\r",
+							"    }\r",
+							"  }\r",
+							"}`;\r",
+							"\r",
+							"const json6 = `{\r",
+							"  \"nodes\": {\r",
+							"    \r",
+							"  },\r",
+							"  \"edges\": {\r",
+							"    \r",
+							"  },\r",
+							"  \"layouts\": {\r",
+							"   \r",
+							"  }\r",
+							"}`;\r",
+							"\r",
+							"const jsonArray = [json1, json2, json3, json4, json5, json6];\r",
+							"\r",
+							"const randomIndex = Math.floor(Math.random() * jsonArray.length);\r",
+							"const selectedJsonNodes = jsonArray[randomIndex];\r",
+							"\r",
+							"pm.environment.set(\"selectedNodes\", selectedJsonNodes);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Respuesta con código 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Tiempo de respuesta menor a 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El cuerpo está en formato JSON\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El cuerpo contiene los atributos esperados\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"values\");\r",
+							"    pm.expect(jsonData).to.have.property(\"n\");\r",
+							"    pm.expect(jsonData).to.have.property(\"verticesIds\");\r",
+							"    pm.expect(jsonData).to.have.property(\"rowSum\");\r",
+							"    pm.expect(jsonData).to.have.property(\"colSum\");\r",
+							"    pm.expect(jsonData).to.have.property(\"mtxSum\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El atributo 'n' es un número >=0\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.n).to.be.a(\"number\").that.is.above(-1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El valor de 'n' coincide con la cantidad de elementos en los parámetros relacionados\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    const n = jsonData.n;\r",
+							"\r",
+							"    // Verificando que 'n' coincide con la cantidad de elementos de cada parámetro\r",
+							"    pm.expect(Object.keys(jsonData.verticesIds)).to.have.lengthOf(n);\r",
+							"    pm.expect(jsonData.verticesNames).to.have.lengthOf(n);\r",
+							"\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{selectedNodes}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/graph/adjMatrix",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"graph",
+						"adjMatrix"
 					]
 				}
 			},
