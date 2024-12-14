@@ -53,6 +53,18 @@ export class HomePage {
     await this.confirmPasswordField.fill(password);
   }
 
+  async fillWrongly(
+    username: string,
+    email: string,
+    password: string,
+    confirmPassword: string
+  ) {
+    await this.usernameField.fill(username);
+    await this.emailField.fill(email);
+    await this.passwordField.fill(password);
+    await this.confirmPasswordField.fill(confirmPassword);
+  }
+
   async clickSignUpSubmitButton() {
     await this.signUpSubmitButton.click();
   }
