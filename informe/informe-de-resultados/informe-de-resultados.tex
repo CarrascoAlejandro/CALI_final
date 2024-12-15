@@ -30,7 +30,7 @@
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
 % Portada
-\title{\Large Informe de Resultados}
+\title{\Large Informe de Resultados }
 \author{
     Campero Morales José Antonio \\
     Campohermoso Berdeja Oscar \\
@@ -463,30 +463,44 @@ S3-1-NW & Abrir el formulario "Northwest" para ver la matriz generada. & 2024-10
 
 \noindent Para una descripción completa de los resultados obtenidos en cada ítem evaluado, por favor consulte los detalles (\hyperref[tab:reporte_usabilidad]{en Anexos})
 
-
+\newpage
 \section{Conclusiones}
 
 \begin{itemize}
-    \item \textbf{Evaluación general del sistema:} Los resultados obtenidos en las pruebas indican que el sistema cumple con la mayoría de las funcionalidades requeridas. Sin embargo, se identificaron varias áreas de mejora en términos de validación de datos, usabilidad, accesibilidad y feedback visual al usuario. Estas mejoras son críticas para alcanzar un sistema más robusto y alineado con las necesidades de los usuarios.
+    \item \textbf{Evaluaci\'on general del sistema:} Los resultados obtenidos en las pruebas indican que el sistema cumple en gran medida con las funcionalidades especificadas, especialmente en los m\'odulos clave como los algoritmos Compet y Dijkstra. Sin embargo, tambi\'en se identificaron debilidades en la resistencia a casos at\'ipicos, accesibilidad y retroalimentaci\'on visual. Estas \'areas necesitan mejoras para garantizar un funcionamiento m\'as robusto y alineado con los est\'andares de calidad esperados.
 
-    \item \textbf{Validación de datos y manejo de errores:} Se detectaron defectos en la validación de campos obligatorios y numéricos, así como en la notificación de errores en entradas inconsistentes. Estos problemas pueden llevar a errores de entrada, afectando la precisión de los cálculos y la experiencia de usuario. Es recomendable implementar mecanismos de validación más rigurosos y notificaciones específicas para guiar a los usuarios en la corrección de errores.
+    \item \textbf{Validaci\'on de datos y manejo de errores:} Durante las pruebas se detectaron defectos en la validaci\'on de campos obligatorios y num\'ericos, as\'i como en la notificaci\'on de errores en entradas inconsistentes. Estos problemas afectan la precisi\'on de los c\'alculos y la experiencia del usuario. La implementaci\'on de mecanismos de validaci\'on m\'as rigurosos y notificaciones espec\'ificas es esencial para corregir estas deficiencias.
 
-    \item \textbf{Accesibilidad y usabilidad:} A pesar de cumplir con algunos principios de accesibilidad, se observaron deficiencias en el contraste de colores, la etiquetación de elementos de interfaz y el feedback visual. Esto impacta especialmente a usuarios con discapacidades visuales. La implementación de mejoras en accesibilidad no solo cumpliría con los estándares de WCAG, sino que también mejoraría la experiencia de todos los usuarios.
+    \item \textbf{Accesibilidad y usabilidad:} Las pruebas de accesibilidad revelaron incumplimientos con los criterios WCAG 2.2, como contraste inadecuado de colores y falta de etiquetado descriptivo para lectores de pantalla. Aunque se realizaron correcciones parciales, se recomienda implementar verificaciones recurrentes de accesibilidad para mejorar la experiencia de todos los usuarios, incluyendo aquellos con discapacidades.
 
-    \item \textbf{Retroalimentación y consistencia visual:} Las pruebas de usabilidad evidenciaron la falta de consistencia en elementos visuales y retroalimentación insuficiente para algunas interacciones. Se recomienda estandarizar los íconos, colores, y mensajes del sistema, así como ofrecer retroalimentación inmediata para cada acción del usuario. Esto facilitará la navegación y reducirá la curva de aprendizaje del sistema.
+    \item \textbf{Resultados de pruebas clave:} De los casos de prueba ejecutados, varios fueron aceptados sin observaciones, confirmando que los m\'odulos cumplen con los criterios de aceptaci\'on. Sin embargo, algunos defectos de baja prioridad y otros m\'as significativos, como problemas en la visualizaci\'on de listas extensas y superposiciones en el m\'odulo de Sorts, fueron documentados para futuras iteraciones.
 
-    \item \textbf{Gestión de riesgos y defectos persistentes:} Varios defectos identificados en las pruebas de funcionalidad y usabilidad representan riesgos no mitigados que afectan la estabilidad y confiabilidad del sistema. La falta de ajuste automático en situaciones de desbalance entre oferta y demanda, junto con la ausencia de notificaciones para datos inconsistentes, son áreas críticas que requieren atención inmediata para evitar problemas en el uso del sistema en entornos de producción.
+    \item \textbf{Gestión de riesgos y defectos:} Se identificaron seis defectos importantes que, aunque no se corrigieron en su totalidad, han sido documentados detalladamente. La falta de ajustes autom\'aticos en situaciones de desbalance entre oferta y demanda tambi\'en representa un riesgo cr\'itico que debe priorizarse en las pr\'oximas fases de desarrollo.
 
-    \item \textbf{Recomendaciones para próximas iteraciones de pruebas:} 
+    \item \textbf{Conclusión final:} Si bien el sistema demuestra estabilidad en sus m\'odulos principales y cumple con los requisitos funcionales, las \'areas de accesibilidad, usabilidad y documentaci\'on requieren atenci\'on significativa. Las mejoras sugeridas no solo aumentar\'an la calidad general del producto, sino que tambi\'en garantizar\'an una experiencia de usuario inclusiva y satisfactoria.
+\end{itemize}
+
+\section{Lecciones Aprendidas y Recomendaciones}
+
+\begin{itemize}
+    \item \textbf{Lecciones aprendidas:}
     \begin{itemize}
-        \item Mejorar el proceso de validación de datos, asegurando que todos los campos requeridos y numéricos tengan validaciones adecuadas y que el sistema emita mensajes de error específicos y comprensibles.
-        \item Implementar mejoras en la accesibilidad mediante la optimización de contraste de colores, adición de etiquetas descriptivas para lectores de pantalla y simplificación de la navegación.
-        \item Fortalecer el feedback visual, asegurando que el sistema proporcione retroalimentación clara y consistente para todas las acciones del usuario.
-        \item Realizar pruebas de usabilidad con usuarios finales para identificar oportunidades adicionales de mejora en la interfaz, especialmente en términos de diseño minimalista y reconocimiento de errores.
+        \item La necesidad de pruebas tempranas y recurrentes en accesibilidad y usabilidad result\'o ser una lecci\'on clave para asegurar la inclusividad desde las etapas iniciales del desarrollo.
+        \item La falta de estimaciones precisas en el tiempo necesario para la ejecuci\'on del plan de pruebas resalt\'o la importancia de una mejor gesti\'on de tiempos en proyectos futuros.
+        \item La documentaci\'on limitada del proceso de desarrollo dificult\'o la replicabilidad de casos y la resoluci\'on eficiente de defectos.
     \end{itemize}
 
-    \item \textbf{Conclusión final:} Si bien el sistema cumple con muchos de los requisitos funcionales, las áreas de accesibilidad, usabilidad y manejo de errores necesitan mejoras significativas para que el producto sea verdaderamente accesible y fácil de usar. Se recomienda abordar las áreas mencionadas en futuras iteraciones de desarrollo para optimizar el sistema y mejorar la experiencia del usuario, asegurando que el producto final cumpla con los estándares de calidad esperados.
+    \item \textbf{Recomendaciones para mejoras:}
+    \begin{itemize}
+        \item Implementar una suite de pruebas automatizadas para cubrir los endpoints y simplificar el testing continuo de la API.
+        \item Mejorar el proceso de validaci\'on de datos, asegurando que todos los campos requeridos tengan validaciones adecuadas y mensajes de error comprensibles.
+        \item Optimizar la accesibilidad mediante contrastes adecuados de colores, etiquetas descriptivas para lectores de pantalla y simplificaci\'on de la navegaci\'on.
+        \item Realizar pruebas de carga y escalabilidad en m\'odulos como Sorts para asegurar el correcto funcionamiento con grandes vol\'umenes de datos.
+        \item Priorizar la correcci\'on de defectos identificados en las pruebas, especialmente aquellos relacionados con accesibilidad y riesgos funcionales.
+        \item Asegurar que futuras iteraciones incluyan documentaci\'on m\'as detallada tanto del proceso de desarrollo como del plan de pruebas, facilitando su comprensi\'on y mantenimiento.
+    \end{itemize}
 \end{itemize}
+
 
 
 \newpage
