@@ -159,11 +159,26 @@ Garantizar la correcta funcionalidad, usabilidad y calidad de los diferentes mó
 
 \subsection{Limitaciones}
 
-\begin{itemize}
-    \item \textbf{Datos de prueba limitados:} La disponibilidad de datos de prueba representativos es limitada, lo que podría restringir la validación a configuraciones específicas de oferta y demanda, dejando fuera algunos escenarios posibles que podrían presentarse en situaciones reales.
+El presente plan de pruebas contempla diversas limitaciones que restringen el alcance y el entorno en el cual se ejecutarán las pruebas. A continuación, se describen dichas limitaciones:
 
-    \item \textbf{Configuración de grafos predefinida:} Debido a que este es un problema de asignación, la configuración de grafos utilizada está previamente definida y limitada a ciertos parámetros específicos. Esto significa que el editor no se someterá a pruebas en configuraciones de grafos alternativas o personalizables, lo que podría limitar la flexibilidad de los resultados en otros escenarios de aplicación.
+\begin{itemize}
+    \item \textbf{Datos de prueba limitados:} La disponibilidad de datos de prueba representativos es limitada, lo que podría restringir la validación a configuraciones específicas de oferta y demanda, dejando fuera algunos escenarios posibles que podrían presentarse en situaciones reales. Además, los datos de prueba utilizados son simulados y pueden no representar la diversidad de datos procesados en producción.
+
+    \item \textbf{Entorno de pruebas no desplegado:} Las pruebas se realizarán en un entorno de desarrollo, sin acceso a un ambiente de staging ni a una instancia de deploy. Por lo tanto, los resultados pueden no reflejar completamente el rendimiento o la experiencia de usuario final en un entorno de producción. Esto también implica que no se realizarán pruebas de carga, estrés o escalabilidad a gran escala.
+
+    \item \textbf{Exclusión de componentes específicos:} Los contenedores de \textit{Keycloak}, \textit{MinIO} y \textit{Python} no serán objeto de pruebas directas. Sin embargo, cualquier incidencia en su funcionamiento que afecte a los módulos bajo prueba será documentada.
+
+    \item \textbf{Funcionalidades no finalizadas:} Algunas funcionalidades del sistema están en etapas de desarrollo o modificación, como la autenticación con Google. Estas características no serán evaluadas en las pruebas actuales debido a su estado de implementación.
+
+    \item \textbf{Pruebas de rendimiento excluidas:} No se realizarán pruebas de rendimiento o de carga a gran escala debido a las limitaciones del entorno de desarrollo. Las pruebas de rendimiento deberán ejecutarse en un entorno de staging o producción para garantizar su validez.
+
+    \item \textbf{Pruebas de seguridad excluidas:} Este plan no contempla evaluaciones sobre la gestión de autenticación, autorización, cifrado de datos ni posibles vulnerabilidades de seguridad. Estas pruebas deben ser consideradas en futuros planes de validación.
+
+    \item \textbf{Limitaciones en funcionalidades del frontend:} Las pruebas funcionales en el frontend estarán limitadas a verificar la interacción del \textit{dashboard} de nodos y arcos con los algoritmos de \textit{Compet} y \textit{Dijkstra}. Otras funcionalidades del \textit{dashboard} y la interfaz de usuario no serán evaluadas.
+
+    \item \textbf{Compatibilidad limitada de accesibilidad:} Las pruebas de accesibilidad se limitarán a elementos básicos, como la navegación con teclado y el contraste visual en componentes relacionados con los algoritmos de \textit{Compet} y \textit{Dijkstra}. No se evaluarán estándares adicionales de accesibilidad en otros módulos.
 \end{itemize}
+
 
 \subsection{Base de la Prueba}
 \subsubsection{Descripción del Sistema}
@@ -522,17 +537,42 @@ La interfaz de usuario, desarrollada en Vue.js, se encarga de descargar y cargar
 
 \section{\large Supuestos y Limitaciones del Proyecto de Prueba}
 
-\begin{itemize}
-    \item \textbf{Vigencia de autenticación:} Se supone que los tokens de autenticación utilizados en el sistema tienen una duración de 30 minutos. Esto implica que, para mantener la validez de estos tokens y no interrumpir el proceso de pruebas, las pruebas deben contemplar este límite de tiempo.
-    
-    \item \textbf{Servicios auxiliares no utilizados:} Existen ciertos servicios auxiliares configurados que no se utilizarán directamente en este entorno de pruebas. Por lo tanto, se asumirán levantados para mantener la estructura de la arquitectura, pero no serán considerados en las pruebas.
-    
-    \item \textbf{Creación de datos simulados (mocks):} Es probable que para algunas pruebas se requiera la creación de datos simulados, especialmente para el proceso de optimización y generación de matrices. Se asumirán estos datos como representativos para validar el funcionamiento de los algoritmos.
+\subsection{Supuestos}
 
-    \item \textbf{Limitaciones en los datos de prueba:} La disponibilidad de datos de prueba se limita a ciertas configuraciones de oferta y demanda representativas, lo cual podría restringir la validación del sistema a escenarios específicos. Esto significa que podrían quedar fuera algunos casos extremos o poco comunes.
-    
-    \item \textbf{Configuración de grafos predefinida:} Debido a la naturaleza del problema de asignación, la configuración de grafos que se probará estará predefinida en el sistema, limitando la flexibilidad para probar variaciones personalizadas de grafos. Esto es una limitación para analizar escenarios alternativos.
+\begin{itemize}
+    \item \textbf{Vigencia de autenticación:} Los tokens de autenticación utilizados en el sistema tienen una duración de 30 minutos. Esto implica que las pruebas deben contemplar este límite de tiempo para mantener la validez de los tokens y garantizar la continuidad del proceso.
+
+    \item \textbf{Funcionamiento continuo del sistema:} Se asume que el sistema operará de manera ininterrumpida durante las sesiones de prueba, asegurando estabilidad operativa y disponibilidad continua mientras el sistema esté activado.
+
+    \item \textbf{Conocimiento del equipo de pruebas:} El equipo de pruebas cuenta con un conocimiento básico de los algoritmos implementados, como Dijkstra y Compet, así como de su funcionamiento teórico y práctico, lo que permitirá ejecutar pruebas más comprensivas y efectivas.
+
+    \item \textbf{Disponibilidad de recursos y soporte:} Se garantiza acceso a los recursos necesarios, incluyendo herramientas de prueba (como Axe DevTools para accesibilidad), documentación del sistema y el soporte de los desarrolladores durante la fase de pruebas.
+
+    \item \textbf{Estabilidad de los requisitos:} Los requisitos del sistema permanecerán estables durante todo el ciclo de pruebas. No se esperan cambios significativos en el alcance del proyecto que puedan impactar la cobertura o los resultados de las pruebas.
+
+    \item \textbf{Disponibilidad del entorno y módulos:} Se presupone que todos los módulos, incluidos Sorts y Árboles Binarios, están completamente desarrollados y estables, así como que el entorno de pruebas será consistente en términos de hardware y software durante todo el ciclo de pruebas.
+
+    \item \textbf{Representatividad de los datos de prueba:} Los datos de prueba utilizados serán representativos de los escenarios reales de uso del sistema, asegurando que los resultados de las pruebas sean aplicables al entorno de producción.
 \end{itemize}
+
+\subsection{Limitaciones}
+
+\begin{itemize}
+
+    \item \textbf{Entorno de pruebas simulado:} Las pruebas se realizarán en un entorno de desarrollo local, lo que implica que no se simularán condiciones de producción o de alta carga. Además, la configuración del entorno puede variar entre máquinas, afectando la consistencia de los resultados.
+
+    \item \textbf{Limitación en la configuración de grafos:} La configuración de grafos a probar estará predefinida, lo que restringe la flexibilidad para evaluar variaciones personalizadas y escenarios alternativos.
+
+
+    \item \textbf{Limitaciones en el conocimiento del código:} Dado que el equipo de QA no participó en el desarrollo, su conocimiento del código y su estructura es limitado, lo que puede impactar la identificación de defectos y la ejecución de pruebas más detalladas.
+
+    \item \textbf{Tiempo y recursos limitados:} Debido a restricciones de tiempo y recursos, se priorizarán los casos de prueba críticos y las funcionalidades principales, dejando algunos escenarios secundarios fuera del alcance.
+
+    \item \textbf{Datos de prueba limitados:} La disponibilidad de datos de prueba se restringe a configuraciones representativas de oferta y demanda, excluyendo casos extremos o poco comunes.
+
+    \item \textbf{No escalabilidad para grandes volúmenes de datos:} Este plan no incluye pruebas de escalabilidad ni rendimiento con grandes volúmenes de datos que excedan los límites definidos para el desarrollo.
+\end{itemize}
+
 
 \section{\large Partes Interesadas}
 
