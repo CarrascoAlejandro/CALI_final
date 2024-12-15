@@ -19,7 +19,7 @@ test("Sign in with valid data", async ({ page }) => {
   await homePage.clickSignInSubmitButton();
 });
 
-test("Sign ip with all empty fields", async ({ page }) => {
+test("Sign in with all empty fields", async ({ page }) => {
   const homePage = new HomePage(page);
   await homePage.goto();
   await homePage.clickSignInButton();
@@ -30,7 +30,7 @@ test("Sign ip with all empty fields", async ({ page }) => {
   );
 });
 
-test("Sign ip with empty username", async ({ page }) => {
+test("Sign in with empty username", async ({ page }) => {
   const homePage = new HomePage(page);
   await homePage.goto();
   await homePage.clickSignInButton();
@@ -43,7 +43,7 @@ test("Sign ip with empty username", async ({ page }) => {
   );
 });
 
-test("Sign ip with empty password", async ({ page }) => {
+test("Sign in with empty password", async ({ page }) => {
   const homePage = new HomePage(page);
   await homePage.goto();
   await homePage.clickSignInButton();
@@ -56,7 +56,7 @@ test("Sign ip with empty password", async ({ page }) => {
   );
 });
 
-test("Sign ip with wrong username", async ({ page }) => {
+test("Sign in with wrong username", async ({ page }) => {
   const homePage = new HomePage(page);
   await homePage.goto();
   await homePage.clickSignInButton();
@@ -69,7 +69,7 @@ test("Sign ip with wrong username", async ({ page }) => {
   );
 });
 
-test("Sign ip with wrong password", async ({ page }) => {
+test("Sign in with wrong password", async ({ page }) => {
   const homePage = new HomePage(page);
   await homePage.goto();
   await homePage.clickSignInButton();
