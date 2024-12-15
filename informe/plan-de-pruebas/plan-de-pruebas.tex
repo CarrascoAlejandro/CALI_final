@@ -878,6 +878,34 @@ La estimación final es de \textbf{47 horas-persona} con un \textbf{error están
     \end{tabular}
 \end{table}
 
+\subsection*{Diagrama Gantt}
+
+\begin{ganttchart}[
+    x unit=0.7cm,
+    y unit chart=0.7cm,
+    hgrid,
+    vgrid,
+    milestone label font=\scriptsize,
+    bar label font=\scriptsize,
+    group label font=\scriptsize,
+    time slot format=isodate
+]{2024-12-03}{2024-12-15}
+    % Configuración del tiempo
+    \gantttitlecalendar{year, month=name, day} \\
+
+    % Actividades
+    \ganttbar{Creación del Repositorio}{2024-12-03}{2024-12-03} \\
+    \ganttbar{Subida de Bases en LaTeX}{2024-12-04}{2024-12-04} \\
+    \ganttbar{Organización del Trabajo}{2024-12-10}{2024-12-10} \\
+    \ganttbar{Pruebas Automatizadas}{2024-12-11}{2024-12-13} \\
+    \ganttbar{Documentación Final}{2024-12-12}{2024-12-15} \\
+
+    % Opcional: Marcar hitos
+    \ganttmilestone{Inicio del Proyecto}{2024-12-03} \\
+    \ganttmilestone{Fin del Proyecto}{2024-12-15}
+\end{ganttchart}
+
+
 \section{\large Enfoque de Prueba}
 
 \noindent El enfoque de prueba se centra en validar tanto los aspectos funcionales como no funcionales del sistema, asegurando que cumpla con los requisitos definidos y proporcione una experiencia de usuario satisfactoria.
