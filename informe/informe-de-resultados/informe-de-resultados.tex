@@ -89,8 +89,14 @@
 % Cuerpo
 \pagenumbering{arabic}
 \newpage
-
 \section{\large Resumen de la prueba}
+Durante el proceso de pruebas, se ejecutaron 42 casos de prueba que abarcaron las funcionalidades clave del sistema descritas en las 33 historias de usuario existentes. Del total de casos de prueba, 33 fueron aceptados sin observaciones, cumpliendo con los criterios de aceptación establecidos y asegurando el correcto funcionamiento esperado. Sin embargo, 9 casos fallaron debido a problemas encontrados durante la ejecución, los cuales fueron documentados y reportados para su resolución. 
+
+A lo largo de las pruebas, se identificaron 28 defectos en los distintos módulos del sistema, estos se documentaron incluyedo detalles de reproducción, evidencias y sugerencias para su corrección, abarcando tanto aspectos funcionales como de accesibilidad. 
+
+Además, se identificaron 7 alertas de accesibilidad, agrupadas según el criterio WCAG afectado, lo cual refleja la evaluación de la accesibilidad del sistema. 
+
+\noindent Todos los reportes mencionados (Test Cases, reporte de errores y alertas de accesibilidad) se encuentran en los anexos.
 
 \section{\large Evaluación de la prueba}
 
@@ -135,11 +141,7 @@ A continuación, se detallan las desviaciones por tarea:
 Estas desviaciones fueron causadas por la coincidencia de las responsabilidades académicas de los miembros del equipo con el cronograma del proyecto. Sin embargo, se logró ajustar el plan para minimizar el impacto y garantizar que todas las actividades se completaran dentro de un plazo razonable.
 
 \subsection*{Cronograma Final del Proyecto}
-El cronograma final obtuvo:
-\begin{itemize}
-    \item \textbf{Horas realizadas}: 38 horas para el periodo de trabajo (3 de diciembre al 15 de diciembre).
-
-\end{itemize}
+El cronograma final obtuvo 38 horas para el periodo de trabajo (3 de diciembre al 15 de diciembre).
 
 \begin{table}[H]
     \centering
@@ -190,378 +192,65 @@ El cronograma final obtuvo:
 
 \subsection{Impedimentos de prueba y soluciones alternativas}
 
-
-\section{\large Informe de Resultados}
-
-\subsection{Resultados de los Casos de Prueba}
-
-\noindent A continuación se documentan los resultados de los casos de prueba realizados, especificando cuáles pasaron o fallaron y detallando observaciones relevantes.
-
-\small % Slightly reduce the font size for better fit
-\renewcommand{\arraystretch}{1.0} % Slightly reduce the space between rows
-\setlength{\tabcolsep}{4pt} % Reduce space between columns
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-  \caption{Caso de prueba 1} \label{tab:casos_prueba1} \\
-  \hline
-    \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-01, HU006-GraphEditor}} \\ \hline
-
-  \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-  \endfirsthead
-  \hline
-  \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-  \endhead
-  TC1-NW & 2024-10-17 & Comprobar que, al crear los nodos y las conexiones, se genera automáticamente la matriz con los valores correctos de los pesos. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Los pesos asignados deben ser valores numéricos válidos y compatibles con el sistema. & ALTA \\ \hline
-\textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-S1-1-NW & Crear 3 nodos de origen y 3 nodos de destino en el editor. & 2024-10-17 & Los 6 nodos son creados correctamente sin errores. & PASS. Los 6 nodos se crearon correctamente. \\ \hline
-S2-1-NW & Asignar conexiones entre ellos con pesos específicos para cada enlace. & 2024-10-17 & Las conexiones se establecen correctamente y los pesos asignados son visibles en la interfaz. & PASS. Las conexiones inician con un peso 0, luego este valor es editable. \\ \hline
-S3-1-NW & Abrir el formulario "Northwest" para ver la matriz generada. & 2024-10-17 & La matriz generada muestra los valores de los pesos correctamente, coincidiendo con los valores de las conexiones creadas. & PASS. Los valores de los pesos sean 0 o si se han editado corresponde correctamente \\ \hline
-\end{longtable}
-\begin{itemize}
-    \item \textbf{Resumen de la Prueba:} En el Caso de Prueba 1 se verificó la creación de nodos y conexiones en el editor, y la generación automática de una matriz de pesos correcta. Todos los pasos del caso de prueba se completaron exitosamente sin errores.
-    
-    \item \textbf{Evaluación de la Calidad y Cumplimiento del Plan de Pruebas:} El sistema cumplió con las expectativas del plan de pruebas, mostrando los nodos y conexiones correctamente y generando una matriz de pesos precisa.
-    
-    \item \textbf{Desviaciones del Plan de Prueba:} No se observaron desviaciones del plan de prueba en este caso.
-    
-    \item \textbf{Impedimentos y Soluciones Alternativas:} No hubo impedimentos durante la ejecución de este caso de prueba.
-    
-    \item \textbf{Riesgos No Mitigados y Defectos No Corregidos:} No se identificaron riesgos ni defectos pendientes al finalizar esta prueba.
-    
-    \item \textbf{Lecciones Aprendidas y Recomendaciones:} El flujo de creación de nodos y conexiones funcionó bien, pero sería útil agregar mensajes de confirmación visuales para mejorar la experiencia del usuario.
-\end{itemize}
-
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 2} \label{tab:casos_prueba2} \\
-    \hline
-        \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-01, HU010-NorthWest-02}} \\ \hline
-
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY } \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC2-NW & 2024-10-17 & Verificar el comportamiento del sistema cuando la suma de la oferta y la demanda no es igual. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Los pesos asignados deben ser valores numéricos válidos y compatibles con El sistema. La oferta total debe ser mayor que  la demanda. & MEDIA                                                                                                     \\ \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-2-NW & Ingresar 100 unidades de oferta para los nodos de origen & 2024-10-17 & El sistema debe aceptar la cantidad de oferta sin mostrar errores. & PASS. Se muestra la cantidad de ofertta sin mostrar errores. \\ \hline
-    S2-2-NW & Ingresar 80 unidades de demanda para los nodos de destino. & 2024-10-17 & El sistema debe aceptar la cantidad de demanda sin mostrar errores. & PASS. La cantidad de demanda se muestra sin errores. \\ \hline
-    S3-2-NW & Ejecutar el cálculo utilizando el método de la esquina noroeste. & 2024-10-17 & El sistema debe detectar que la oferta y la demanda no están balanceadas y ajustar automáticamente la solución (por ejemplo, añadiendo un nodo ficticio) para resolver el problema de transporte sin errores. & FAIL. El sistema no detecta que la oferta y la demanda no están balanceados, y no se ajusta la solución. \\ \hline
-\end{longtable}
-
-\begin{itemize}
-    \item \textbf{Resumen de la Prueba:} Este caso de prueba verificó el comportamiento del sistema cuando la oferta y demanda no estaban balanceadas. Se identificó un fallo en el ajuste automático cuando estos valores no coincidían.
-    
-    \item \textbf{Evaluación de la Calidad y Cumplimiento del Plan de Pruebas:} El sistema no cumplió con el comportamiento esperado, ya que no detectó el desbalance y no ajustó la solución automáticamente.
-    
-    \item \textbf{Desviaciones del Plan de Prueba:} Se observó una desviación en cuanto al comportamiento del sistema al no ajustar la oferta y demanda desbalanceadas.
-    
-    \item \textbf{Impedimentos y Soluciones Alternativas:} No hubo impedimentos adicionales; sin embargo, se sugiere implementar una alerta o ajuste automático para estos escenarios.
-    
-    \item \textbf{Riesgos No Mitigados y Defectos No Corregidos:} El sistema presenta un riesgo de error en la optimización en escenarios de desbalance entre oferta y demanda.
-    \item \textbf{Lecciones Aprendidas y Recomendaciones:} Se recomienda mejorar la validación del balance entre oferta y demanda, implementando un nodo ficticio automático para evitar problemas en la solución
-\end{itemize}
-
-
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 3} \label{tab:casos_prueba3} \\
-    \hline
-        \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU010-NorthWest-02, HU010-NorthWest-03}} \\ \hline
-
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY } \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC3-NW & 2024-10-17 & Verificar que las opciones de maximizar y minimizar generen soluciones distintas. & El editor debe estar configurado correctamente, permitiendo crear y conectar nodos. Pesos numéricos válidos y matriz de costos conocida. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-3-NW & Configurar la matriz de costos. & 2024-10-17 & El sistema acepta la matriz de costos sin errores y la muestra correctamente. & PASS. Matriz aceptada y mostrada correctamente. \\ \hline
-    S2-3-NW & Seleccionar maximización y calcular. & 2024-10-17 & El sistema calcula y muestra la solución sin errores. & PASS. Calcula solución sin errores pero no alerta sobre datos problemáticos. \\ \hline
-    S3-3-NW & Verificar la solución en maximización. & 2024-10-17 & Solución visible y accesible en la interfaz. & PASS. Solución visible y accesible. \\ \hline
-    S4-3-NW & Seleccionar minimización y calcular. & 2024-10-17 & El sistema calcula y muestra la solución sin errores. & PASS. Calcula correctamente en minimización. \\ \hline
-    S5-3-NW & Comparar ambas soluciones. & 2024-10-17 & Las soluciones deben diferir según el criterio de optimización. & PASS. Solución máxima y mínima obtenidas. \\ \hline
-\end{longtable}
-\begin{itemize}
-    \item \textbf{Resumen de la Prueba:} Se probó que el sistema generara diferentes soluciones de maximización y minimización. El sistema logró calcular ambas soluciones correctamente.
-    
-    \item \textbf{Evaluación de la Calidad y Cumplimiento del Plan de Pruebas:} La prueba cumplió con los estándares de calidad, generando soluciones distintas para los criterios de maximización y minimización.
-    
-    \item \textbf{Desviaciones del Plan de Prueba:} No hubo desviaciones en este caso de prueba.
-    
-    \item \textbf{Impedimentos y Soluciones Alternativas:} No se identificaron impedimentos para la ejecución de esta prueba.
-    
-    \item \textbf{Riesgos No Mitigados y Defectos No Corregidos:} No se identificaron riesgos ni defectos pendientes en esta prueba.
-    
-    \item \textbf{Lecciones Aprendidas y Recomendaciones:} Se recomienda incluir una verificación automática que confirme la diferencia entre las soluciones de maximización y minimización para facilitar la validación.
-\end{itemize}
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 4} \label{tab:casos_prueba4} \\
-    \hline
-        \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-01, HU010-NorthWest-03}} \\ \hline
-
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC4-NW & 2024-10-17 & Verificar que el sistema siempre genere una solución factible para diferentes configuraciones de oferta y demanda. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Los pesos asignados deben ser valores numéricos válidos y compatibles con El sistema. Varias configuraciones de oferta y demanda, incluyendo configuraciones balanceadas y no balanceadas. & ALTA                                                                                           \\ \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-4-NW & Ingresar diferentes valores de oferta y demanda (balanceados y no balanceados). & 2024-10-17 & El sistema debe aceptar los valores de oferta y demanda sin errores, independientemente de si están balanceados. & PASS. Si acepta cualquier tipo de valores sin ningún error. \\ \hline
-    S2-4-NW & Ejecutar el cálculo del problema de transporte utilizando el módulo "Northwest". & 2024-10-17 & El sistema debe generar una solución válida y consistente, sin importar si la configuración de oferta y demanda está balanceada. & FAIL. Si genera soluciones, aunque no siempre es valida \\ \hline
-\end{longtable}
-\begin{itemize}
-    \item \textbf{Resumen de la Prueba:} El objetivo de este caso fue verificar que el sistema generara una solución factible en diferentes configuraciones de oferta y demanda. Hubo un fallo al intentar generar soluciones válidas en configuraciones no balanceadas.
-    
-    \item \textbf{Evaluación de la Calidad y Cumplimiento del Plan de Pruebas:} El sistema falló en cumplir con los requisitos del plan de pruebas, ya que no siempre generó una solución válida en configuraciones no balanceadas.
-    
-    \item \textbf{Desviaciones del Plan de Prueba:} Se observó que el sistema no pudo adaptarse adecuadamente en configuraciones no balanceadas.
-    
-    \item \textbf{Impedimentos y Soluciones Alternativas:} No hubo impedimentos adicionales, pero se sugiere una revisión del algoritmo para mejorar la estabilidad en casos de desbalance.
-    
-    \item \textbf{Riesgos No Mitigados y Defectos No Corregidos:} Existe el riesgo de obtener resultados inconsistentes en configuraciones no balanceadas, lo cual puede impactar la precisión del sistema.
-    
-    \item \textbf{Lecciones Aprendidas y Recomendaciones:} Es recomendable implementar una validación para alertar al usuario en configuraciones de oferta y demanda no balanceadas y evitar errores.
-\end{itemize}
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 5} \label{tab:casos_prueba5} \\
-    \hline
-        \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-02}} \\ \hline
-
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC5-NW & 2024-10-17 & Asegurarse de que el formulario de entrada de datos sea intuitivo y que los campos obligatorios estén correctamente validados. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Datos válidos e inválidos en el formulario de entrada, incluyendo campos vacíos y datos no numéricos en los campos de oferta y demanda. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-5-NW & Intentar enviar el formulario con algunos campos vacíos. & 2024-10-17 & El sistema debe mostrar mensajes de error específicos indicando que los campos obligatorios están vacíos. & FAIL. El sistema no muestra mensajes de error específicos ni indica que los campos son obligatorios. \\ \hline
-    S2-5-NW & Ingresar datos no numéricos en los campos de oferta y demanda y enviar el formulario. & 2024-10-17 & El sistema debe mostrar mensajes de error indicando que los valores en oferta y demanda deben ser numéricos. & FAIL. El sistema no muestra mensajes de error ni indica que los valores necesiten ser numéricos. \\ \hline
-    S3-5-NW & Ingresar datos válidos en todos los campos y enviar el formulario, sin demanda y oferta. & 2024-10-17 & El sistema debe lanzar un mensaje de error porque los datos de demanda y oferta deberían ser obligatorios. & FAIL. El sistema permite enviar los datos, pero no muestra error cuando los datos obligatorios de demanda y oferta están vacíos. \\ \hline
-\end{longtable}
-\begin{itemize}
-    \item \textbf{Resumen de la Prueba:} Se evaluó la usabilidad del formulario de entrada de datos, incluyendo la validación de campos obligatorios. Se identificaron fallos en la validación de campos vacíos y no numéricos.
-    
-    \item \textbf{Evaluación de la Calidad y Cumplimiento del Plan de Pruebas:} El sistema no cumplió con los requisitos de usabilidad esperados, al permitir el envío de datos inválidos sin mostrar mensajes de error.
-    
-    \item \textbf{Desviaciones del Plan de Prueba:} La ausencia de validación en campos obligatorios representó una desviación significativa del plan de pruebas.
-    
-    \item \textbf{Impedimentos y Soluciones Alternativas:} No hubo impedimentos, pero se sugiere implementar validaciones adicionales en los campos del formulario.
-    
-    \item \textbf{Riesgos No Mitigados y Defectos No Corregidos:} El sistema presenta riesgos de errores de entrada al no validar adecuadamente los campos obligatorios.
-    
-    \item \textbf{Lecciones Aprendidas y Recomendaciones:} Es esencial fortalecer la validación de datos en el formulario para mejorar la experiencia y prevenir errores de entrada.
-\end{itemize}
-\small % Slightly reduce the font size for better fit
-\renewcommand{\arraystretch}{1.0} % Slightly reduce the space between rows
-\setlength{\tabcolsep}{4pt} % Reduce space between columns
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 6} \label{tab:casos_prueba6} \\
-    \hline
-        \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU006-GraphEditor}} \\ \hline
-
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC6-NW & 2024-10-17 & Verificar que el editor permita a los usuarios definir nodos y conexiones con pesos, y que los grafos se visualicen de forma intuitiva en la interfaz. & Configuración inicial del editor sin grafos; usuarios con capacidad de definir nodos y conexiones. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-6-NW & Definir un nodo en el editor. & 2024-10-17 & El nodo debe aparecer inmediatamente en la visualización gráfica del editor. & PASS. El nodo aparece de manera inmediata en la visualización en el editor. \\ \hline
-    S2-6-NW & Ingresar datos válidos en todos los campos y enviar el formulario. & 2024-10-17 & La conexión debe visualizarse en el grafo en tiempo real, mostrando el peso asignado. & PASS. La conexión se visualiza en tiempo real y asigna un peso 0. \\ \hline
-    S3-6-NW & Intentar crear una conexión con datos inconsistentes (por ejemplo, un peso no numérico). & 2024-10-17 & El sistema debe notificar al usuario sobre la inconsistencia en la entrada de datos, previniendo errores en la creación del grafo. & FAIL. El sistema evita la inconsistencia de los datos, pero no notifica sobre errores. \\ \hline
-    S4-6-NW & Modificar la conexión o el nodo existente. & 2024-10-17 & La visualización del grafo debe actualizarse de inmediato para reflejar los cambios realizados. & PASS. Los cambios al grafo se producen de manera inmediata. \\ \hline
-\end{longtable}
-\begin{itemize}
-    \item \textbf{Resumen de la Prueba:} Este caso de prueba se centró en la creación y visualización de grafos en el editor. El sistema logró representar correctamente los nodos y conexiones, pero falló al manejar datos inconsistentes sin notificar al usuario.
-    
-    \item \textbf{Evaluación de la Calidad y Cumplimiento del Plan de Pruebas:} El sistema cumplió parcialmente con el plan de pruebas, aunque falló en la notificación de errores para datos inconsistentes.
-    
-    \item \textbf{Desviaciones del Plan de Prueba:} No se detectaron desviaciones mayores, salvo la falta de notificación en entradas inconsistentes.
-    
-    \item \textbf{Impedimentos y Soluciones Alternativas:} No hubo impedimentos, pero se sugiere implementar notificaciones para datos inválidos en el editor.
-    
-    \item \textbf{Riesgos No Mitigados y Defectos No Corregidos:} El riesgo de errores sin notificación puede llevar a confusión en el usuario al ingresar datos incorrectos.
-    
-    \item \textbf{Lecciones Aprendidas y Recomendaciones:} Se recomienda mejorar las notificaciones de error para que el usuario esté informado de inconsistencias de entrada.
-\end{itemize}
-
-\small % Slightly reduce the font size for better fit
-\renewcommand{\arraystretch}{1.0} % Slightly reduce the space between rows
-\setlength{\tabcolsep}{4pt} % Reduce space between columns
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 7} \label{tab:casos_prueba7} \\
-    \hline
-        \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU008-FileManagement}} \\ \hline
-
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC7-NW & 2024-10-17 & Verificar que el editor permita cargar grafos desde el computador en formato JSON y descargar los grafos creados, con notificaciones de éxito o error en las operaciones. & Grafo guardado en formato JSON en el computador; editor configurado para cargar y descargar grafos. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-7-NW & Cargar un archivo JSON de grafo desde el computador al editor. & 2024-10-17 & El grafo debe aparecer correctamente en el editor, conservando todos los nodos y conexiones, y el sistema debe notificar que la carga fue exitosa. & PASS. El grafo aparece correctamente en el editor, y conserva todos los nodos y conexiones. \\ \hline
-    S2-7-NW & Intentar cargar un archivo JSON con datos incompletos o en formato incorrecto. & 2024-10-17 & El sistema debe mostrar un mensaje de error indicando el problema con el archivo, sin cargar datos incompletos en el editor. & FAIL. El sistema no muestra ningún mensaje de error. \\ \hline
-    S3-7-NW & Descargar el grafo actualmente visualizado en el editor en formato JSON. & 2024-10-17 & El archivo debe descargarse correctamente, conservando toda la información de nodos y conexiones, y el sistema debe notificar que la descarga fue exitosa. & PASS. El archivo se descarga correctamente con toda la información, y el sistema notifica que la descarga fue exitosa. \\ \hline
-\end{longtable}
-\begin{itemize}
-    \item \textbf{Resumen de la Prueba:} Este caso evaluó la funcionalidad de carga y descarga de grafos en formato JSON. Hubo éxito en la mayoría de las pruebas, pero fallos al cargar archivos en formato incorrecto sin notificación de error.
-    
-    \item \textbf{Evaluación de la Calidad y Cumplimiento del Plan de Pruebas:} El sistema logró cargar y descargar archivos correctamente, pero no cumplió con el estándar de calidad al no notificar errores en archivos incorrectos.
-    
-    \item \textbf{Desviaciones del Plan de Prueba:} Se identificó una desviación en la falta de notificación de errores al cargar archivos en formato incorrecto.
-    
-    \item \textbf{Impedimentos y Soluciones Alternativas:} No hubo impedimentos, aunque se sugiere mejorar la detección y notificación de errores de carga.
-    
-    \item \textbf{Riesgos No Mitigados y Defectos No Corregidos:} La falta de notificación de errores al cargar archivos defectuosos representa un riesgo para la integridad de los datos cargados.
-    
-    \item \textbf{Lecciones Aprendidas y Recomendaciones:} Es importante implementar mensajes de error específicos para archivos en formato incorrecto, mejorando la usabilidad del sistema.
-\end{itemize}
-
 \section{Reporte y Resultados}
-
-\subsection{Reporte de Defectos}
-
-\noindent Se identificaron los siguientes defectos (bugs) durante la ejecución de los casos de prueba:
-
-\begin{longtable}{|p{5cm}|p{10cm}|}
-    \caption{Reporte de Defecto TC2-NW} \label{tab:reporte_defecto_tc2} \\
-    \hline
-    \textbf{Test Case Reference} & TC2-NW \\ \hline
-    \textbf{ID} & DEF-001 \\ \hline
-    \textbf{Title} & Falta de ajuste automático en desbalance de oferta y demanda \\ \hline
-    \textbf{Description} & El sistema no ajusta automáticamente la solución cuando la oferta y demanda están desbalanceadas, impidiendo resolver correctamente el problema de transporte. \\ \hline
-    \textbf{Steps to Reproduce} & 
-    1. Ingresar 100 unidades de oferta para los nodos de origen. \newline
-    2. Ingresar 80 unidades de demanda para los nodos de destino. \newline
-    3. Ejecutar el cálculo utilizando el método de la esquina noroeste. \\ \hline
-    \textbf{Expected Result} & El sistema debe detectar que la oferta y la demanda no están balanceadas y ajustar automáticamente la solución (por ejemplo, añadiendo un nodo ficticio) para resolver el problema de transporte sin errores. \\ \hline
-    \textbf{Actual Result} & FAIL. El sistema no detecta que la oferta y la demanda no están balanceados, y no se ajusta la solución. \\ \hline
-    \textbf{Evidence} & \url{https://drive.google.com/drive/folders/1YT13XV8GKL1_5Vs0Eiqv073T4WOpTW_h?usp=drive_link} \\ \hline
-    \textbf{Severity} & Alta \\ \hline
-    \textbf{Priority} & Alta \\ \hline
-\end{longtable}
-
-\begin{longtable}{|p{5cm}|p{10cm}|}
-    \caption{Reporte de Defecto TC4-NW} \label{tab:reporte_defecto_tc4} \\
-    \hline
-    \textbf{Test Case Reference} & TC4-NW \\ \hline
-    \textbf{ID} & DEF-002 \\ \hline
-    \textbf{Title} & Generación de soluciones no válidas en configuraciones desbalanceadas \\ \hline
-    \textbf{Description} & El sistema genera soluciones inconsistentes cuando la configuración de oferta y demanda no está balanceada, afectando la precisión de los resultados. \\ \hline
-    \textbf{Steps to Reproduce} & 
-    1. Ingresar diferentes valores de oferta y demanda (balanceados y no balanceados). \newline
-    2. Ejecutar el cálculo del problema de transporte utilizando el módulo "Northwest". \\ \hline
-    \textbf{Expected Result} & El sistema debe generar una solución válida y consistente, sin importar si la configuración de oferta y demanda está balanceada. \\ \hline
-    \textbf{Actual Result} & FAIL. Si genera soluciones, aunque no siempre es válida. \\ \hline
-    \textbf{Evidence} & \url{https://drive.google.com/drive/folders/17rGON0-rO-N2L-eLUU5vKIduLq4BL2vu?usp=drive_link} \\ \hline
-    \textbf{Severity} & Alta \\ \hline
-    \textbf{Priority} & Alta \\ \hline
-\end{longtable}
-
-\begin{longtable}{|p{5cm}|p{10cm}|}
-    \caption{Reporte de Defecto TC5-NW} \label{tab:reporte_defecto_tc5} \\
-    \hline
-    \textbf{Test Case Reference} & TC5-NW \\ \hline
-    \textbf{ID} & DEF-003 \\ \hline
-    \textbf{Title} & Falta de validación y mensajes de error en campos obligatorios y numéricos \\ \hline
-    \textbf{Description} & El sistema permite el envío de datos sin validar campos obligatorios ni valores numéricos, y no muestra mensajes de error en campos incorrectos o vacíos. \\ \hline
-    \textbf{Steps to Reproduce} & 
-    1. Intentar enviar el formulario con algunos campos vacíos. \newline
-    2. Ingresar datos no numéricos en los campos de oferta y demanda y enviar el formulario. \newline
-    3. Ingresar datos válidos en todos los campos y enviar el formulario, sin demanda y oferta. \\ \hline
-    \textbf{Expected Result} & El sistema debe mostrar mensajes de error específicos indicando que los campos obligatorios están vacíos, que los valores en oferta y demanda deben ser numéricos, y que estos datos deben ser obligatorios. \\ \hline
-    \textbf{Actual Result} & FAIL. El sistema no muestra mensajes de error específicos ni indica que los campos son obligatorios o que deben ser numéricos. \\ \hline
-    \textbf{Evidence} & \url{https://drive.google.com/drive/folders/10bwq9Ha9stscJcG6weDrUWH_h_Sp8eGR?usp=drive_link} \\ \hline
-    \textbf{Severity} & Alta \\ \hline
-    \textbf{Priority} & Alta \\ \hline
-\end{longtable}
-
-\begin{longtable}{|p{5cm}|p{10cm}|}
-    \caption{Reporte de Defecto TC6-NW} \label{tab:reporte_defecto_tc6} \\
-    \hline
-    \textbf{Test Case Reference} & TC6-NW \\ \hline
-    \textbf{ID} & DEF-004 \\ \hline
-    \textbf{Title} & Falta de notificación de inconsistencias en datos al crear conexiones \\ \hline
-    \textbf{Description} & El sistema permite crear conexiones con datos inconsistentes sin notificar al usuario sobre los errores en los datos ingresados. \\ \hline
-    \textbf{Steps to Reproduce} & 
-    1. Definir un nodo en el editor. \newline
-    2. Ingresar datos válidos en todos los campos y enviar el formulario. \newline
-    3. Intentar crear una conexión con datos inconsistentes (por ejemplo, un peso no numérico). \\ \hline
-    \textbf{Expected Result} & El sistema debe notificar al usuario sobre la inconsistencia en la entrada de datos, previniendo errores en la creación del grafo. \\ \hline
-    \textbf{Actual Result} & FAIL. El sistema evita la inconsistencia de los datos pero no notifica sobre errores. \\ \hline
-    \textbf{Evidence} & \url{https://drive.google.com/drive/folders/1uA5hSTQQ20aGa1zVK830kfKvrHaQ8wZS?usp=drive_link} \\ \hline
-    \textbf{Severity} & Media \\ \hline
-    \textbf{Priority} & Media \\ \hline
-\end{longtable}
-
-\begin{longtable}{|p{5cm}|p{10cm}|}
-    \caption{Reporte de Defecto TC1-NW} \label{tab:reporte_defecto_tc1} \\
-    \hline
-    \textbf{Test Case Reference} & TC1-NW \\ \hline
-    \textbf{ID} & DEF-005 \\ \hline
-    \textbf{Title} & Bloqueo del editor al modificar el grafo tras ejecutar el algoritmo \\ \hline
-    \textbf{Description} & Después de ejecutar el algoritmo de la esquina noroeste, el editor se bloquea, impidiendo realizar modificaciones en el grafo. Solo vuelve a funcionar después de presionar Enter. \\ \hline
-    \textbf{Steps to Reproduce} & 
-    1. Solicitar la solución utilizando el método Northwest. \newline
-    2. Intentar volver al editor para hacer modificaciones en el grafo. \\ \hline
-    \textbf{Expected Result} & Después de ejecutar el algoritmo, el editor debe permitir al usuario modificar el grafo sin problemas. \\ \hline
-    \textbf{Actual Result} & El editor se bloquea y no permite realizar ninguna acción. Solo vuelve a funcionar al presionar Enter. \\ \hline
-    \textbf{Evidence} & \url{https://drive.google.com/drive/folders/1VqBzMIqzObjwQ7AbNkVM1nD7D_-MKnde?usp=drive_link} \\ \hline
-    \textbf{Severity} & Alta \\ \hline
-    \textbf{Priority} & Alta \\ \hline
-\end{longtable}
-
 
 \subsection{Resultados de las Métricas del Plan de Pruebas}
 
-\noindent A continuación, se presentan las métricas recopiladas:
+\noindent Los resultados del plan de pruebas reflejan los siguientes indicadores clave:  
 
 \begin{itemize}
-    \item \textbf{Número de Test Cases ejecutados}: 7
-    \item \textbf{Proporción de casos exitosos}: 42.86\% (3 casos pasaron, 4 fallaron)
-    \item \textbf{Número de defectos identificados}: 4 (detallados en el reporte de defectos)
-    \item \textbf{Tiempo total de ejecución de pruebas}: 15 horas-persona
-    \item \textbf{Cobertura de Pruebas}: Se logró cubrir todas las funcionalidades según las historias de usuario, garantizando que las pruebas abarcaron la mayoría de las funcionalidades del producto. Esto asegura un monitoreo efectivo de la calidad de las pruebas y permite identificar áreas que podrían necesitar pruebas adicionales.
+    \item \textbf{Número total de Test Cases ejecutados}: Se ejecutaron 42 casos de prueba, de los cuales el \textbf{78.57\%} (33 casos) fueron exitosos, mientras que 9 resultaron fallidos.
+    \item \textbf{Defectos identificados}: Durante las pruebas, se encontraron un total de 28 defectos. Sin embargo, solo se corrigieron 3, representando un \textbf{10.71\% de bugs resueltos}.
+    \item \textbf{Tiempo total de ejecución}: Las pruebas requirieron un total de 15 horas-persona.
+    \item \textbf{Cobertura de pruebas}: 
+    \begin{itemize}
+        \item Historias de Usuario cubiertas: 26  
+        \item Historias de Usuario no cubiertas: 7
+    \end{itemize}
+    \item \textbf{Automatización de Test Cases}: 
+    \begin{itemize}
+        \item Usando \textbf{Postman}: 6 casos exitosos, 2 fallidos.
+        \item Usando \textbf{Playwright}: 4 casos exitosos, 2 fallidos.
+    \end{itemize}
 \end{itemize}
+
+\noindent Respecto a los defectos, el análisis del \textit{Tiempo Medio de Reparación} (\textit{TMR}) muestra que el promedio fue de \textbf{33 días y 8 horas}. La siguiente tabla detalla los defectos críticos identificados, sus fechas de resolución y el tiempo requerido para su corrección:  
+
+
+\begin{table}[H]
+    \caption{Tiempo Medio de Reparación de Bugs}
+    \centering
+    \begin{tabularx}{\textwidth}{|l|X|l|l|l|}
+        \hline
+        \textbf{Código} & \textbf{Descripción} & \textbf{Fecha detección} & \textbf{Fecha resolución} & \textbf{TMR (días)} \\ \hline
+        BG-JH-01 & Cuando se crea una arista conectada a sí misma, su peso no se mueve junto al elemento asociado & 2024-03-15 & 2024-10-16 & 78 \\ \hline
+        BG-JH-02 & Cuando se intenta solucionar el algoritmo de Johnson con un grafo incorrecto no sucede nada & 2024-10-15 & 2024-10-26 & 11 \\ \hline
+        BG-JH-03 & Cuando se intenta solucionar un grafo con un bucle, el algoritmo entra en un loop infinito & 2024-10-15 & 2024-10-26 & 11 \\ \hline
+    \end{tabularx}
+\end{table}
+
+\noindent En términos de accesibilidad, se llevaron a cabo análisis utilizando \textit{Axe Dev Tools} en las vistas de selección de archivos y el editor de grafos Johnson.  
+
+\begin{itemize}
+    \item \textbf{Antes de las correcciones}: Se detectaron 16 alertas.  
+    \item \textbf{Después de las correcciones}: Las alertas se redujeron a 7, de las cuales 6 están relacionadas con limitaciones del framework del proyecto, quedando fuera del alcance de esta fase.  
+\end{itemize}
+
+\noindent Estos resultados están resumidos visualmente en el dashboard presentado a continuación:  
 
 \begin{figure}[H]
     \label{fig:dashboard_metrica_pruebas}
     \centering
-    \includegraphics[width=\textwidth]{../imgs/dashboard_test_metrics_white_bg.png}
+    \includegraphics[width=\textwidth]{../imgs/new_dashboard.png}
     \caption{Dashboard de Métricas del Plan de Pruebas}
 \end{figure}
 
-\subsection{Resultados Obtenidos en Pruebas de Accesibilidad}
+\section{Accesibilidad y usabilidad}
 
-\noindent Las pruebas de accesibilidad realizadas con Axe DevTools revelaron varios problemas de accesibilidad, aunque en general, la cantidad de defectos encontrados no fue excesiva, lo cual es un indicio de que el sistema ya cuenta con una base relativamente sólida en términos de accesibilidad. A continuación, se detalla cada uno de los problemas identificados:
-
-\begin{longtable}{|p{3cm}|p{10cm}|}
-    \caption{Reporte de Accesibilidad} \label{tab:reporte_accesibilidad} \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{WCAG 2.1 AA}} \\ \hline
-    \textbf{Guideline} & \textbf{Descripción de la Violación} \\ \hline
-    \endfirsthead
-
-    \hline
-    \multicolumn{2}{|c|}{\textbf{WCAG 2.1 AA}} \\ \hline
-    \textbf{Guideline} & \textbf{Descripción de la Violación} \\ \hline
-    \endhead
-
-    1.1 & Los botones deben tener texto discernible. Se detectaron botones sin texto visible para lectores de pantalla, ni atributos accesibles como `aria-label` o `aria-labelledby`, lo cual impide que los usuarios de tecnologías de asistencia comprendan la función de estos botones. \\ \hline
-    1.2 & Los elementos deben tener un contraste de colores suficiente. Se encontraron elementos con un contraste insuficiente entre el texto y el fondo, lo cual no cumple con el estándar mínimo de 4.5:1. Ejemplo: color de primer plano \#17a2b8 en fondo blanco (\#ffffff) con un tamaño de fuente de 16px y grosor en negrita, resultando en un contraste de 3.04:1. Este problema afecta la legibilidad, especialmente para usuarios con discapacidades visuales. \\ \hline
-    1.3 & Los elementos de formulario deben tener etiquetas. Algunos campos de entrada no cuentan con etiquetas visibles o accesibles mediante `<label>`, `aria-label`, o `aria-labelledby`, lo cual dificulta la comprensión de estos elementos para los usuarios que dependen de lectores de pantalla. \\ \hline
-\end{longtable}
-
+Las pruebas de accesibilidad realizadas con Axe DevTools revelaron varios problemas de accesibilidad, aunque en general, la cantidad de defectos encontrados no fue excesiva, lo cual es un indicio de que el sistema ya cuenta con una base relativamente sólida en términos de accesibilidad. Las pruebas que se llevaron a cabo se encuentran detalladas en el reporte de accesibilidad adjunto en anexos.
 \subsection{Resultados Obtenidos en Pruebas de Usabilidad}
 
-\noindent Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave del sistema, como la visibilidad del estado, el control y la libertad del usuario, la consistencia y estándares, entre otros. En general, se detectaron áreas de mejora en términos de consistencia visual, retroalimentación al usuario, y navegación, los cuales se detallan en los resultados adjuntos. Cabe destacar que el sistema cumple con algunos de los principios fundamentales, como la flexibilidad y la visibilidad en varias de sus opciones, lo cual es positivo para la experiencia de usuario.
+Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave del sistema, como la visibilidad del estado, el control y la libertad del usuario, la consistencia y estándares, entre otros. En general, se detectaron áreas de mejora en términos de consistencia visual, retroalimentación al usuario, y navegación, los cuales se detallan en los resultados adjuntos. Cabe destacar que el sistema cumple con algunos de los principios fundamentales, como la flexibilidad y la visibilidad en varias de sus opciones, lo cual es positivo para la experiencia de usuario.
 
 \noindent Para una descripción completa de los resultados obtenidos en cada ítem evaluado, por favor consulte los detalles (\hyperref[tab:reporte_usabilidad]{en Anexos})
 
