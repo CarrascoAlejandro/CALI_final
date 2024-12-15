@@ -192,6 +192,32 @@ El cronograma final obtuvo 38 horas para el periodo de trabajo (3 de diciembre a
 
 \subsection{Impedimentos de prueba y soluciones alternativas}
 
+A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron soluciones alternativas para garantizar el avance eficiente del proyecto. A continuación, se detallan los principales problemas identificados y las soluciones implementadas:
+
+\begin{enumerate}
+    \item \textbf{Familiaridad limitada con el sistema} \\
+    Algunos miembros del equipo que realizaron las pruebas no participaron en el desarrollo del sistema, lo que inicialmente limitó su conocimiento sobre la estructura y el funcionamiento detallado del proyecto. Esta falta de familiaridad hizo necesaria una etapa adicional de recopilación y análisis de las historias de usuario, con el fin de comprender los procesos internos y flujos específicos del sistema.\\
+    \textbf{Solución implementada:} Se recurrió a la documentación técnica existente y se organizaron reuniones frecuentes con los desarrolladores y responsables del proyecto para acelerar la comprensión del sistema.
+
+    \item \textbf{Problemas con la configuración de LaTeX} \\
+    Algunos miembros del equipo encontraron dificultades iniciales relacionadas con la instalación y el aprendizaje del uso de LaTeX para la documentación del informe. Esto ocasionó pequeños retrasos en la preparación de los documentos. \\
+    \textbf{Solución implementada:} Se compartieron tutoriales y guías prácticas, además de realizar sesiones de consulta para resolver dudas sobre el uso de LaTeX, lo que permitió al equipo completar la documentación de manera efectiva.
+
+    \item \textbf{Cruce con exámenes académicos} \\
+    La coincidencia de las actividades del proyecto con los exámenes finales de los miembros del equipo afectó la disponibilidad de los integrantes en momentos clave. Este cruce provocó algunos retrasos en la ejecución de tareas y reuniones. \\
+    \textbf{Solución implementada:} Las reuniones se reorganizaron de manera más flexible, priorizando una mejor gestión del tiempo y la organización del equipo para evitar descuidar las actividades del proyecto. Este enfoque permitió cumplir con los objetivos sin comprometer los resultados.
+
+    \item \textbf{Modificaciones en el código para pruebas de interfaz (Playwright)} \\
+    Durante la implementación de las pruebas automatizadas en Playwright, se detectaron limitaciones en los identificadores del frontend que hacían los localizadores excesivamente largos y complicados. Además, ciertos componentes del frontend mostraban lentitud al ejecutarse en navegadores como WebKit. \\
+    \textbf{Solución implementada:} Se realizaron ajustes en el frontend, como la adición de identificadores (\texttt{id}) a componentes específicos y alertas para facilitar las pruebas. \\
+    También se recomendó aumentar el número de trabajadores para mejorar el rendimiento de las pruebas con el comando:
+    \begin{verbatim}
+    npx playwright test tests --workers 6
+    \end{verbatim}
+    
+\end{enumerate}
+
+
 \section{Reporte y Resultados}
 
 \subsection{Resultados de las Métricas del Plan de Pruebas}
