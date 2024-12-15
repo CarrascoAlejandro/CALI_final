@@ -90,55 +90,39 @@
 \pagenumbering{arabic}
 \section{\large Introducción}
 
-\noindent El sistema esarrollado en la materia de Análisis de Algoritmos durante el periodo 1-2024 permite probar y analizar diversos tipos de algoritmos, cada uno implementado en un editor especializado. Estos editores están diseñados para adaptarse a las características específicas de cada algoritmo, permitiendo diferentes enfoques según los requisitos: algunos permiten la creación y visualización de grafos y la generación de matrices de adyacencia, mientras que otros, como los algoritmos de ordenamiento, se centran en la manipulación y visualización de datos ordenados. Este enfoque modular facilita un análisis práctico y enfocado en las propiedades de cada tipo de algoritmo.
+\noindent El sistema desarrollado en la materia de Análisis de Algoritmos durante el periodo 1-2024 permite probar y analizar diversos tipos de algoritmos, cada uno implementado en un editor especializado. Estos editores están diseñados para adaptarse a las características específicas de cada algoritmo, permitiendo diferentes enfoques según los requisitos: algunos permiten la creación y visualización de grafos y la generación de matrices de adyacencia, mientras que otros, como los algoritmos de ordenamiento, se centran en la manipulación y visualización de datos ordenados. Este enfoque modular facilita un análisis práctico y enfocado en las propiedades de cada tipo de algoritmo.
 
 \noindent El \textit{editor Northwest}, uno de los editores desarrollados, está diseñado específicamente para el método de la esquina noroeste (\textit{Northwest Corner Method}), una técnica utilizada para resolver problemas de transporte y asignación de recursos. Este método ofrece una solución inicial factible al distribuir suministros y demandas de manera efectiva, lo cual facilita la posterior optimización del costo total de transporte.
 
 \noindent La elección de este editor para el plan de pruebas responde al interés de explorar cómo este algoritmo puede generar soluciones iniciales basadas en condiciones específicas de oferta y demanda. Además, el editor Northwest permite la manipulación visual de grafos y la generación de la matriz de adyacencia, convirtiéndolo en una herramienta práctica tanto para el análisis como para la resolución de problemas de asignación. A continuación, se presenta un plan de pruebas para asegurar la funcionalidad completa y la robustez del editor Northwest.
 
-\subsection{Alcance del Plan de Pruebas}
+\subsection{Alcance}
 
-El presente plan de pruebas plantea evaluar de manera integral el sistema desarrollado, abarcando múltiples módulos y funcionalidades clave, con el fin de garantizar su correcto funcionamiento, accesibilidad, usabilidad y cumplimiento de los objetivos especificados. A continuación, se detallan los alcances específicos de las pruebas:
-
-\subsubsection{Áreas incluidas en las pruebas}
+\subsubsection{Las pruebas abarcarán las siguientes áreas:}
 
 \begin{itemize}
-    \item \textbf{Creación y visualización de grafos:} Se evaluará la capacidad del editor para permitir la creación precisa de grafos, incluyendo la adición, edición y conexión de nodos y aristas, asegurando que los grafos generados se representen de manera adecuada en el entorno gráfico del editor.
-    
-    \item \textbf{Guardado y carga de grafos:} Se comprobará que los datos de los grafos se almacenen y recuperen correctamente, permitiendo la continuidad del análisis y la manipulación en futuras sesiones.
+    \item \textbf{Creación y visualización de grafos:} Se verificará que el editor permita la creación precisa de grafos, incluyendo la adición y conexión de nodos y aristas, asegurando que los grafos generados se representen correctamente en el entorno gráfico del editor.
 
-    \item \textbf{Generación de matrices:} Las pruebas cubrirán:
-    \begin{itemize}
-        \item \textbf{Matriz de adyacencia:} Verificar que refleje con precisión las conexiones y relaciones entre los nodos del grafo.
-        \item \textbf{Matriz de costos:} Evaluar su construcción precisa basada en los nodos y sus conexiones, garantizando que represente correctamente las relaciones de costos entre puntos de suministro y demanda.
-    \end{itemize}
+    \item \textbf{Guardado y carga de grafos:} Se evaluará la funcionalidad de guardado de grafos, comprobando que los datos se almacenen correctamente y que puedan ser recuperados sin pérdida de información, para permitir la continuidad del análisis y la manipulación de los grafos en futuras sesiones.
 
-    \item \textbf{Optimización:} Se revisará la funcionalidad del módulo de optimización, asegurando que pueda resolver problemas de maximización y minimización de manera consistente con los objetivos definidos.
+    \item \textbf{Generación de la matriz de adyacencia:} Se revisará que el editor construya de manera precisa la matriz de adyacencia a partir de los grafos creados, asegurando que refleje adecuadamente las conexiones y relaciones entre los nodos en el grafo.
 
-    \item \textbf{Interfaz de usuario y usabilidad:} Se evaluará la facilidad de uso y la accesibilidad de la interfaz desarrollada en Vue.js, evaluando que cumpla con los criterios de accesibilidad de la WCAG versión 2.2 y que los resultados del sistema sean presentados de forma clara y comprensible para los usuarios.
+    \item \textbf{Generación de la matriz de costos:} Se evaluará la construcción precisa de la matriz de costos basada en los nodos y sus conexiones, garantizando que refleje las relaciones correctas entre puntos de suministro y demanda.
 
-    \item \textbf{Algoritmos implementados:} Se evaluará la correcta ejecución y funcionalidad de los siguientes algoritmos:
-    \begin{itemize}
-        \item \textbf{Algoritmo de Asignación:} Incluyendo la interacción entre el backend en Spring Boot y la base de datos MySQL, para garantizar que los datos se almacenen y recuperen adecuadamente.
-        \item \textbf{Compet:} Se verificará la funcionalidad de su dashboard de edición de grafos, permitiendo la adición de nodos y la resolución eficiente del algoritmo mediante accesos directos.
-        \item \textbf{Dijkstra:} Se evaluarán opciones avanzadas como la selección de nodos inicial y destino, así como la ejecución del algoritmo para minimizar o maximizar rutas.
-        \item \textbf{Kruskal:} Verificación de la implementación y resultados del algoritmo en el contexto del sistema de gestión de grafos.
-        \item \textbf{Algoritmo de Johnson:} Se comprobará la correcta implementación del algoritmo para resolver problemas de caminos más cortos en grafos dirigidos con otras funcionalidades del editor.
-        \item \textbf{Método de la esquina noroeste (North-West):} Se evaluará su capacidad para resolver problemas de transporte, verificando que las soluciones iniciales se calculen correctamente y se representen de manera adecuada en las matrices de costos.
-    \end{itemize}
+    \item \textbf{Optimización:} Se verificará que el módulo de optimización sea capaz de resolver tanto problemas de maximización como de minimización, validando que los resultados sean consistentes con los objetivos definidos en el editor.
 
-        \item \textbf{Sorts:} Evaluar la ejecución de los algoritmos de ordenamiento (Selection Sort, Insertion Sort, Merge Sort, Shell Sort), verificando la correcta representación del proceso y su animación a diferentes velocidades.
-        \item \textbf{Árboles Binarios:} Se probará la creación, visualización gráfica y recorridos (inorden, preorden, postorden) de los árboles binarios, garantizando que los datos se representen adecuadamente.
+    \item \textbf{Interfaz, usabilidad y accesibilidad:} Se revisará la facilidad de uso del formulario de entrada, asegurando que los elementos interactivos sean intuitivos y que el editor responda adecuadamente a diferentes valores de entrada. Además, se realizarán pruebas de accesibilidad para garantizar que el editor cumpla con los estándares de accesibilidad definidos.
 \end{itemize}
 
-\subsubsection{Áreas excluidas de las pruebas}
+\vspace{1cm}
+\subsubsection{Las pruebas no abarcarán las siguientes áreas:}
 
 \begin{itemize}
-    \item \textbf{Componentes externos al editor:} No se evaluarán funcionalidades relacionadas con la manipulación de archivos de grafos creados previamente o la descripción del algoritmo en la interfaz inicial, ya que se consideran fuera del alcance del editor.
+    \item \textbf{Componentes fuera del editor:} No se evaluarán elementos externos al editor, como la manipulación de archivos de grafos creados previamente que se realiza antes de ingresar al editor, ni la descripción del algoritmo en la interfaz inicial. Incluir estas áreas implicaría evaluar funcionalidades que están fuera del alcance directo del editor.
     
-    \item \textbf{Pruebas de estrés:} No se realizarán pruebas de desempeño bajo condiciones extremas de carga en esta fase del proyecto. Estas evaluaciones serán consideradas para iteraciones futuras.
+    \item \textbf{Pruebas de desempeño bajo condiciones extremas de carga:} No se realizarán pruebas de estrés en esta fase del proyecto; sin embargo, estas pruebas serán consideradas para futuras iteraciones.
+    
 \end{itemize}
-
 
 \subsection{Objetivo}
 
