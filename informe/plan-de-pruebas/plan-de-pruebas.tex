@@ -851,39 +851,33 @@ Estos riesgos están asociados a factores de gestión y control del proyecto, lo
 \end{itemize}
 
 \section{\large Presupuesto y Cronograma}
-La estimación final es 32 horas-persona con un error estándar de aproximadamente 5.33 horas-persona. Esto significa que el esfuerzo estimado es de 32 horas-persona, pero podría variar en un rango de \(\pm 5.33\) horas debido a posibles incertidumbres. En base a esta estimación, se ha elaborado un cronograma detallado para el proyecto, que se muestra en la \hyperref[fig:cronograma]{Figura 3}.
+Para el desarrollo del proyecto, se empleó la técnica de estimación de tres puntos, utilizando valores optimistas, pesimistas y los más probables para cada tarea. Este método permitió calcular un rango confiable de tiempo y costo, reduciendo riesgos de sobrecostos o retrasos.
 
-\begin{figure}[!ht]
+Así se obtuvo:
+\begin{itemize}
+    \item \textbf{Horas estimadas}: 47 horas para el periodo inicial (3 de diciembre al 15 de diciembre).
+
+\end{itemize}
+
+La estimación final es de \textbf{47 horas-persona} con un \textbf{error estándar aproximado de 5.33 horas-persona}. Esto significa que el esfuerzo estimado es de 47 horas-persona, pero podría variar en un rango de ±5.33 horas debido a posibles incertidumbres. En base a esta estimación, se ha elaborado un cronograma detallado para el proyecto, que se muestra a continuación.
+
+\subsection*{Cronograma del Proyecto}
+
+\begin{table}[H]
     \centering
-    \caption{Cronograma del Proyecto: Diagrama de Gantt}
+    \caption{Cronograma del Proyecto}
     \label{fig:cronograma}
-    \begin{ganttchart}[
-        hgrid,
-        vgrid,
-        time slot format=isodate,
-        time slot unit=day
-    ]{2024-10-15}{2024-10-28}
-    
-    % Define time labels
-    \gantttitlecalendar{year, month=name, day} \\
-    
-    % Define tasks
-    \ganttbar{Desarrollo del Plan de Pruebas}{2024-10-15}{2024-10-17} \\
-    \ganttbar{Diseño y Creación de Test Cases}{2024-10-18}{2024-10-21} \\
-    \ganttbar{Ejecución de Pruebas}{2024-10-22}{2024-10-24} \\
-    \ganttbar{Análisis y Documentación de Defectos}{2024-10-25}{2024-10-26} \\
-    \ganttbar{Creación del Informe Final}{2024-10-27}{2024-10-28} \\
-    
-    % Dependencies
-    \ganttlink{elem0}{elem1}
-    \ganttlink{elem1}{elem2}
-    \ganttlink{elem2}{elem3}
-    \ganttlink{elem3}{elem4}
-    
-    \end{ganttchart}
-\end{figure}
+    \begin{tabular}{|p{3cm}|p{4cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        \textbf{Actividad} & \textbf{Descripción} & \textbf{Inicio} & \textbf{Fin} & \textbf{Duración (d)} & \textbf{Duración (h)} \\ \hline
+        Creación del Repositorio & Configuración inicial para pruebas y documentación. & 2024-12-03 & 2024-12-03 & 1 & 2 \\ \hline
+        Subida de Bases en LaTeX & Subida de documentos base para el plan y el informe. & 2024-12-04 & 2024-12-04 & 1 & 3 \\ \hline
+        Organización del Trabajo & Reunión del equipo para definir roles y tareas. & 2024-12-10 & 2024-12-10 & 1 & 2 \\ \hline
+        Pruebas Automatizadas & Realización de pruebas (3 Postman, 3 Playwright). & 2024-12-11 & 2024-12-13 & 3 & 24 \\ \hline
+        Documentación Final & Completar y actualizar los documentos en LaTeX. & 2024-12-12 & 2024-12-15 & 4 & 16 \\ \hline
+    \end{tabular}
+\end{table}
 
-\clearpage
 \section{\large Enfoque de Prueba}
 
 \noindent El enfoque de prueba se centra en validar tanto los aspectos funcionales como no funcionales del sistema, asegurando que cumpla con los requisitos definidos y proporcione una experiencia de usuario satisfactoria.
