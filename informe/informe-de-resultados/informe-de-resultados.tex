@@ -89,6 +89,108 @@
 % Cuerpo
 \pagenumbering{arabic}
 \newpage
+
+\section{\large Resumen de la prueba}
+
+\section{\large Evaluación de la prueba}
+
+\subsection{Desviaciones de Plan de Prueba}
+
+Las desviaciones en el plan de prueba se originaron principalmente por la coincidencia de los exámenes finales universitarios de los miembros del equipo con las fechas del cronograma del proyecto. Este cruce provocó un periodo de inactividad, lo que afectó la disponibilidad del equipo y causó retrasos en las tareas clave. 
+Esta situación fue temporal y se produjo en la fase inicial e intermedia del proyecto, lo que ocasionó un retraso en varias actividades clave.
+A continuación, se detallan las desviaciones por tarea:
+
+\begin{itemize}
+    \item \textbf{Creación del Repositorio}  
+    \begin{itemize}
+        \item \textbf{Plan original}: La creación del repositorio estaba prevista para el 2 de diciembre, con una duración estimada de 1.5 horas.
+        \item \textbf{Realidad}: La tarea se retrasó un día debido a la falta de disponibilidad de los miembros del equipo, resultando en la ejecución el 3 de diciembre con un total de 2 horas.
+    \end{itemize}
+
+    \item \textbf{Documentación base en LaTeX}  
+    \begin{itemize}
+        \item \textbf{Plan original}: Se planificó para el 2 de diciembre, con una duración de 2.5 horas.
+        \item \textbf{Realidad}: Al igual que la tarea anterior, esta se retrasó un día, realizándose el 4 de diciembre, con una duración de 2 horas.
+    \end{itemize}
+
+    \item \textbf{Organización del Trabajo}  
+    \begin{itemize}
+        \item \textbf{Plan original}: Estaba prevista para el 1 de diciembre, con una duración de 2.5 horas.
+        \item \textbf{Realidad}: Debido al periodo de inactividad, se pospuso para el 10 de diciembre con una duración de 3 horas, pero no afectó significativamente el flujo de trabajo debido a la flexibilidad del equipo.
+    \end{itemize}
+
+    \item \textbf{Pruebas Automatizadas}  
+    \begin{itemize}
+        \item \textbf{Plan original}: Se pensaba realizar las pruebas desde el 4 hasta el 6 de diciembre, con una duración estimada de 16 horas.
+        \item \textbf{Realidad}: Las pruebas se realizaron entre el 11 y el 13 de diciembre, con una duración de 20 horas.
+    \end{itemize}
+
+    \item \textbf{Documentación Final}  
+    \begin{itemize}
+        \item \textbf{Plan original}: La documentación debía completarse entre el 9 y el 10 de diciembre, con una duración de 8 horas.
+        \item \textbf{Realidad}: Debido a los retrasos previos, la documentación final, incluyendo sus revisión y ajustes finales, se completó entre el 12 y el 15 de diciembre, con una duración total de 11 horas.
+    \end{itemize}
+\end{itemize}
+
+Estas desviaciones fueron causadas por la coincidencia de las responsabilidades académicas de los miembros del equipo con el cronograma del proyecto. Sin embargo, se logró ajustar el plan para minimizar el impacto y garantizar que todas las actividades se completaran dentro de un plazo razonable.
+
+\subsection*{Cronograma Final del Proyecto}
+El cronograma final obtuvo:
+\begin{itemize}
+    \item \textbf{Horas realizadas}: 38 horas para el periodo de trabajo (3 de diciembre al 15 de diciembre).
+
+\end{itemize}
+
+\begin{table}[H]
+    \centering
+    \caption{Cronograma Final del Proyecto}
+    \label{fig:cronograma}
+    \begin{tabular}{|p{3cm}|p{4cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        \textbf{Actividad} & \textbf{Descripción} & \textbf{Fecha realizada} & \textbf{Duración (d)} & \textbf{Duración (h)} \\ \hline
+        Creación del Repositorio & Configuración inicial para pruebas y documentación. & 2024-12-03 & 1 & 2 \\ \hline
+        Documentación base en LaTeX & Subida de documentos base para el plan y el informe. & 2024-12-04 & 1 & 2 \\ \hline
+        Organización del Trabajo & Reunión del equipo para definir tareas. & 2024-12-10 & 1 & 3 \\ \hline
+        Pruebas Automatizadas & Realización de pruebas (3 Postman, 3 Playwright). & 2024-12-11 - 2024-12-13 & 3 & 20 \\ \hline
+        Documentación Final & Completar y actualizar los documentos en LaTeX. & 2024-12-12 - 2024-12-15 & 4 & 11 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{Diagrama de Gantt Final}
+
+\begin{figure}[H]
+    \centering
+    \caption{Cronograma del Proyecto Final: Diagrama de Gantt}
+    \label{fig:diagrama_gantt}
+    \begin{ganttchart}[
+        x unit=0.7cm,
+        y unit chart=0.7cm,
+        hgrid,
+        vgrid,
+        milestone label font=\scriptsize,
+        bar label font=\scriptsize,
+        group label font=\scriptsize,
+        time slot format=isodate
+    ]{2024-12-03}{2024-12-15}
+        % Configuración del tiempo
+        \gantttitlecalendar{year, month=name, day} \\
+
+        % Actividades
+        \ganttbar{Creación del Repositorio}{2024-12-03}{2024-12-03} \\
+        \ganttbar{Documentación base en LaTeX}{2024-12-04}{2024-12-04} \\
+        \ganttbar{Organización del Trabajo}{2024-12-10}{2024-12-10} \\
+        \ganttbar{Pruebas Automatizadas}{2024-12-11}{2024-12-13} \\
+        \ganttbar{Documentación Final}{2024-12-12}{2024-12-15} \\
+
+        % Opcional: Marcar hitos
+        \ganttmilestone{Inicio del Proyecto}{2024-12-03} \\
+        \ganttmilestone{Presentación del Proyecto}{2024-12-15}
+    \end{ganttchart}
+\end{figure}
+
+\subsection{Impedimentos de prueba y soluciones alternativas}
+
+
 \section{\large Informe de Resultados}
 
 \subsection{Resultados de los Casos de Prueba}
