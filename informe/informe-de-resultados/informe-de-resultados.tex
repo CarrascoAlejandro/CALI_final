@@ -436,7 +436,150 @@ S3-1-NW & Abrir el formulario "Northwest" para ver la matriz generada. & 2024-10
     \caption{Dashboard de Métricas del Plan de Pruebas}
 \end{figure}
 
-\subsection{Resultados Obtenidos en Pruebas de Accesibilidad}
+\pagenumbering{arabic}
+\newpage
+\section{\large Riesgos no mitigados, defectos no corregidos}
+
+\subsection{Evaluación de riesgos}
+
+\noindent Durante el proceso de pruebas, algunos de los riesgos previamente identificados impulsaron la creación de pruebas con el objetivo de evaluar la posibilidad de mitigarlos de manera más precisa. Con el reporte de defectos resultante de estas pruebas, se espera implementar acciones correctivas que permitan reducir el impacto y probabilidad de estos riesgos en el sistema.
+
+\noindent Después de la evaluación completa del sistema y la ejecución de todas las pruebas planificadas, no se identificaron riesgos adicionales. Los riesgos previamente identificados se abordaron de forma adecuada mediante la implementación de controles y la ejecución de pruebas específicas, lo que permitió mitigar su impacto y probabilidad de ocurrencia.
+
+
+\subsubsection{Riesgos del Producto}
+
+\begin{itemize}
+    \item \textbf{Resultados inexactos en algoritmos o cálculos complejos} \\ 
+    \textbf{Riesgo:} Los algoritmos de cálculo pueden devolver resultados incorrectos debido a errores en la lógica. \\ 
+    \textbf{Cobertura:} Totalmente cubierto \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-AG-02: Verifica la correcta optimización por pesos máximos.
+      \item TC-AG-03: Verifica la correcta optimización por pesos mínimos.
+      \item TC-DJ-01: Verifica que Dijkstra calcule correctamente el camino mínimo.
+      \item TC-JH-02: Valida el cálculo de la ruta crítica con Johnson.
+    \end{itemize}
+    \textbf{Riesgo cubierto:}Sí, la cobertura es adecuada.
+  
+    \item \textbf{Fallas en la comunicación entre backend y frontend} \\ 
+    \textbf{Riesgo:} La comunicación entre la interfaz y el servidor puede fallar, generando errores de sincronización de datos. \\ 
+    \textbf{Cobertura:} Totalmente cubierto \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-PT-01: Valida la correcta respuesta del endpoint de la matriz de adyacencia.
+      \item TC-PT-02: Verifica la respuesta correcta del endpoint de optimización de asignación.
+      \item TC-PT-03: Valida la correcta respuesta del endpoint del camino crítico con Johnson.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada.
+  
+    \item \textbf{Manejo inadecuado de datos en la interfaz del usuario} \\ 
+    \textbf{Riesgo:} La interfaz puede no validar correctamente los datos ingresados por el usuario, causando errores. \\ 
+    \textbf{Cobertura:} Totalmente cubierto\\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-PW-02: Verifica el comportamiento al registrar una cuenta con campos vacíos.
+      \item TC-PW-03: Verifica que no se permita registrar cuentas con datos inválidos.
+      \item TC-PW-05: Verifica el inicio de sesión con campos vacíos.
+      \item TC-PW-06: Verifica que no se permita iniciar sesión con datos inválidos.
+      \item TC-NW-05: Valida la interfaz intuitiva y la correcta validación de campos obligatorios.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada.
+  
+    \item \textbf{Problemas en el almacenamiento de archivos al guardar un grafo} \\ 
+    \textbf{Riesgo:} La funcionalidad de guardar o cargar grafos no funciona correctamente, y se pueden perder datos. \\ 
+    \textbf{Cobertura:} Totalmente cubierto \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-GF-03: Verifica que se pueda guardar la estructura del grafo en JSON y restaurar la información.
+      \item TC-JH-12: Verifica la correcta carga y almacenamiento de grafos de Johnson.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada.
+  
+    \item \textbf{Rendimiento insuficiente del sistema con grandes volúmenes de datos (Grafos grandes)} \\ 
+    \textbf{Riesgo:} El sistema puede experimentar lentitud o fallos al procesar grandes grafos. \\ 
+    \textbf{Cobertura:}  No cubierto \\ 
+    \textbf{Test Cases relevantes:} Ninguno. Este riesgo no está contemplado en los casos de prueba actuales. 
+    \textbf{Riesgo cubierto:} No, la cobertura es insuficiente.
+  
+    \item \textbf{Cumplimiento insuficiente de estándares de accesibilidad} \\ 
+    \textbf{Riesgo:} La aplicación puede no ser accesible para usuarios con discapacidades. \\ 
+    \textbf{Cobertura:} Cobertura adecuada\\ 
+    \textbf{Test Cases relevantes:} Se realizó una evaluación de accesibilidad con Axe DevTools para cubrir los estándares WCAG 2 AA. 
+    \textbf{Riesgo cubierto:} Si, la cobertura es suficiente, aunque se identificaron problemas de accesibilidad.
+  
+    \item \textbf{Vulnerabilidades en la seguridad de la gestión de datos y autenticación} \\ 
+    \textbf{Riesgo:} Usuarios no autorizados podrían acceder al sistema o manipular datos sensibles. \\ 
+    \textbf{Cobertura:} Cobertura adecuada \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-PW-01: Verifica el registro de usuario con datos válidos.
+      \item TC-PW-04: Verifica que los usuarios puedan iniciar sesión con credenciales correctas.
+      \item TC-PW-06: Verifica que no se permita iniciar sesión con datos inválidos.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada, aunque puede mejorarse otro tipo de pruebas enfocadas en la seguridad.
+  \end{itemize}
+  
+
+  \subsubsection{Riesgos de Proyecto}
+
+\begin{itemize}
+    
+    \item \textbf{Demoras en la comunicación y cronograma} \\ 
+    \textbf{Riesgo:} Las demoras en la comunicación entre los equipos de desarrollo y calidad, así como las dificultades en el cumplimiento de los plazos establecidos, pueden retrasar la implementación y las pruebas del sistema de grafos. \\ 
+    \textbf{Cobertura:} Cobertura adecuada \\ 
+    \textbf{Motivo:} La participación de 2 desarrolladores en el equipo de calidad permitió una comunicación más efectiva, reduciendo los retrasos. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Establecimiento de canales de comunicación claros y frecuentes entre los equipos de desarrollo y calidad.
+      \item Uso de herramientas de gestión de proyectos para hacer un seguimiento eficiente de los plazos y las tareas.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Sí, la cobertura fue adecuada.}} 
+
+    \item \textbf{QAs desconocen la lógica interna del sistema} \\ 
+    \textbf{Riesgo:} Los QAs pueden no comprender completamente la lógica de los algoritmos y el sistema de grafos, lo que puede llevar a pruebas incompletas o incorrectas. \\ 
+    \textbf{Cobertura:} Cobertura adecuada \\ 
+    \textbf{Motivo:} Se realizaron reuniones y comunicación directa entre los QAs externos y los QAs que también formaban parte del equipo de desarrollo, logrando una mejor comprensión del sistema. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Documentación clara de la lógica interna de los algoritmos y su funcionamiento dentro del sistema.
+      \item Sesiones de capacitación y colaboración entre desarrolladores y QAs para garantizar la comprensión mutua del sistema.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Sí, la cobertura fue adecuada.}} 
+    
+    \item \textbf{Dependencia de QAs hacia developers para el entorno contenedorizado} \\ 
+    \textbf{Riesgo:} La dependencia de los QAs hacia los desarrolladores para la configuración y el manejo del entorno contenedorizado puede generar cuellos de botella en las pruebas y la integración continua. \\ 
+    \textbf{Cobertura:} Cobertura parcial \\ 
+    \textbf{Motivo:} Se explicó a los QAs en las reuniones iniciales cómo levantar los entornos, reduciendo la dependencia inicial, aunque aún se requiere cierto apoyo ocasional. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Capacitación a los QAs en la gestión y configuración de entornos contenedorizados, utilizando herramientas como Docker.
+      \item Creación de scripts y documentación detallada para la configuración y despliegue de entornos de prueba.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Parcialmente mitigado.}} 
+    
+    \item \textbf{Falta de documentación del sistema} \\ 
+    \textbf{Riesgo:} La ausencia de documentación técnica adecuada por parte de los desarrolladores puede dificultar la comprensión, mantenimiento y escalabilidad del sistema de grafos. \\ 
+    \textbf{Cobertura:} Cobertura parcial \\ 
+    \textbf{Motivo:} Se reunieron historias de usuario mediante pruebas exploratorias que se confirmaron con los desarrolladores, aunque se reconoce la necesidad de una documentación más formal. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Revisión de código periódica y mantenimiento de documentación actualizada sobre la arquitectura y algoritmos del sistema.
+      \item Implementación de un sistema de documentación automática, como comentarios detallados en el código y herramientas como Javadoc o Swagger.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Parcialmente mitigado.}} 
+    
+\end{itemize}
+
+\subsection{Evaluación de defectos}
+
+Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento (\textbf{ver anexo \ref{sec:anexos}}). La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. 
+% FIXME: poner el anexo correcto
+
+
+\pagenumbering{arabic}
+\newpage
+\section{Resultados Obtenidos en Pruebas de Accesibilidad}
 
 \noindent Las pruebas de accesibilidad realizadas con Axe DevTools revelaron varios problemas de accesibilidad, aunque en general, la cantidad de defectos encontrados no fue excesiva, lo cual es un indicio de que el sistema ya cuenta con una base relativamente sólida en términos de accesibilidad. A continuación, se detalla cada uno de los problemas identificados:
 
