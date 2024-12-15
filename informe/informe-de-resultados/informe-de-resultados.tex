@@ -419,20 +419,52 @@ S3-1-NW & Abrir el formulario "Northwest" para ver la matriz generada. & 2024-10
 
 \subsection{Resultados de las Métricas del Plan de Pruebas}
 
-\noindent A continuación, se presentan las métricas recopiladas:
+\noindent Los resultados del plan de pruebas reflejan los siguientes indicadores clave:  
 
 \begin{itemize}
-    \item \textbf{Número de Test Cases ejecutados}: 7
-    \item \textbf{Proporción de casos exitosos}: 42.86\% (3 casos pasaron, 4 fallaron)
-    \item \textbf{Número de defectos identificados}: 4 (detallados en el reporte de defectos)
-    \item \textbf{Tiempo total de ejecución de pruebas}: 15 horas-persona
-    \item \textbf{Cobertura de Pruebas}: Se logró cubrir todas las funcionalidades según las historias de usuario, garantizando que las pruebas abarcaron la mayoría de las funcionalidades del producto. Esto asegura un monitoreo efectivo de la calidad de las pruebas y permite identificar áreas que podrían necesitar pruebas adicionales.
+    \item \textbf{Número total de Test Cases ejecutados}: Se ejecutaron 42 casos de prueba, de los cuales el \textbf{78.57\%} (33 casos) fueron exitosos, mientras que 9 resultaron fallidos.
+    \item \textbf{Defectos identificados}: Durante las pruebas, se encontraron un total de 28 defectos. Sin embargo, solo se corrigieron 3, representando un \textbf{10.71\% de bugs resueltos}.
+    \item \textbf{Tiempo total de ejecución}: Las pruebas requirieron un total de 15 horas-persona.
+    \item \textbf{Cobertura de pruebas}: 
+    \begin{itemize}
+        \item Historias de Usuario cubiertas: 26  
+        \item Historias de Usuario no cubiertas: 7
+    \end{itemize}
+    \item \textbf{Automatización de Test Cases}: 
+    \begin{itemize}
+        \item Usando \textbf{Postman}: 6 casos exitosos, 2 fallidos.
+        \item Usando \textbf{Playwright}: 4 casos exitosos, 2 fallidos.
+    \end{itemize}
 \end{itemize}
+
+\noindent Respecto a los defectos, el análisis del \textit{Tiempo Medio de Reparación} (\textit{TMR}) muestra que el promedio fue de \textbf{33 días y 8 horas}. La siguiente tabla detalla los defectos críticos identificados, sus fechas de resolución y el tiempo requerido para su corrección:  
+
+
+\begin{table}[H]
+    \caption{Tiempo Medio de Reparación de Bugs}
+    \centering
+    \begin{tabularx}{\textwidth}{|l|X|l|l|l|}
+        \hline
+        \textbf{Código} & \textbf{Descripción} & \textbf{Fecha detección} & \textbf{Fecha resolución} & \textbf{TMR (días)} \\ \hline
+        BG-JH-01 & Cuando se crea una arista conectada a sí misma, su peso no se mueve junto al elemento asociado & 2024-03-15 & 2024-10-16 & 78 \\ \hline
+        BG-JH-02 & Cuando se intenta solucionar el algoritmo de Johnson con un grafo incorrecto no sucede nada & 2024-10-15 & 2024-10-26 & 11 \\ \hline
+        BG-JH-03 & Cuando se intenta solucionar un grafo con un bucle, el algoritmo entra en un loop infinito & 2024-10-15 & 2024-10-26 & 11 \\ \hline
+    \end{tabularx}
+\end{table}
+
+\noindent En términos de accesibilidad, se llevaron a cabo análisis utilizando \textit{Axe Dev Tools} en las vistas de selección de archivos y el editor de grafos Johnson.  
+
+\begin{itemize}
+    \item \textbf{Antes de las correcciones}: Se detectaron 16 alertas.  
+    \item \textbf{Después de las correcciones}: Las alertas se redujeron a 7, de las cuales 6 están relacionadas con limitaciones del framework del proyecto, quedando fuera del alcance de esta fase.  
+\end{itemize}
+
+\noindent Estos resultados están resumidos visualmente en el dashboard presentado a continuación:  
 
 \begin{figure}[H]
     \label{fig:dashboard_metrica_pruebas}
     \centering
-    \includegraphics[width=\textwidth]{../imgs/dashboard_test_metrics_white_bg.png}
+    \includegraphics[width=\textwidth]{../imgs/new_dashboard.png}
     \caption{Dashboard de Métricas del Plan de Pruebas}
 \end{figure}
 
