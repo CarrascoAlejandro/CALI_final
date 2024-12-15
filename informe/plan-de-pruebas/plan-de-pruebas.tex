@@ -851,39 +851,70 @@ Estos riesgos están asociados a factores de gestión y control del proyecto, lo
 \end{itemize}
 
 \section{\large Presupuesto y Cronograma}
-La estimación final es 32 horas-persona con un error estándar de aproximadamente 5.33 horas-persona. Esto significa que el esfuerzo estimado es de 32 horas-persona, pero podría variar en un rango de \(\pm 5.33\) horas debido a posibles incertidumbres. En base a esta estimación, se ha elaborado un cronograma detallado para el proyecto, que se muestra en la \hyperref[fig:cronograma]{Figura 3}.
 
-\begin{figure}[!ht]
+Para el desarrollo del proyecto, se empleó la técnica de estimación de tres puntos, utilizando valores optimistas, pesimistas y los más probables para cada tarea. Este método permitió calcular un rango confiable de tiempo y costo, reduciendo riesgos de sobrecostos o retrasos.
+
+Así se obtuvo:
+\begin{itemize}
+    \item \textbf{Horas estimadas}: 36 horas para el periodo inicial (1 de diciembre al 15 de diciembre).
+\end{itemize}
+
+La estimación final es de \textbf{36 horas-persona} con un \textbf{error estándar aproximado de 4.8 horas-persona}. Esto significa que el esfuerzo estimado es de 36 horas-persona, pero podría variar en un rango de ±4.8 horas debido a posibles incertidumbres. En base a esta estimación, se ha elaborado un cronograma detallado para el proyecto, que se muestra a continuación.
+
+\subsection*{Cronograma del Proyecto}
+
+\begin{table}[H]
+    \centering
+    \caption{Cronograma del Proyecto}
+    \label{fig:cronograma}
+    \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{1.8cm}|p{1.8cm}|}
+        \hline
+        \textbf{Actividad} & \textbf{Descripción} & \textbf{Fecha prevista} & \textbf{Duración (días)} & \textbf{Duración (horas)} \\ \hline
+        Organización del Trabajo & Reunión del equipo para definir roles y tareas. & 2024-12-01  & 1 & 2.50 \\ \hline
+        Creación del Repositorio & Configuración inicial para pruebas y documentación. & 2024-12-02 & 1 & 1.5 \\ \hline
+        Documentación base en LaTeX & Subida de documentos base para el plan y el informe. & 2024-12-02 & 1 & 2.5 \\ \hline
+        Pruebas Automatizadas & Realización de pruebas (3 Postman, 3 Playwright). & 2024-12-04 - 2024-12-06 & 3 & 16 \\ \hline
+        Documentación Final & Completar y actualizar los documentos en LaTeX. & 2024-12-09 - 2024-12-10 & 2 & 8 \\ \hline
+        Revisión y Ajustes Finales & Revisión final de todos los documentos y pruebas. & 2024-12-11 - 2024-12-12 & 2 & 6 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{Diagrama Gantt}
+
+\begin{figure}[H]
     \centering
     \caption{Cronograma del Proyecto: Diagrama de Gantt}
-    \label{fig:cronograma}
+    \label{fig:diagrama_gantt}
     \begin{ganttchart}[
+        x unit=0.7cm,
+        y unit chart=0.7cm,
         hgrid,
         vgrid,
-        time slot format=isodate,
-        time slot unit=day
-    ]{2024-10-15}{2024-10-28}
-    
-    % Define time labels
-    \gantttitlecalendar{year, month=name, day} \\
-    
-    % Define tasks
-    \ganttbar{Desarrollo del Plan de Pruebas}{2024-10-15}{2024-10-17} \\
-    \ganttbar{Diseño y Creación de Test Cases}{2024-10-18}{2024-10-21} \\
-    \ganttbar{Ejecución de Pruebas}{2024-10-22}{2024-10-24} \\
-    \ganttbar{Análisis y Documentación de Defectos}{2024-10-25}{2024-10-26} \\
-    \ganttbar{Creación del Informe Final}{2024-10-27}{2024-10-28} \\
-    
-    % Dependencies
-    \ganttlink{elem0}{elem1}
-    \ganttlink{elem1}{elem2}
-    \ganttlink{elem2}{elem3}
-    \ganttlink{elem3}{elem4}
-    
+        milestone label font=\scriptsize,
+        bar label font=\scriptsize,
+        group label font=\scriptsize,
+        time slot format=isodate
+    ]{2024-12-01}{2024-12-16}
+        % Configuración del tiempo
+        \gantttitlecalendar{year, month=name, day} \\
+
+        % Actividades
+        \ganttbar{Organización del Trabajo}{2024-12-01}{2024-12-01} \\
+        \ganttbar{Creación del Repositorio}{2024-12-02}{2024-12-02} \\
+        \ganttbar{Documentación base en LaTeX}{2024-12-02}{2024-12-02} \\
+        \ganttbar{Pruebas Automatizadas}{2024-12-04}{2024-12-06} \\
+        \ganttbar{Documentación Final}{2024-12-09}{2024-12-10} \\
+        \ganttbar{Revisión y Ajustes Finales}{2024-12-11}{2024-12-12} \\
+        \ganttbar{Entrega del Proyecto}{2024-12-15}{2024-12-15} \\
+
+        % Opcional: Marcar hitos
+        \ganttmilestone{Inicio del Proyecto}{2024-12-01} \\
+        \ganttmilestone{Fin del Proyecto}{2024-12-15}
     \end{ganttchart}
 \end{figure}
 
-\clearpage
+El cronograma fue diseñado para ser realista y permitir la realización de las tareas clave del proyecto dentro de un marco temporal adecuado. Las horas estimadas para cada actividad se basaron en la complejidad de las tareas y en la experiencia previa en proyectos similares. Además, se consideraron posibles retrasos o imprevistos, lo que justifica la inclusión del margen de error en la estimación final de horas.
+
 \section{\large Enfoque de Prueba}
 
 \noindent El enfoque de prueba se centra en validar tanto los aspectos funcionales como no funcionales del sistema, asegurando que cumpla con los requisitos definidos y proporcione una experiencia de usuario satisfactoria.

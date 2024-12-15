@@ -97,8 +97,128 @@ A lo largo de las pruebas, se identificaron 28 defectos en los distintos módulo
 Además, se identificaron 7 alertas de accesibilidad, agrupadas según el criterio WCAG afectado, lo cual refleja la evaluación de la accesibilidad del sistema. 
 
 \noindent Todos los reportes mencionados (Test Cases, reporte de errores y alertas de accesibilidad) se encuentran en los anexos.
-\section{Reporte y Resultados}
 
+\section{\large Evaluación de la prueba}
+
+\subsection{Desviaciones de Plan de Prueba}
+
+Las desviaciones en el plan de prueba se originaron principalmente por la coincidencia de los exámenes finales universitarios de los miembros del equipo con las fechas del cronograma del proyecto. Este cruce provocó un periodo de inactividad, lo que afectó la disponibilidad del equipo y causó retrasos en las tareas clave. 
+Esta situación fue temporal y se produjo en la fase inicial e intermedia del proyecto, lo que ocasionó un retraso en varias actividades clave.
+A continuación, se detallan las desviaciones por tarea:
+
+\begin{itemize}
+    \item \textbf{Creación del Repositorio}  
+    \begin{itemize}
+        \item \textbf{Plan original}: La creación del repositorio estaba prevista para el 2 de diciembre, con una duración estimada de 1.5 horas.
+        \item \textbf{Realidad}: La tarea se retrasó un día debido a la falta de disponibilidad de los miembros del equipo, resultando en la ejecución el 3 de diciembre con un total de 2 horas.
+    \end{itemize}
+
+    \item \textbf{Documentación base en LaTeX}  
+    \begin{itemize}
+        \item \textbf{Plan original}: Se planificó para el 2 de diciembre, con una duración de 2.5 horas.
+        \item \textbf{Realidad}: Al igual que la tarea anterior, esta se retrasó un día, realizándose el 4 de diciembre, con una duración de 2 horas.
+    \end{itemize}
+
+    \item \textbf{Organización del Trabajo}  
+    \begin{itemize}
+        \item \textbf{Plan original}: Estaba prevista para el 1 de diciembre, con una duración de 2.5 horas.
+        \item \textbf{Realidad}: Debido al periodo de inactividad, se pospuso para el 10 de diciembre con una duración de 3 horas, pero no afectó significativamente el flujo de trabajo debido a la flexibilidad del equipo.
+    \end{itemize}
+
+    \item \textbf{Pruebas Automatizadas}  
+    \begin{itemize}
+        \item \textbf{Plan original}: Se pensaba realizar las pruebas desde el 4 hasta el 6 de diciembre, con una duración estimada de 16 horas.
+        \item \textbf{Realidad}: Las pruebas se realizaron entre el 11 y el 13 de diciembre, con una duración de 20 horas.
+    \end{itemize}
+
+    \item \textbf{Documentación Final}  
+    \begin{itemize}
+        \item \textbf{Plan original}: La documentación debía completarse entre el 9 y el 10 de diciembre, con una duración de 8 horas.
+        \item \textbf{Realidad}: Debido a los retrasos previos, la documentación final, incluyendo sus revisión y ajustes finales, se completó entre el 12 y el 15 de diciembre, con una duración total de 11 horas.
+    \end{itemize}
+\end{itemize}
+
+Estas desviaciones fueron causadas por la coincidencia de las responsabilidades académicas de los miembros del equipo con el cronograma del proyecto. Sin embargo, se logró ajustar el plan para minimizar el impacto y garantizar que todas las actividades se completaran dentro de un plazo razonable.
+
+\subsection*{Cronograma Final del Proyecto}
+El cronograma final obtuvo 38 horas para el periodo de trabajo (3 de diciembre al 15 de diciembre).
+
+\begin{table}[H]
+    \centering
+    \caption{Cronograma Final del Proyecto}
+    \label{fig:cronograma}
+    \begin{tabular}{|p{3cm}|p{4cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+        \hline
+        \textbf{Actividad} & \textbf{Descripción} & \textbf{Fecha realizada} & \textbf{Duración (d)} & \textbf{Duración (h)} \\ \hline
+        Creación del Repositorio & Configuración inicial para pruebas y documentación. & 2024-12-03 & 1 & 2 \\ \hline
+        Documentación base en LaTeX & Subida de documentos base para el plan y el informe. & 2024-12-04 & 1 & 2 \\ \hline
+        Organización del Trabajo & Reunión del equipo para definir tareas. & 2024-12-10 & 1 & 3 \\ \hline
+        Pruebas Automatizadas & Realización de pruebas (3 Postman, 3 Playwright). & 2024-12-11 - 2024-12-13 & 3 & 20 \\ \hline
+        Documentación Final & Completar y actualizar los documentos en LaTeX. & 2024-12-12 - 2024-12-15 & 4 & 11 \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection*{Diagrama de Gantt Final}
+
+\begin{figure}[H]
+    \centering
+    \caption{Cronograma del Proyecto Final: Diagrama de Gantt}
+    \label{fig:diagrama_gantt}
+    \begin{ganttchart}[
+        x unit=0.7cm,
+        y unit chart=0.7cm,
+        hgrid,
+        vgrid,
+        milestone label font=\scriptsize,
+        bar label font=\scriptsize,
+        group label font=\scriptsize,
+        time slot format=isodate
+    ]{2024-12-03}{2024-12-15}
+        % Configuración del tiempo
+        \gantttitlecalendar{year, month=name, day} \\
+
+        % Actividades
+        \ganttbar{Creación del Repositorio}{2024-12-03}{2024-12-03} \\
+        \ganttbar{Documentación base en LaTeX}{2024-12-04}{2024-12-04} \\
+        \ganttbar{Organización del Trabajo}{2024-12-10}{2024-12-10} \\
+        \ganttbar{Pruebas Automatizadas}{2024-12-11}{2024-12-13} \\
+        \ganttbar{Documentación Final}{2024-12-12}{2024-12-15} \\
+
+        % Opcional: Marcar hitos
+        \ganttmilestone{Inicio del Proyecto}{2024-12-03} \\
+        \ganttmilestone{Presentación del Proyecto}{2024-12-15}
+    \end{ganttchart}
+\end{figure}
+
+\subsection{Impedimentos de prueba y soluciones alternativas}
+
+A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron soluciones alternativas para garantizar el avance eficiente del proyecto. A continuación, se detallan los principales problemas identificados y las soluciones implementadas:
+
+\begin{enumerate}
+    \item \textbf{Familiaridad limitada con el sistema} \\
+    Algunos miembros del equipo que realizaron las pruebas no participaron en el desarrollo del sistema, lo que inicialmente limitó su conocimiento sobre la estructura y el funcionamiento detallado del proyecto. Esta falta de familiaridad hizo necesaria una etapa adicional de recopilación y análisis de las historias de usuario, con el fin de comprender los procesos internos y flujos específicos del sistema.\\
+    \textbf{Solución implementada:} Se recurrió a la documentación técnica existente y se organizaron reuniones frecuentes con los desarrolladores y responsables del proyecto para acelerar la comprensión del sistema.
+
+    \item \textbf{Problemas con la configuración de LaTeX} \\
+    Algunos miembros del equipo encontraron dificultades iniciales relacionadas con la instalación y el aprendizaje del uso de LaTeX para la documentación del informe. Esto ocasionó pequeños retrasos en la preparación de los documentos. \\
+    \textbf{Solución implementada:} Se compartieron tutoriales y guías prácticas, además de realizar sesiones de consulta para resolver dudas sobre el uso de LaTeX, lo que permitió al equipo completar la documentación de manera efectiva.
+
+    \item \textbf{Cruce con exámenes académicos} \\
+    La coincidencia de las actividades del proyecto con los exámenes finales de los miembros del equipo afectó la disponibilidad de los integrantes en momentos clave. Este cruce provocó algunos retrasos en la ejecución de tareas y reuniones. \\
+    \textbf{Solución implementada:} Las reuniones se reorganizaron de manera más flexible, priorizando una mejor gestión del tiempo y la organización del equipo para evitar descuidar las actividades del proyecto. Este enfoque permitió cumplir con los objetivos sin comprometer los resultados.
+
+    \item \textbf{Modificaciones en el código para pruebas de interfaz (Playwright)} \\
+    Durante la implementación de las pruebas automatizadas en Playwright, se detectaron limitaciones en los identificadores del frontend que hacían los localizadores excesivamente largos y complicados. Además, ciertos componentes del frontend mostraban lentitud al ejecutarse en navegadores como WebKit. \\
+    \textbf{Solución implementada:} Se realizaron ajustes en el frontend, como la adición de identificadores (\texttt{id}) a componentes específicos y alertas para facilitar las pruebas. \\
+    También se recomendó aumentar el número de trabajadores para mejorar el rendimiento de las pruebas con el comando:
+    \begin{verbatim}
+    npx playwright test tests --workers 6
+    \end{verbatim}
+    
+\end{enumerate}
+
+
+\section{Reporte y Resultados}
 
 \subsection{Resultados de las Métricas del Plan de Pruebas}
 
@@ -150,6 +270,151 @@ Además, se identificaron 7 alertas de accesibilidad, agrupadas según el criter
     \includegraphics[width=\textwidth]{../imgs/new_dashboard.png}
     \caption{Dashboard de Métricas del Plan de Pruebas}
 \end{figure}
+
+
+\pagenumbering{arabic}
+\newpage
+\section{\large Riesgos no mitigados, defectos no corregidos}
+
+\subsection{Evaluación de riesgos} 
+
+\noindent Durante el proceso de pruebas, algunos de los riesgos previamente identificados impulsaron la creación de pruebas con el objetivo de evaluar la posibilidad de mitigarlos de manera más precisa. Con el reporte de defectos resultante de estas pruebas, se espera implementar acciones correctivas que permitan reducir el impacto y probabilidad de estos riesgos en el sistema.
+
+\noindent Después de la evaluación completa del sistema y la ejecución de todas las pruebas planificadas, no se identificaron riesgos adicionales. Los riesgos previamente identificados se abordaron de forma adecuada mediante la implementación de controles y la ejecución de pruebas específicas, lo que permitió mitigar su impacto y probabilidad de ocurrencia.
+
+
+\subsubsection{Riesgos del Producto}
+
+\begin{itemize}
+    \item \textbf{Resultados inexactos en algoritmos o cálculos complejos} \\ 
+    \textbf{Riesgo:} Los algoritmos de cálculo pueden devolver resultados incorrectos debido a errores en la lógica. \\ 
+    \textbf{Cobertura:} Totalmente cubierto \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-AG-02: Verifica la correcta optimización por pesos máximos.
+      \item TC-AG-03: Verifica la correcta optimización por pesos mínimos.
+      \item TC-DJ-01: Verifica que Dijkstra calcule correctamente el camino mínimo.
+      \item TC-JH-02: Valida el cálculo de la ruta crítica con Johnson.
+    \end{itemize}
+    \textbf{Riesgo cubierto:}Sí, la cobertura es adecuada.
+  
+    \item \textbf{Fallas en la comunicación entre backend y frontend} \\ 
+    \textbf{Riesgo:} La comunicación entre la interfaz y el servidor puede fallar, generando errores de sincronización de datos. \\ 
+    \textbf{Cobertura:} Totalmente cubierto \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-PT-01: Valida la correcta respuesta del endpoint de la matriz de adyacencia.
+      \item TC-PT-02: Verifica la respuesta correcta del endpoint de optimización de asignación.
+      \item TC-PT-03: Valida la correcta respuesta del endpoint del camino crítico con Johnson.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada.
+  
+    \item \textbf{Manejo inadecuado de datos en la interfaz del usuario} \\ 
+    \textbf{Riesgo:} La interfaz puede no validar correctamente los datos ingresados por el usuario, causando errores. \\ 
+    \textbf{Cobertura:} Totalmente cubierto\\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-PW-02: Verifica el comportamiento al registrar una cuenta con campos vacíos.
+      \item TC-PW-03: Verifica que no se permita registrar cuentas con datos inválidos.
+      \item TC-PW-05: Verifica el inicio de sesión con campos vacíos.
+      \item TC-PW-06: Verifica que no se permita iniciar sesión con datos inválidos.
+      \item TC-NW-05: Valida la interfaz intuitiva y la correcta validación de campos obligatorios.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada.
+  
+    \item \textbf{Problemas en el almacenamiento de archivos al guardar un grafo} \\ 
+    \textbf{Riesgo:} La funcionalidad de guardar o cargar grafos no funciona correctamente, y se pueden perder datos. \\ 
+    \textbf{Cobertura:} Totalmente cubierto \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-GF-03: Verifica que se pueda guardar la estructura del grafo en JSON y restaurar la información.
+      \item TC-JH-12: Verifica la correcta carga y almacenamiento de grafos de Johnson.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada.
+  
+    \item \textbf{Rendimiento insuficiente del sistema con grandes volúmenes de datos (Grafos grandes)} \\ 
+    \textbf{Riesgo:} El sistema puede experimentar lentitud o fallos al procesar grandes grafos. \\ 
+    \textbf{Cobertura:}  No cubierto \\ 
+    \textbf{Test Cases relevantes:} Ninguno. Este riesgo no está contemplado en los casos de prueba actuales. 
+    \textbf{Riesgo cubierto:} No, la cobertura es insuficiente.
+  
+    \item \textbf{Cumplimiento insuficiente de estándares de accesibilidad} \\ 
+    \textbf{Riesgo:} La aplicación puede no ser accesible para usuarios con discapacidades. \\ 
+    \textbf{Cobertura:} Cobertura adecuada\\ 
+    \textbf{Test Cases relevantes:} Se realizó una evaluación de accesibilidad con Axe DevTools para cubrir los estándares WCAG 2 AA. 
+    \textbf{Riesgo cubierto:} Si, la cobertura es suficiente, aunque se identificaron problemas de accesibilidad.
+  
+    \item \textbf{Vulnerabilidades en la seguridad de la gestión de datos y autenticación} \\ 
+    \textbf{Riesgo:} Usuarios no autorizados podrían acceder al sistema o manipular datos sensibles. \\ 
+    \textbf{Cobertura:} Cobertura adecuada \\ 
+    \textbf{Test Cases relevantes:} 
+    \begin{itemize}
+      \item TC-PW-01: Verifica el registro de usuario con datos válidos.
+      \item TC-PW-04: Verifica que los usuarios puedan iniciar sesión con credenciales correctas.
+      \item TC-PW-06: Verifica que no se permita iniciar sesión con datos inválidos.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} Sí, la cobertura es adecuada, aunque puede mejorarse otro tipo de pruebas enfocadas en la seguridad.
+  \end{itemize}
+  
+
+  \subsubsection{Riesgos de Proyecto}
+
+\begin{itemize}
+    
+    \item \textbf{Demoras en la comunicación y cronograma} \\ 
+    \textbf{Riesgo:} Las demoras en la comunicación entre los equipos de desarrollo y calidad, así como las dificultades en el cumplimiento de los plazos establecidos, pueden retrasar la implementación y las pruebas del sistema de grafos. \\ 
+    \textbf{Cobertura:} Cobertura adecuada \\ 
+    \textbf{Motivo:} La participación de 2 desarrolladores en el equipo de calidad permitió una comunicación más efectiva, reduciendo los retrasos. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Establecimiento de canales de comunicación claros y frecuentes entre los equipos de desarrollo y calidad.
+      \item Uso de herramientas de gestión de proyectos para hacer un seguimiento eficiente de los plazos y las tareas.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Sí, la cobertura fue adecuada.}} 
+
+    \item \textbf{QAs desconocen la lógica interna del sistema} \\ 
+    \textbf{Riesgo:} Los QAs pueden no comprender completamente la lógica de los algoritmos y el sistema de grafos, lo que puede llevar a pruebas incompletas o incorrectas. \\ 
+    \textbf{Cobertura:} Cobertura adecuada \\ 
+    \textbf{Motivo:} Se realizaron reuniones y comunicación directa entre los QAs externos y los QAs que también formaban parte del equipo de desarrollo, logrando una mejor comprensión del sistema. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Documentación clara de la lógica interna de los algoritmos y su funcionamiento dentro del sistema.
+      \item Sesiones de capacitación y colaboración entre desarrolladores y QAs para garantizar la comprensión mutua del sistema.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Sí, la cobertura fue adecuada.}} 
+    
+    \item \textbf{Dependencia de QAs hacia developers para el entorno contenedorizado} \\ 
+    \textbf{Riesgo:} La dependencia de los QAs hacia los desarrolladores para la configuración y el manejo del entorno contenedorizado puede generar cuellos de botella en las pruebas y la integración continua. \\ 
+    \textbf{Cobertura:} Cobertura parcial \\ 
+    \textbf{Motivo:} Se explicó a los QAs en las reuniones iniciales cómo levantar los entornos, reduciendo la dependencia inicial, aunque aún se requiere cierto apoyo ocasional. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Capacitación a los QAs en la gestión y configuración de entornos contenedorizados, utilizando herramientas como Docker.
+      \item Creación de scripts y documentación detallada para la configuración y despliegue de entornos de prueba.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Parcialmente mitigado.}} 
+    
+    \item \textbf{Falta de documentación del sistema} \\ 
+    \textbf{Riesgo:} La ausencia de documentación técnica adecuada por parte de los desarrolladores puede dificultar la comprensión, mantenimiento y escalabilidad del sistema de grafos. \\ 
+    \textbf{Cobertura:} Cobertura parcial \\ 
+    \textbf{Motivo:} Se reunieron historias de usuario mediante pruebas exploratorias que se confirmaron con los desarrolladores, aunque se reconoce la necesidad de una documentación más formal. \\ 
+    \textbf{Controles:} 
+    \begin{itemize}
+      \item Revisión de código periódica y mantenimiento de documentación actualizada sobre la arquitectura y algoritmos del sistema.
+      \item Implementación de un sistema de documentación automática, como comentarios detallados en el código y herramientas como Javadoc o Swagger.
+    \end{itemize}
+    \textbf{Riesgo cubierto:} \textbf{\textit{Parcialmente mitigado.}} 
+    
+\end{itemize}
+
+\subsection{Evaluación de defectos}
+
+Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento (\textbf{ver anexo \ref{sec:anexos}}). La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. 
+% FIXME: poner el anexo correcto
+
+
+\pagenumbering{arabic}
+\newpage
 
 \section{Accesibilidad y usabilidad}
 
