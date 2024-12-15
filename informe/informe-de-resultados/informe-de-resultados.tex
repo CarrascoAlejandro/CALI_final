@@ -225,8 +225,8 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 \noindent Los resultados del plan de pruebas reflejan los siguientes indicadores clave:  
 
 \begin{itemize}
-    \item \textbf{Número total de Test Cases ejecutados}: Se ejecutaron 42 casos de prueba, de los cuales el \textbf{78.57\%} (33 casos) fueron exitosos, mientras que 9 resultaron fallidos.
-    \item \textbf{Defectos identificados}: Durante las pruebas, se encontraron un total de 28 defectos. Sin embargo, solo se corrigieron 3, representando un \textbf{10.71\% de bugs resueltos}.
+    \item \textbf{Número total de Test Cases ejecutados}: Se ejecutaron 40 casos de prueba, de los cuales el \textbf{82.5\%} (33 casos) fueron exitosos, mientras que 7 resultaron fallidos.
+    \item \textbf{Defectos identificados}: Durante las pruebas, se encontraron un total de 30 defectos. De estos, se corrigieron 3, representando un \textbf{10\% de bugs resueltos}.
     \item \textbf{Tiempo total de ejecución}: Las pruebas requirieron un total de 15 horas-persona.
     \item \textbf{Cobertura de pruebas}: 
     \begin{itemize}
@@ -235,13 +235,12 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
     \end{itemize}
     \item \textbf{Automatización de Test Cases}: 
     \begin{itemize}
-        \item Usando \textbf{Postman}: 6 casos exitosos, 2 fallidos.
-        \item Usando \textbf{Playwright}: 4 casos exitosos, 2 fallidos.
+        \item Usando \textbf{Postman}: 4 casos exitosos, 0 fallidos.
+        \item Usando \textbf{Playwright}: 6 casos exitosos, 2 fallidos.
     \end{itemize}
 \end{itemize}
 
 \noindent Respecto a los defectos, el análisis del \textit{Tiempo Medio de Reparación} (\textit{TMR}) muestra que el promedio fue de \textbf{33 días y 8 horas}. La siguiente tabla detalla los defectos críticos identificados, sus fechas de resolución y el tiempo requerido para su corrección:  
-
 
 \begin{table}[H]
     \caption{Tiempo Medio de Reparación de Bugs}
@@ -249,9 +248,9 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
     \begin{tabularx}{\textwidth}{|l|X|l|l|l|}
         \hline
         \textbf{Código} & \textbf{Descripción} & \textbf{Fecha detección} & \textbf{Fecha resolución} & \textbf{TMR (días)} \\ \hline
-        BG-JH-01 & Cuando se crea una arista conectada a sí misma, su peso no se mueve junto al elemento asociado & 2024-03-15 & 2024-10-16 & 78 \\ \hline
-        BG-JH-02 & Cuando se intenta solucionar el algoritmo de Johnson con un grafo incorrecto no sucede nada & 2024-10-15 & 2024-10-26 & 11 \\ \hline
-        BG-JH-03 & Cuando se intenta solucionar un grafo con un bucle, el algoritmo entra en un loop infinito & 2024-10-15 & 2024-10-26 & 11 \\ \hline
+        BG-JH-01 & Cuando se crea una arista conectada a sí misma, su peso no se mueve junto al elemento asociado & 2024-03-15 & 2024-06-01 & 78 \\ \hline
+        BG-JH-02 & Cuando se intenta solucionar el algoritmo de Johnson con un grafo incorrecto no sucede nada & 2024-10-15 & 2024-10-27 & 11 \\ \hline
+        BG-JH-03 & Cuando se intenta solucionar un grafo con un bucle, el algoritmo entra en un loop infinito & 2024-10-15 & 2024-10-27 & 11 \\ \hline
     \end{tabularx}
 \end{table}
 
