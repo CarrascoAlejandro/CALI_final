@@ -631,48 +631,149 @@ Los stakeholders académicos influyen en la dirección del desarrollo y en la pr
 
 \section{\large Registro de Riesgos}
 
-\noindent A continuación, se presenta un registro de riesgos que abarca tanto los riesgos del proyecto como del producto. Estos riesgos podrían impactar en la ejecución, calidad y resultados esperados del editor \textit{Northwest}. 
+\noindent A continuación, se presenta un registro de riesgos que abarca tanto los riesgos del proyecto como del producto. Estos riesgos podrían impactar en la ejecución, calidad y resultados esperados del sistema. 
+
+\subsection{Riesgos del Producto}
+Los riesgos del producto están relacionados con los requisitos funcionales y la experiencia del usuario al utilizar el sistema web. Estos riesgos pueden impactar directamente en la satisfacción del usuario final y en el rendimiento del sistema.
+
+\begin{itemize}
+    \item \textbf{Resultados inexactos en algoritmos o cálculos complejos:} 
+    \begin{itemize}
+        \item \textbf{Descripción:} Los algoritmos implementados (como optimización o generación de matrices) pueden producir resultados erróneos debido a errores en el código, malas configuraciones o datos incorrectos.
+        \item \textbf{Consecuencias:} Resultados incorrectos podrían afectar la experiencia del usuario, generar desconfianza en el sistema y comprometer su utilidad académica o profesional.
+        \item \textbf{Controles:} 
+        \begin{itemize}
+            \item Revisiones detalladas del código y lógica de los algoritmos.
+            \item Validación de resultados mediante pruebas con datos representativos y casos límite.
+            \item Implementación de validaciones automáticas para verificar la precisión de los cálculos.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Fallas en la comunicación entre backend y frontend:} 
+    \begin{itemize}
+        \item \textbf{Descripción:} Errores en la comunicación entre las APIs del backend y el frontend pueden impedir que las funcionalidades del sistema operen correctamente, como la generación de matrices, resultado de los algoritmos o la carga de datos.
+        \item \textbf{Consecuencias:} La falta de comunicación afecta la funcionalidad del sistema, generando errores visibles para el usuario y afectando la experiencia.
+        \item \textbf{Controles:} 
+        \begin{itemize}
+            \item Pruebas de integración regulares para verificar la comunicación entre los componentes.
+            \item Manejo adecuado de errores en el frontend para informar al usuario sobre problemas de conexión.
+            \item Monitoreo de las solicitudes API con herramientas como Postman o logs.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Manejo inadecuado de datos en la interfaz del usuario:} 
+    \begin{itemize}
+        \item \textbf{Descripción:} La interfaz puede presentar datos incorrectos, desactualizados o mal procesados debido a fallos en el backend o en la manipulación de datos en el frontend.
+        \item \textbf{Consecuencias:} Confusión del usuario, reducción en la confianza del sistema y resultados inexactos al trabajar con datos erróneos.
+        \item \textbf{Controles:} 
+        \begin{itemize}
+            \item Validación y sanitización de datos en el backend antes de enviarlos al frontend.
+            \item Pruebas de usabilidad y validaciones en el frontend.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Rendimiento insuficiente del sistema con grandes volúmenes de datos (Grafos grandes):} 
+    \begin{itemize}
+        \item \textbf{Descripción:} El sistema podría experimentar tiempos de carga lentos o fallos al procesar grafos grandes o matrices complejas.
+        \item \textbf{Consecuencias:} Experiencia de usuario deficiente, posibles cuelgues del sistema y limitación para casos prácticos con grandes cantidades de datos.
+        \item \textbf{Controles:} 
+        \begin{itemize}
+            \item Optimización del manejo de estructuras de datos y algoritmos.
+            \item Escalabilidad mediante paralelización de procesos y distribución de carga en el backend.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Cumplimiento insuficiente de estándares de accesibilidad:} 
+    \begin{itemize}
+        \item \textbf{Descripción:} La interfaz del sistema podría no cumplir estándares como WCAG 2.1, dificultando el uso a personas con discapacidades visuales, motoras o cognitivas.
+        \item \textbf{Consecuencias:} Exclusión de usuarios con necesidades especiales y posibles críticas o incumplimientos normativos.
+        \item \textbf{Controles:} 
+        \begin{itemize}
+            \item Auditorías de accesibilidad utilizando herramientas como Axe DevTools.
+            \item Implementación de prácticas de diseño inclusivo de la WCAG 2.1 (contrastes adecuados, navegación por teclado, etc).
+            \item Pruebas de accesibilidad con usuarios finales.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Vulnerabilidades en la seguridad de la gestión de datos y autenticación:} 
+    \begin{itemize}
+        \item \textbf{Descripción:} Aunque se implementan medidas de seguridad con Keycloak para la gestión de autenticación y protección de datos, siempre existe el riesgo de vulneraciones a través de ataques avanzados, como la explotación de fallos en el sistema de autenticación o ataques de tipo "man-in-the-middle" en conexiones no seguras.
+        \item \textbf{Consecuencias:} Filtración de datos sensibles, acceso no autorizado al sistema y pérdida de confianza en la plataforma.
+        \item \textbf{Controles:} 
+        \begin{itemize}
+            \item Continuar utilizando Keycloak para la autenticación con medidas de seguridad robustas, como la autenticación multifactor (MFA).
+            \item Asegurar la transmisión de datos mediante HTTPS con cifrado TLS.
+            \item Implementación de auditorías y escaneos de seguridad periódicos en el sistema de autenticación.
+            \item Revisión regular de configuraciones de seguridad de Keycloak y actualizaciones de seguridad.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Problemas en el almacenamiento de archivos al guardar un grafo:} 
+    \begin{itemize}
+        \item \textbf{Descripción:} El almacenamiento de archivos generados al guardar un grafo puede fallar si el formato del archivo es incompatible, el tamaño es excesivo, o si la infraestructura de almacenamiento no está optimizada para manejar grandes volúmenes de datos.
+        \item \textbf{Consecuencias:} Pérdida de datos, fallos en la visualización del grafo, y frustración para el usuario al no poder acceder al archivo correctamente.
+        \item \textbf{Controles:} 
+        \begin{itemize}
+            \item Validación del formato y tamaño de los archivos de grafo en el backend antes de su almacenamiento.
+            \item Uso de una infraestructura de almacenamiento optimizada para grandes archivos, como MinIO o AWS S3, con mecanismos de compresión y control de versiones.
+        \end{itemize}
+    \end{itemize}
+
+\end{itemize}
+
+\noindent Las consecuencias de estos riesgos incluyen insatisfacción del usuario, pérdida de confiabilidad en los resultados y posibles costos de mantenimiento adicionales, que podrían impactar negativamente en la percepción y uso del sistema web.
 
 \subsection{Riesgos de Proyecto}
 Estos riesgos están asociados a factores de gestión y control del proyecto, lo que incluye problemas organizacionales, limitaciones de recursos y cuestiones técnicas.
 
 \begin{itemize}
-    \item \textbf{Cuestiones de organización:}
+
+    \item \textbf{Demoras en la comunicación y cronograma:}
     \begin{itemize}
-        \item \textbf{Disponibilidad limitada del equipo de desarrollo:} Dos de los cuatro desarrolladores asignados al proyecto no estarán disponibles para resolver bugs, lo cual podría retrasar la corrección de errores y afectar los plazos de entrega.
-        \item \textbf{Falta de experiencia en áreas clave:} La ausencia de personal especializado en rendimiento y accesibilidad limita la capacidad del equipo para realizar pruebas profundas en estas áreas, lo que podría afectar la calidad final del producto en términos de usabilidad y desempeño.
+        \item \textbf{Descripción:} Las demoras en la comunicación entre los equipos de desarrollo y calidad, así como las dificultades en el cumplimiento de los plazos establecidos, pueden retrasar la implementación y las pruebas del sistema de grafos.
+        \item \textbf{Consecuencias:} Retrasos en el cronograma del proyecto, reducción de la calidad de las entregas y posibles inconsistencias entre las funcionalidades implementadas y las expectativas del cliente.
+        \item \textbf{Controles:}
+        \begin{itemize}
+            \item Establecimiento de canales de comunicación claros y frecuentes entre los equipos de desarrollo y calidad.
+            \item Uso de herramientas de gestión de proyectos para hacer un seguimiento eficiente de los plazos y las tareas.
+        \end{itemize}
     \end{itemize}
 
-    \item \textbf{Problemas técnicos:}
+    \item \textbf{QAs desconocen la lógica interna del sistema:}
     \begin{itemize}
-        \item Dificultad en la integración de servicios: La arquitectura basada en múltiples servicios externos podría presentar problemas de comunicación y despliegue, afectando las pruebas de funcionalidades que dependen de estos servicios.
+        \item \textbf{Descripción:} Los QAs pueden no comprender completamente la lógica de los algoritmos y el sistema de grafos, lo que puede llevar a pruebas incompletas o incorrectas.
+        \item \textbf{Consecuencias:} Identificación inadecuada de errores, posibles fallos en la validación de algoritmos, y reducción de la cobertura de las pruebas.
+        \item \textbf{Controles:}
+        \begin{itemize}
+            \item Documentación clara de la lógica interna de los algoritmos y su funcionamiento dentro del sistema.
+            \item Sesiones de capacitación y colaboración entre desarrolladores y QAs para garantizar la comprensión mutua del sistema.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Dependencia de QAs hacia developers para el entorno contenedorizado:}
+    \begin{itemize}
+        \item \textbf{Descripción:} La dependencia de los QAs hacia los desarrolladores para la configuración y el manejo del entorno contenedorizado puede generar cuellos de botella en las pruebas y la integración continua.
+        \item \textbf{Consecuencias:} Retrasos en la ejecución de pruebas, dificultades en la automatización de pruebas y posibles inconsistencias entre entornos de desarrollo y pruebas.
+        \item \textbf{Controles:}
+        \begin{itemize}
+            \item Capacitación a los QAs en la gestión y configuración de entornos contenedorizados, utilizando herramientas como Docker.
+            \item Creación de scripts y documentación detallada para la configuración y despliegue de entornos de prueba.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{Falta de documentación del sistema:}
+    \begin{itemize}
+        \item \textbf{Descripción:} La ausencia de documentación técnica adecuada por parte de los desarrolladores puede dificultar la comprensión, mantenimiento y escalabilidad del sistema de grafos.
+        \item \textbf{Consecuencias:} Aumento en el tiempo de resolución de problemas, dificultades en la implementación de nuevas características y posibles errores debido a la falta de claridad sobre la arquitectura y el flujo del sistema.
+        \item \textbf{Controles:}
+        \begin{itemize}
+            \item Revisión de código periódica y mantenimiento de documentación actualizada sobre la arquitectura y algoritmos del sistema.
+            \item Implementación de un sistema de documentación automática, como comentarios detallados en el código y herramientas como Javadoc o Swagger.
+        \end{itemize}
     \end{itemize}
 \end{itemize}
 
 \noindent Estos riesgos de proyecto pueden afectar el cronograma, los recursos y el alcance del proyecto, comprometiendo potencialmente la capacidad del equipo para cumplir con todos los objetivos del plan de pruebas.
-
-\subsection{Riesgos del Producto}
-Los riesgos del producto están relacionados con los requisitos funcionales y la experiencia del usuario al utilizar el editor \textit{Northwest}. Estos riesgos pueden impactar directamente en la satisfacción del usuario final y en el rendimiento del sistema.
-
-\begin{itemize}
-    \item \textbf{Accesibilidad limitada:} La falta de características avanzadas de accesibilidad podría dificultar el uso del editor a diferentes usuarios.
-
-    \item \textbf{Problemas de funcionalidad:} 
-    \begin{itemize}
-        \item \textbf{Inconsistencias en el ajuste automático de oferta y demanda:} La funcionalidad de ajuste automático podría no balancear correctamente la matriz de costos cuando la oferta y demanda no coinciden, generando resultados inconsistentes y comprometiendo la confiabilidad de la solución.
-    \end{itemize}
-    
-    \item \textbf{Dependencia de una librería inestable:} El editor utiliza la librería \textit{vue-network-graph}, la cual aún no ha lanzado su versión 1.0.0. Esto representa un riesgo de inestabilidad, ya que cualquier actualización o cambio inesperado en la librería podría afectar directamente el funcionamiento de las funcionalidades de visualización de grafos.
-
-    \item \textbf{Rendimiento inadecuado:} El sistema podría experimentar tiempos de respuesta lentos o fallos al procesar grafos complejos, lo cual afectaría la usabilidad y la eficiencia en contextos educativos.
-
-    \item \textbf{Interfaz y experiencia de usuario deficiente:} 
-    \begin{itemize}
-        \item Interfaz poco intuitiva: Una interfaz confusa podría dificultar el uso eficiente del editor, afectando la satisfacción de los usuarios y la efectividad de la herramienta como recurso de aprendizaje.
-    \end{itemize}
-\end{itemize}
-
-\noindent Las consecuencias de estos riesgos incluyen insatisfacción del usuario, pérdida de confiabilidad en los resultados y posibles costos de mantenimiento adicionales, que podrían impactar negativamente en la percepción y uso del editor en un entorno académico.
 
 \subsection{Matriz de Riesgos}
 
@@ -680,29 +781,33 @@ Los riesgos del producto están relacionados con los requisitos funcionales y la
 
 \begin{figure}[!ht]
     \centering
-    \caption{Matriz de Riesgos del Proyecto}
-    \label{fig:project_risk_matrix}
-    \includegraphics[width=\textwidth]{../imgs/proyecto.png}
+    \caption{Matriz de Riesgos del Producto}
+    \label{fig:product_risk_matrix}
+    \includegraphics[width=\textwidth]{../imgs/matrix_producto.png}
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Disponibilidad limitada del equipo} (Probabilidad Alta, Impacto Alto): Este riesgo se encuentra en el cuadrante \textbf{Crítico}.
-    \item \textbf{Falta de experiencia en áreas clave} (Probabilidad Alta, Impacto Medio): Clasificado como \textbf{Alto}, este riesgo necesita medidas de mitigación, como capacitación o apoyo adicional.
-    \item \textbf{Dificultad en la integración de servicios} (Probablidad Media, Impacto Medio): También clasificado como \textbf{Medio}, este riesgo afecta principalmente la fase de pruebas.
+    \item \textbf{Resultados inexactos en algoritmos o cálculos complejos} (Probabilidad Media, Impacto Alto): Este riesgo es \textbf{Alto} dado que los cálculos incorrectos pueden comprometer la utilidad y fiabilidad del sistema.
+    \item \textbf{Fallas en la comunicación entre backend y frontend} (Probabilidad Media, Impacto Medio): Clasificado como riesgo \textbf{Medio}, aunque podría generar errores visibles para el usuario.
+    \item \textbf{Manejo inadecuado de datos en la interfaz del usuario} (Probabilidad Baja, Impacto Bajo): Este riesgo se encuentra en el cuadrante de riesgo \textbf{Bajo} debido a la baja probabilidad de ocurrencia.
+    \item \textbf{Rendimiento insuficiente del sistema con grandes volúmenes de datos} (Probabilidad Media, Impacto Medio): Este riesgo está clasificado como \textbf{Medio}, ya que afectaría significativamente el desempeño del sistema.
+    \item \textbf{Cumplimiento insuficiente de estándares de accesibilidad} (Probabilidad Media, Impacto Bajo): Clasificado como riesgo \textbf{Bajo}, pero con la posibilidad de afectar la accesibilidad del sistema.
+    \item \textbf{Vulnerabilidades en la seguridad de la gestión de datos y autenticación} (Probabilidad Media, Impacto Alto): Este riesgo es \textbf{Alto}, dado que las vulnerabilidades en la seguridad pueden comprometer la integridad del sistema.
+    \item \textbf{Problemas en el almacenamiento de archivos al guardar un grafo} (Probabilidad Baja, Impacto Medio): Clasificado como riesgo \textbf{Bajo}, pero puede generar frustración si ocurre.
 \end{itemize}
 
 \begin{figure}[!ht]
     \centering
-    \caption{Matriz de Riesgos del Producto}
-    \label{fig:product_risk_matrix}
-    \includegraphics[width=\textwidth]{../imgs/producto.png}
+    \caption{Matriz de Riesgos del Proyecto}
+    \label{fig:project_risk_matrix}
+    \includegraphics[width=\textwidth]{../imgs/matrix_proyecto.png}
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Inconsistencias en el ajuste automático} y \textbf{Rendimiento inadecuado} (Probabilidad Media, Impacto Alto): Son riesgos \textbf{Altos}, recomendando acciones de mitigación urgentes para optimizar estas funcionalidades.
-    \item \textbf{Accesibilidad limitada} (Probabilidad Media, Impacto Medio): Clasificado como \textbf{Medio}, este riesgo requiere mejoras en la accesibilidad del editor.
-    \item \textbf{Dependencia de una librería inestable} (Probabilidad Baja, Impacto Alto): Aunque la probabilidad es baja, el impacto es alto, lo que sugiere la necesidad de monitorear y actualizar la librería con precaución.
-    \item \textbf{Interfaz y experiencia de usuario deficiente} (Probabilidad Alta, Impacto Medio): Clasificado como \textbf{Alto}, este riesgo requiere mejoras en la usabilidad y accesibilidad del editor.
+    \item \textbf{Demoras en la comunicación y cronograma} (Probabilidad Media, Impacto Alto): Este riesgo se encuentra en el cuadrante de riesgo \textbf{Alto}.
+    \item \textbf{QAs desconocen la lógica interna del sistema} (Probabilidad Media, Impacto Medio): Clasificado como riesgo \textbf{Medio}, este riesgo necesita medidas de mitigación, como capacitación o documentación adicional.
+    \item \textbf{Dependencia de QAs hacia developers para el entorno contenedorizado} (Probabilidad Alta, Impacto Medio): Clasificado como riesgo \textbf{Alto}, este riesgo requiere capacitación y mejora en la gestión de entornos de pruebas.
+    \item \textbf{Falta de documentación de los developers} (Probabilidad Alta, Impacto Bajo): Este riesgo se encuentra en el cuadrante de riesgo \textbf{Medio} y necesita controles estrictos para garantizar la disponibilidad de documentación técnica adecuada.
 \end{itemize}
 
 \section{\large Presupuesto y Cronograma}
