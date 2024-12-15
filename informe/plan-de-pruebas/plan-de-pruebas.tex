@@ -345,28 +345,22 @@ El profesor de la materia, Ing. Yamil Cárdenas, quien supervisa el uso del edit
 
 \noindent La comunicación de los resultados y hallazgos se llevará a cabo mediante un informe de resultados que incluirá todos los aspectos evaluados y observaciones relevantes.
 
-\begin{itemize}
-    \item \textbf{Informe final de resultados:} Los resultados se presentarán formalmente en un informe final, que abarcará:
-    \begin{itemize}
-        \item Un análisis completo de los defectos encontrados en cada etapa de la prueba, categorizados según el tipo de prueba realizada: funcionalidad, usabilidad y accesibilidad.
-        \item Métricas de desempeño de las pruebas, tales como la cantidad de casos de prueba ejecutados y la tasa de éxito, con visualizaciones para facilitar su interpretación.
-        \item Referencia directa a los Test Cases en anexos, que servirán como soporte detallado y herramienta de comunicación, permitiendo una revisión exhaustiva de cada caso probado.
-    \end{itemize}
+    \subsection{Formularios y frecuencias de comunicación}
+        \noindent Para garantizar una comunicación eficiente, se establecerán los siguientes formularios y frecuencias de comunicación:
+        \begin{itemize}
+            \item \textbf{Reuniones semanales:} Se realizarán reuniones de seguimiento, donde se discutirán los avances, problemas encontrados y planes de acción. (\hyperref[]{ver en Anexos}).
+            \item \textbf{Reuniones mensuales:} Se realizarán evaluaciones del progreso general del proyecto y ajustes en la estrategia o recursos. (\hyperref[]{ver en Anexos}).
+            \item \textbf{Revisión de Defectos:} Los defectos se informarán por correo electrónico, con un resumen del impacto y la prioridad asignada. (\hyperref[]{ver en Anexos}).
+        \end{itemize}
 
-    \item \textbf{Reporte de defectos:} Los defectos identificados serán documentados en reportes específicos según el tipo de prueba:
-    \begin{itemize}
-        \item \textbf{Reporte de defectos de pruebas funcionales}: Detallado en anexos, cubriendo hallazgos en la funcionalidad del editor Northwest (\hyperref[tab:reporte_defectos]{ver en Anexos}).
-        \item \textbf{Reporte de defectos de pruebas de accesibilidad}: Incluirá observaciones sobre la accesibilidad en la interfaz (\hyperref[tab:reporte_accesibilidad]{ver en Anexos}).
-        \item \textbf{Reporte de defectos de usabilidad}: Basado en heurísticas de Nielsen, con observaciones sobre la experiencia de usuario (\hyperref[tab:reporte_usabilidad]{ver en Anexos}).
-    \end{itemize}
-
-    
-    \item \textbf{Dashboard de métricas:} Como complemento visual, el informe incluirá un dashboard sencillo que resuma los siguientes indicadores:
-    \begin{itemize}
-        \item Número total de Test Cases ejecutados.
-        \item Proporción de casos exitosos, presentados mediante gráficos circulares para facilitar su interpretación.
-    \end{itemize}
-\end{itemize}
+        \subsection{Plantillas de documentación}
+            \noindent Se utilizarán plantillas estandarizadas para la comunicación formal, controlando la uniformidad y claridad de los documentos. Las principales plantillas son las siguientes:
+            \begin{itemize}
+                \item \textbf{Plantilla de historias de usuario:} Esta plantilla define los requisitos desde la perspectiva del usuario final. Se utiliza la estructura: "Como [tipo de usuario], quiero [acción o funcionalidad] para [beneficio o valor agregado]".
+                \item \textbf{Plantilla de casos de prueba:} La plantilla de casos de prueba permite documentar cada una de las pruebas necesarias para validar el sistema.
+                \item \textbf{Plantilla de reporte de defectos:} Esta plantilla se utiliza para registrar y controlar los errores o defectos identificados durante las pruebas.
+                \item \textbf{Plantilla de reporte de riesgos:} La plantilla de reporte de riesgos permite identificar, evaluar y controlar los riesgos que podrían afectar el proyecto.
+            \end{itemize}
 
 \section{\large Registro de Riesgos}
 
@@ -483,14 +477,14 @@ La estimación final es 32 horas-persona con un error estándar de aproximadamen
 \clearpage
 \section{\large Enfoque de Prueba}
 
-\noindent El enfoque de prueba para el editor \textit{Northwest} se centra en validar tanto los aspectos funcionales como no funcionales del sistema, asegurando que cumpla con los requisitos definidos y proporcione una experiencia de usuario satisfactoria.
+\noindent El enfoque de prueba se centra en validar tanto los aspectos funcionales como no funcionales del sistema, asegurando que cumpla con los requisitos definidos y proporcione una experiencia de usuario satisfactoria.
 
 \subsection{Niveles de Prueba}
 Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes niveles:
 \begin{itemize}
     \item \textbf{Pruebas de Componentes}: Cada funcionalidad clave (como la creación de grafos, generación de matrices, y opciones de optimización) se probará de manera aislada para verificar su correcto funcionamiento.
     \item \textbf{Pruebas de Integración}: Validar la interacción entre componentes, especialmente entre la interfaz y los servicios backend, para asegurar que los datos fluyan correctamente.
-    \item \textbf{Pruebas de Sistema}: Se evaluará la funcionalidad completa del editor, considerando la ejecución fluida de los procesos de prueba, generación de soluciones de optimización, y verificación de resultados.
+    \item \textbf{Pruebas de Sistema}: Se evaluará la funcionalidad del editor, considerando la ejecución fluida de los procesos de prueba, generación de soluciones de optimización, y verificación de resultados.
 \end{itemize}
 
 \subsection{Tipos de Prueba}
@@ -503,21 +497,15 @@ Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes n
         \item \textbf{Validación de Creación y Visualización de Grafos}: Verifica que los grafos se creen correctamente con nodos y conexiones, y se visualicen de manera clara e intuitiva en la interfaz.
         \item \textbf{Carga y Descarga de Archivos}: Asegura que los grafos puedan ser guardados y recuperados sin pérdida de datos ni errores.
         \item \textbf{Generación de Matrices de Adyacencia y Costos}: Comprueba que el editor construya matrices precisas basadas en las conexiones y valores de los nodos.
-        \item \textbf{Optimización de Soluciones}: Valida que el editor produzca soluciones correctas para los criterios de maximización y minimización.
+        \item \textbf{Optimización de Soluciones para diferentes algoritmos}: Valida que el editor produzca soluciones correctas según los distintos algoritmos de optimización seleccionados.
+        \item \textbf{Verificación de uso de Interfaz de Usuario (UI)}: Se realizarán pruebas automáticas de la interfaz gráfica para validar la interacción del usuario con el sistema, garantizando la correcta visualización, usabilidad y funcionalidad de los elementos de la interfaz.
+        \item \textbf{Verificación de llamadas API}: Se ejecutarán pruebas de los servicios API mediante Postman para garantizar la correcta comunicación entre el cliente y el servidor.
     \end{itemize}
 
-    \item \textbf{Pruebas No Funcionales}: Estas pruebas evalúan los aspectos que afectan la experiencia del usuario y el rendimiento del editor, asegurando que el sistema sea accesible, fácil de usar y responda adecuadamente bajo carga. Las pruebas no funcionales incluyen:
+    \item \textbf{Pruebas No Funcionales}: Estas pruebas evalúan los aspectos que afectan la experiencia del usuario, controlando que se cumpla con los criterios de calidad establecidos por la WCAG 2 AA.    
     \begin{itemize}
         \item \textbf{Pruebas de Usabilidad}: Basadas en las heurísticas de Nielsen, estas pruebas aseguran que la interfaz sea intuitiva y satisfactoria para el usuario.
         \item \textbf{Pruebas de Accesibilidad}: Verifican el cumplimiento de estándares básicos de accesibilidad, asegurando que el editor sea utilizable por personas con distintas capacidades.
-        \item \textbf{Pruebas de Rendimiento}: Evaluarán, de manera específica, la capacidad de respuesta del sistema con grafos de tamaño y complejidad moderados, para asegurar que funcione correctamente bajo carga estándar.
-    \end{itemize}
-
-    \item \textbf{Pruebas de Caja Negra}: Estas pruebas se centran en validar el comportamiento del sistema sin analizar su lógica interna. Se utilizan para confirmar que las entradas proporcionadas generan las salidas esperadas, asegurando que el sistema cumpla con los requisitos funcionales sin considerar cómo se alcanzan los resultados. Son especialmente útiles para probar funcionalidades clave del editor como:
-    \begin{itemize}
-        \item \textbf{Validación de Resultados de Generación de Matrices}: La prueba introduce valores de entrada específicos (por ejemplo, conexiones y pesos) y verifica que el sistema genere correctamente matrices de adyacencia y de costos sin necesidad de analizar el código interno.
-        \item \textbf{Optimización de Soluciones}: Introduce datos de oferta y demanda para evaluar si el sistema produce soluciones correctas (maximización o minimización), basándose únicamente en las salidas obtenidas.
-        \item \textbf{Pruebas de Interfaz de Usuario}: Evalúa la funcionalidad de la interfaz para asegurarse de que los usuarios puedan crear grafos, visualizar matrices y obtener resultados sin errores visibles, abordando cualquier posible problema de interacción con el usuario.
     \end{itemize}
 \end{itemize}
 
@@ -528,73 +516,82 @@ Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes n
 \noindent Las técnicas de prueba aplicadas en este proyecto incluyen una combinación de técnicas de caja negra, caja blanca y herramientas específicas para la usabilidad y accesibilidad, para garantizar una validación exhaustiva del editor \textit{Northwest}.
 
 \begin{itemize}
-    \item \textbf{Técnicas de Caja Negra}:
+    \item \textbf{Técnicas de Caja Negra}: Se enfocan en la funcionalidad del software sin considerar la estructura interna. Estas pruebas evalúan si el software actúa según lo esperado en diferentes situaciones.
+    
     \begin{itemize}
-        \item \textbf{Pruebas de Equivalencia de Clases}: Se utilizará para validar que el sistema maneja adecuadamente diferentes categorías de entrada (por ejemplo, valores válidos e inválidos en campos como oferta y demanda), agrupando los datos en clases de equivalencia. Esta técnica permite reducir el número de casos de prueba necesarios al probar solo una entrada representativa por clase.
+        \item \textbf{Partición de Equivalencias}: Se utilizará para validar que el sistema maneja adecuadamente diferentes categorías de entrada (por ejemplo, valores válidos e inválidos en campos como oferta y demanda), agrupando los datos en clases de equivalencia. Esta técnica permite reducir el número de casos de prueba necesarios al probar solo una entrada representativa por clase.
+        \item \textbf{Valores Límite}: Para verificar que los algoritmos respondan correctamente en los extremos de los datos de entrada, asegurando que no ocurran errores con valores cercanos a los límites aceptables.
     \end{itemize}
 
     \item \textbf{Técnicas para Usabilidad y Accesibilidad}:
     \begin{itemize}
         \item \textbf{Pruebas Basadas en Listas de Verificación (Checklists)}: Enfocadas en usabilidad, estas pruebas se basarán en listas de verificación construidas a partir de heurísticas de usabilidad de Nielsen para evaluar la facilidad de uso de la interfaz. La lista incluirá aspectos como claridad de la interfaz, accesibilidad de los elementos y consistencia en el diseño.
-        \item \textbf{Pruebas de Accesibilidad con Axe DevTools}: Para verificar el cumplimiento de criterios de accesibilidad, se empleará la herramienta Axe DevTools, que permite realizar pruebas automáticas de accesibilidad en la interfaz y detectar posibles problemas, como bajo contraste de colores, falta de etiquetas en elementos interactivos y problemas de navegabilidad. Los resultados obtenidos con Axe DevTools se documentarán en el reporte de accesibilidad, asegurando que el sistema cumpla con estándares básicos de accesibilidad.
+        \item \textbf{Pruebas de Accesibilidad con Axe DevTools}: Para verificar el cumplimiento de criterios de accesibilidad, se empleará la herramienta Axe DevTools, que permite realizar pruebas automáticas de accesibilidad en la interfaz y detectar posibles problemas, como bajo contraste de colores, falta de etiquetas en elementos interactivos y problemas de navegabilidad. Los resultados obtenidos con Axe DevTools se documentarán en el reporte de accesibilidad, asegurando que el sistema cumpla con estándares de accesibilidad propuestos por la WCAG 2 AA.
     \end{itemize}
 \end{itemize}
 
 
 \subsection{Criterios de Entrada y Salida}
 \begin{itemize}
-    \item \textbf{Criterios de Entrada}: Las pruebas estarán listas para ejecutarse cuando:
+    \item \textbf{Criterios de Entrada}: Para iniciar la fase de pruebas, deben cumplirse las siguientes condiciones:
     \begin{itemize}
         \item Todos los servicios de backend estén configurados y ejecutándose en Docker.
-        \item El entorno de frontend esté disponible, ya sea ejecutándose en Docker o localmente mediante el comando \texttt{npm run dev}.
-        \item El proyecto esté en la rama \texttt{develop} para garantizar la estabilidad del entorno de pruebas.
+        \item El entorno de frontend esté disponible, ya sea ejecutándose en Docker o localmente.
+        \item La interfaz de usuario y los servicios backend estén disponibles y comunicándose correctamente.
         \item Todos los requisitos de datos de prueba estén definidos, incluyendo configuraciones específicas para nodos, matrices y otros parámetros requeridos.
-        \item La interfaz de usuario y los servicios backend estén disponibles y funcionando correctamente.
+        \item Acceso a las historias de usuario para revisar requisitos y objetivos específicos de cada funcionalidad.
+        \item Se tienen habilitadas las herramientas necesarias para realizar las pruebas, como: Postman, herramientas de accesibilidad y de pruebas de interfaz.
     \end{itemize}
     
     \item \textbf{Criterios de Salida}: Las pruebas se considerarán finalizadas cuando:
     \begin{itemize}
-        \item Se hayan ejecutado al menos cinco Test Cases definidos y se hayan documentado sus resultados y observaciones.
+        \item Se hayan ejecutado en su totalidad los casos de prueba propuestos y se hayan documentado sus resultados y observaciones.
+        \item Se haya finalizado el análisis de defectos encontrados y todos los hallazgos estén documentados en el informe de resultados.
         \item Todos los criterios de éxito para alcanzar el nivel \texttt{AA} en la normativa WCAG de accesibilidad hayan sido evaluados y cumplidos.
         \item Se haya completado el checklist de usabilidad basado en las heurísticas de Nielsen, asegurando una experiencia de usuario óptima.
-        \item Se haya finalizado el análisis de defectos encontrados y todos los hallazgos estén documentados en el informe de resultados.
-        \item Todas las métricas definidas se hayan recopilado y se haya generado el dashboard de métricas para el análisis de resultados.
+        \item Todas las métricas definidas se hayan recopilado para el análisis de resultados.
     \end{itemize}
 \end{itemize}
 
 \subsection{Independencia de las Pruebas}
-Dado que el equipo de desarrollo participa también en el proceso de pruebas, las pruebas no serán completamente independientes. En este caso, Oscar Campohermoso Berdeja, quien participó en el desarrollo, también asume los roles de gestión y ejecución de pruebas. Para mitigar posibles conflictos de interés, se establecerán procedimientos claros para la documentación y revisión de resultados, asegurando que las pruebas sean objetivas y confiables.
+Dado que parte del equipo de desarrollo participa también en el proceso de pruebas, las pruebas no serán completamente independientes. Para mitigar posibles conflictos de interés, se establecerán procedimientos claros para la documentación y revisión de resultados, asegurando que las pruebas sean objetivas y confiables.
 
 \subsection{Métricas a Ser Recopiladas}
-Durante la ejecución de las pruebas, se recopilarán las siguientes métricas:
+Para evaluar la efectividad y calidad de las pruebas, se emplearán las siguientes métricas:
 \begin{itemize}
-    \item \textbf{Número de Test Cases ejecutados} (totales, exitosos, fallidos).
     \item \textbf{Tasa de éxito de Test Cases} (porcentaje de pruebas exitosas).
+    \item \textbf{Cobertura de requisitos del usuario:} (porcentaje de requisitos del usuario evaluados).
     \item \textbf{Número de defectos identificados y categorizados} (funcionalidad, usabilidad, accesibilidad).
     \item \textbf{Tiempo total de ejecución de pruebas}, para estimar esfuerzos futuros.
+    \item \textbf{Defectos encontrados vs. corregidos}, para estimar esfuerzos en la corrección futura.
+
 \end{itemize}
 
 \subsection{Requisitos de Datos de Prueba}
-Los datos de prueba deben cubrir diferentes configuraciones de oferta y demanda, incluyendo:
+Para llevar a cabo las pruebas, los datos de prueba deben incluir:
 \begin{itemize}
-    \item Casos de oferta y demanda balanceados y no balanceados para verificar el ajuste automático del sistema.
-    \item Configuraciones de matriz de costos con diferentes rangos de valores para probar maximización y minimización.
-    \item Valores de entrada válidos e inválidos para evaluar la interfaz y los mensajes de error en el formulario de entrada.
+    \item Incluir diversas configuraciones de tamaño y complejidad de los grafos para abarcar un amplio espectro de escenarios.
+    \item Incluir casos con restricciones específicas para evaluar la robustez y flexibilidad de los algoritmos.
+    \item Los arcos deben contener valores que cubran rangos amplios, incluyendo pesos negativos, valores extremos y valores cercanos a los límites aceptables, para simular distintas situaciones de uso.
+    \item Se deben incluir datos de entrada no válidos para probar la capacidad de los algoritmos de manejar errores de forma controlada y sin interrupciones.
 \end{itemize}
 
 \subsection{Requisitos del Entorno de Prueba}
-El entorno de prueba se configurará utilizando Docker para asegurar una ejecución estable, aislada y reproducible de los servicios necesarios. Esto permite que el entorno sea fácilmente replicable y minimiza las variaciones en el comportamiento de las pruebas. Los servicios necesarios en el entorno de prueba incluyen:
+Los servicios necesarios en el entorno de prueba incluyen:
 
 \begin{itemize}
     \item \textbf{Backend implementado en FastAPI}: Este servicio maneja las solicitudes de optimización de transporte y debe estar configurado para responder a peticiones de la interfaz y los cálculos de matrices, asegurando un procesamiento eficiente y consistente de datos.
     \item \textbf{Servicios de almacenamiento}: Configurados para gestionar y almacenar archivos de configuración en formato JSON. Estos servicios garantizan la persistencia de datos y permiten la carga y recuperación de grafos y matrices sin pérdida de información.
     \item \textbf{Frontend desarrollado en Vue.js}: La interfaz gráfica del editor, desarrollada en Vue.js, permite la interacción del usuario con los elementos del editor. El frontend puede ejecutarse en Docker o de manera local, asegurando accesibilidad a todas las funcionalidades requeridas para la prueba.
+    \item \textbf{Buscador web}: Disponibilidad de un buscador de donde pueda realizarse el acceso al sistema.
+    \item \textbf{Herramientas de prueba}: Estas herramientas (tales como Postman, Axe DevTools y Playwright) deben estar activas para la ejecución de los test cases.
+
 \end{itemize}
 
-Además, para asegurar la integridad del entorno, todos los servicios deben estar conectados mediante una red interna en Docker, permitiendo una comunicación fluida y segura entre los contenedores. Esta configuración facilitará la ejecución de pruebas automáticas y manuales en un entorno controlado, simulado y con condiciones similares a las de producción.
+Además, para asegurar la integridad del entorno, todos los servicios deben estar conectados mediante una red interna en Docker, permitiendo una comunicación fluida entre los contenedores. Esta configuración facilitará la ejecución de pruebas automáticas y manuales en un entorno controlado, simulado y con condiciones similares a las de producción.
 
-
-
+\subsection{Desviación de la Política de pruebas y estrategia de pruebas de la empresa}
+Este plan de pruebas sigue los lineamientos establecidos por la política y estrategia de pruebas de los propietarios del software, cumpliendo con los estándares de calidad y verificación esperados.
 \newpage
 % Referencias
 \renewcommand\refname{\large\textbf{Referencias}}
