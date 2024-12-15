@@ -96,66 +96,43 @@
 
 \noindent La elección de este editor para el plan de pruebas responde al interés de explorar cómo este algoritmo puede generar soluciones iniciales basadas en condiciones específicas de oferta y demanda. Además, el editor Northwest permite la manipulación visual de grafos y la generación de la matriz de adyacencia, convirtiéndolo en una herramienta práctica tanto para el análisis como para la resolución de problemas de asignación. A continuación, se presenta un plan de pruebas para asegurar la funcionalidad completa y la robustez del editor Northwest.
 
-\subsection{Alcance del Plan de Pruebas}
+\subsection{Alcance}
 
-El presente plan de pruebas plantea evaluar de manera integral el sistema desarrollado, abarcando múltiples módulos y funcionalidades clave, con el fin de garantizar su correcto funcionamiento, accesibilidad, usabilidad y cumplimiento de los objetivos especificados. A continuación, se detallan los alcances específicos de las pruebas:
-
-\subsubsection{Áreas incluidas en las pruebas}
+\subsubsection{Las pruebas abarcarán las siguientes áreas:}
 
 \begin{itemize}
-    \item \textbf{Creación y visualización de grafos:} Se evaluará la capacidad del editor para permitir la creación precisa de grafos, incluyendo la adición, edición y conexión de nodos y aristas, asegurando que los grafos generados se representen de manera adecuada en el entorno gráfico del editor.
+    \item \textbf{Creación y visualización de grafos:} Se verificará que el editor permita la creación precisa de grafos, incluyendo la adición y conexión de nodos y aristas, asegurando que los grafos generados se representen correctamente en el entorno gráfico del editor.
+
+    \item \textbf{Guardado y carga de grafos:} Se evaluará la funcionalidad de guardado de grafos, comprobando que los datos se almacenen correctamente y que puedan ser recuperados sin pérdida de información, para permitir la continuidad del análisis y la manipulación de los grafos en futuras sesiones.
+
+    \item \textbf{Generación de la matriz de adyacencia:} Se revisará que el editor construya de manera precisa la matriz de adyacencia a partir de los grafos creados, asegurando que refleje adecuadamente las conexiones y relaciones entre los nodos en el grafo.
+
+    \item \textbf{Generación de la matriz de costos:} Se evaluará la construcción precisa de la matriz de costos basada en los nodos y sus conexiones, garantizando que refleje las relaciones correctas entre puntos de suministro y demanda.
+
+    \item \textbf{Optimización:} Se verificará que el módulo de optimización sea capaz de resolver tanto problemas de maximización como de minimización, validando que los resultados sean consistentes con los objetivos definidos en el editor.
+
+    \item \textbf{Interfaz, usabilidad y accesibilidad:} Se revisará la facilidad de uso del formulario de entrada, asegurando que los elementos interactivos sean intuitivos y que el editor responda adecuadamente a diferentes valores de entrada. Además, se realizarán pruebas de accesibilidad para garantizar que el editor cumpla con los estándares de accesibilidad definidos.
+\end{itemize}
+
+\vspace{1cm}
+\subsubsection{Las pruebas no abarcarán las siguientes áreas:}
+
+\begin{itemize}
+    \item \textbf{Componentes fuera del editor:} No se evaluarán elementos externos al editor, como la manipulación de archivos de grafos creados previamente que se realiza antes de ingresar al editor, ni la descripción del algoritmo en la interfaz inicial. Incluir estas áreas implicaría evaluar funcionalidades que están fuera del alcance directo del editor.
     
-    \item \textbf{Guardado y carga de grafos:} Se comprobará que los datos de los grafos se almacenen y recuperen correctamente, permitiendo la continuidad del análisis y la manipulación en futuras sesiones.
-
-    \item \textbf{Generación de matrices:} Las pruebas cubrirán:
-    \begin{itemize}
-        \item \textbf{Matriz de adyacencia:} Verificar que refleje con precisión las conexiones y relaciones entre los nodos del grafo.
-        \item \textbf{Matriz de costos:} Evaluar su construcción precisa basada en los nodos y sus conexiones, garantizando que represente correctamente las relaciones de costos entre puntos de suministro y demanda.
-    \end{itemize}
-
-    \item \textbf{Optimización:} Se revisará la funcionalidad del módulo de optimización, asegurando que pueda resolver problemas de maximización y minimización de manera consistente con los objetivos definidos.
-
-    \item \textbf{Interfaz de usuario y usabilidad:} Se evaluará la facilidad de uso y la accesibilidad de la interfaz desarrollada en Vue.js, evaluando que cumpla con los criterios de accesibilidad de la WCAG versión 2.2 y que los resultados del sistema sean presentados de forma clara y comprensible para los usuarios.
-
-    \item \textbf{Algoritmos implementados:} Se evaluará la correcta ejecución y funcionalidad de los siguientes algoritmos:
-    \begin{itemize}
-        \item \textbf{Algoritmo de Asignación:} Incluyendo la interacción entre el backend en Spring Boot y la base de datos MySQL, para garantizar que los datos se almacenen y recuperen adecuadamente.
-        \item \textbf{Compet:} Se verificará la funcionalidad de su dashboard de edición de grafos, permitiendo la adición de nodos y la resolución eficiente del algoritmo mediante accesos directos.
-        \item \textbf{Dijkstra:} Se evaluarán opciones avanzadas como la selección de nodos inicial y destino, así como la ejecución del algoritmo para minimizar o maximizar rutas.
-        \item \textbf{Kruskal:} Verificación de la implementación y resultados del algoritmo en el contexto del sistema de gestión de grafos.
-        \item \textbf{Algoritmo de Johnson:} Se comprobará la correcta implementación del algoritmo para resolver problemas de caminos más cortos en grafos dirigidos con otras funcionalidades del editor.
-        \item \textbf{Método de la esquina noroeste (North-West):} Se evaluará su capacidad para resolver problemas de transporte, verificando que las soluciones iniciales se calculen correctamente y se representen de manera adecuada en las matrices de costos.
-    \end{itemize}
-
-        \item \textbf{Sorts:} Evaluar la ejecución de los algoritmos de ordenamiento (Selection Sort, Insertion Sort, Merge Sort, Shell Sort), verificando la correcta representación del proceso y su animación a diferentes velocidades.
-        \item \textbf{Árboles Binarios:} Se probará la creación, visualización gráfica y recorridos (inorden, preorden, postorden) de los árboles binarios, garantizando que los datos se representen adecuadamente.
-\end{itemize}
-
-\subsubsection{Áreas excluidas de las pruebas}
-
-\begin{itemize}
-    \item \textbf{Componentes externos al editor:} No se evaluarán funcionalidades relacionadas con la manipulación de archivos de grafos creados previamente o la descripción del algoritmo en la interfaz inicial, ya que se consideran fuera del alcance del editor.
+    \item \textbf{Pruebas de desempeño bajo condiciones extremas de carga:} No se realizarán pruebas de estrés en esta fase del proyecto; sin embargo, estas pruebas serán consideradas para futuras iteraciones.
     
-    \item \textbf{Pruebas de estrés:} No se realizarán pruebas de desempeño bajo condiciones extremas de carga en esta fase del proyecto. Estas evaluaciones serán consideradas para iteraciones futuras.
 \end{itemize}
 
+\subsection{Objetivo}
 
-\subsection{Objetivos}
-
-\subsubsection{Objetivo General}
-Garantizar la correcta funcionalidad, usabilidad y calidad de los diferentes módulos y algoritmos implementados en el sistema, validando que cumplan con las especificaciones técnicas y funcionales definidas, y que proporcionen una experiencia de usuario eficiente y minimizando de errores.
-
-\subsubsection{Objetivos Específicos}
+\noindent Las pruebas tienen como objetivo asegurar que el editor \textit{Northwest} cumpla con los requisitos funcionales y no funcionales establecidos, garantizando que las soluciones generadas para distintas configuraciones de oferta y demanda sean precisas y consistentes. Este proceso incluirá la verificación de la conformidad del editor con los estándares de calidad definidos por el cliente, y se centrará en:
 
 \begin{itemize}
-    \item Validar la precisión y correcta ejecución de los algoritmos implementados, asegurando resultados optimizados y libres de errores.
-    \item Comprobar que la interfaz de usuario desarrollada en Vue.js sea accesible, intuitiva y cumpla con los estándares de accesibilidad WCAG 2.2.
-    \item Confirmar la integración precisa y estable entre los componentes del sistema, como la interfaz, el backend y la base de datos.
-    \item Detectar y documentar errores o áreas de mejora en el sistema, permitiendo su corrección antes de la implementación en producción.
-    \item Validar la funcionalidad de módulos específicos, como el editor de grafos y la gestión de estructuras de datos, asegurando su correcto desempeño.
-    \item Evaluar la experiencia del usuario, garantizando una interacción fluida, estable y libre de errores críticos o caídas inesperadas.
+    \item Validar la precisión de los resultados generados en términos de optimización, asegurando que se ajusten a los objetivos de maximización o minimización.
+    \item Evaluar la usabilidad y accesibilidad de la interfaz, verificando que los elementos interactivos sean intuitivos y que el editor sea accesible según los estándares de accesibilidad definidos.
+    \item Detectar y documentar posibles errores y áreas de mejora, permitiendo su corrección antes de la implementación en producción, para maximizar la satisfacción del usuario final y asegurar una experiencia de usuario eficiente y libre de problemas.
 \end{itemize}
-
 
 \subsection{Limitaciones}
 
@@ -166,18 +143,11 @@ Garantizar la correcta funcionalidad, usabilidad y calidad de los diferentes mó
 \end{itemize}
 
 \subsection{Base de la Prueba}
-\subsubsection{Descripción del Sistema}
-El proyecto Sistema de Grafos y Algoritmos es una aplicación web que permite a los usuarios crear, editar y visualizar grafos, así como realizar análisis a través de algoritmos clave en el ámbito de la teoría de grafos. Los usuarios pueden interactuar con el sistema a través de un editor visual, el cual les permite construir grafos al agregar, modificar o eliminar nodos y aristas.
-
-\noindent El objetivo es ofrecer una plataforma que no solo facilite la creación y manipulación de grafos, sino que también permita aplicar algoritmos relevantes, manteniendo la integridad y precisión en los cálculos y la representación visual. Este sistema está diseñado para estudiantes, profesionales y cualquier usuario interesado en la teoría de grafos y su aplicación práctica, brindando una experiencia de usuario interactiva, intuitiva y funcional.
 
 \subsubsection{Requisitos del Sistema}
-Los requisitos del sistema definen las necesidades y expectativas que los distintos módulos del sistema deben cumplir para asegurar una funcionalidad completa y efectiva. Estos incluyen:
+Los requisitos del sistema definen las necesidades y expectativas que el editor \textit{Northwest} debe cumplir para asegurar una funcionalidad completa y efectiva. Estos incluyen:
 
 \begin{itemize}
-    \item \textbf{Creación de cuentas y acceso seguro}:  
-    Los usuarios deberán poder realizar la creación de cuentas personales vinculando su cuenta a un correo electrónico y una contraseña segura, así como deberán poder acceder al sistema mediante un inicio de sesión seguro que gestione credenciales. 
-
     \item \textbf{Creación y visualización de grafos}: 
     El editor deberá permitir a los usuarios crear grafos, incluyendo la adición de nodos y aristas, y visualizar los grafos de forma clara e intuitiva dentro de la interfaz del editor.
 
@@ -196,18 +166,6 @@ Los requisitos del sistema definen las necesidades y expectativas que los distin
     \item \textbf{Funcionalidades de optimización}: 
     El editor deberá ofrecer opciones que permitan al usuario seleccionar entre maximización o minimización de soluciones, proporcionando resultados válidos y ajustados a los objetivos especificados en las configuraciones de entrada.
 
-    \item \textbf{Resolución de grafos complejos}:
-    El editor deberá proporcionar herramientas avanzadas para resolver grafos con características complejas, como valores extremos o negativos, y múltiples relaciones. Los algoritmos implementados deberán manejar estas condiciones sin generar errores, asegurando que los resultados sean precisos y comprensibles. Además, el sistema deberá notificar al usuario si los datos ingresados no son válidos para el análisis.
-
-    \item \textbf{Visualización interactiva de procesos de ordenamiento}:
-    El editor deberá permitir a los usuarios observar de manera interactiva el proceso de ordenamiento de listas de datos. La visualización debe mostrar cada paso del algoritmo en tiempo real, permitiendo ajustar la velocidad según las preferencias del usuario. 
-
-    \item \textbf{Construcción y visualización de árboles binarios}:
-    El editor deberá permitir a los usuarios construir árboles binarios mediante la inserción de nodos con valores definidos. Además, ofrecerá la visualización gráfica de la estructura del árbol, mostrando claramente sus niveles, conexiones y jerarquías. También deberá proporcionar opciones para realizar y mostrar recorridos preorden, inorden y postorden, asegurando que los datos se presenten de manera precisa y comprensible para el usuario.
-
-    \item \textbf{Resolución de problemas de asignación}:
-    El editor deberá permitir a los usuarios resolver problemas de asignación óptima mediante el uso de matrices de asignación. Los usuarios podrán definir manualmente o cargar los datos necesarios, y seleccionar criterios de maximización o minimización para obtener soluciones óptimas.
-    
     \item \textbf{Accesibilidad del editor}: 
     Aunque no se ha pensado en un nivel profundo de accesibilidad, se espera que el editor, como mínimo, tenga un buen contraste de colores y cumpla con un nivel básico de accesibilidad.
 \end{itemize}
@@ -215,22 +173,9 @@ Los requisitos del sistema definen las necesidades y expectativas que los distin
 
 \subsubsection{Especificaciones Funcionales}
 
-Estas especificaciones detallan cada función del distintos editores y el comportamiento esperado, proporcionando instrucciones claras para los desarrolladores:
+Estas especificaciones detallan cada función del editor \textit{Northwest} y el comportamiento esperado, proporcionando instrucciones claras para los desarrolladores:
 
 \begin{itemize}
-    \item \textbf{Creación de cuentas y acceso seguro}:
-    \begin{itemize}
-    \item \textbf{Función}: Gestión de cuentas de usuario y accesos.
-    \item \textbf{Requisitos funcionales}:
-        \begin{itemize}
-            \item Los usuarios deberán poder registrarse proporcionando un nombre de usuario, un correo electrónico y contraseña segura.
-            \item El acceso al sistema deberá estar protegido por un inicio de sesión que gestione las credenciales de los usuarios.
-        \end{itemize}
-    \item \textbf{Proceso}:
-        \begin{itemize}
-            \item Los usuarios podrán registrarse o iniciar sesión a través de una interfaz segura.
-        \end{itemize}
-    \end{itemize}
     \item \textbf{Creación y visualización de grafos}:
     \begin{itemize}
         \item \textbf{Función}: Permitir la creación y visualización de grafos.
@@ -324,89 +269,6 @@ Estas especificaciones detallan cada función del distintos editores y el compor
                 \item La solución se mostrará al usuario de forma clara y comprensible, en una tabla.
             \end{itemize}
     \end{itemize}
-
-    \item \textbf{Resolución de grafos complejos}:
-    \begin{itemize}
-        \item \textbf{Función}: Proporcionar herramientas para analizar y resolver grafos que incluyen valores extremos, negativos y múltiples relaciones complejas.
-        \item \textbf{Requisitos funcionales}:
-            \begin{itemize}
-                \item El sistema deberá soportar grafos con valores extremos y negativos, garantizando la correcta interpretación de estos.
-                \item Los resultados obtenidos deberán ser visualizados de manera clara, con gráficos o tablas que expliquen las soluciones generadas.
-            \end{itemize}
-        \item \textbf{Proceso}:
-            \begin{itemize}
-                \item El usuario ingresará los nodos y conexiones del grafo, incluyendo valores extremos o negativos.
-                \item El sistema analizará los datos ingresados y ejecutará los algoritmos correspondientes para encontrar soluciones viables.
-                \item Una vez procesados, los resultados se presentarán al usuario con explicaciones y representaciones gráficas de las soluciones.
-            \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Visualización interactiva de procesos de ordenamiento}:
-    \begin{itemize}
-        \item \textbf{Función}: Representar visualmente el proceso de ordenamiento.
-        \item \textbf{Requisitos funcionales}:
-            \begin{itemize}
-                \item El editor permitirá al usuario seleccionar algoritmos de ordenamiento y observar cada paso del proceso en tiempo real.
-                \item El usuario podrá ajustar la velocidad de la animación para un aprendizaje personalizado.
-            \end{itemize}
-        \item \textbf{Proceso}:
-            \begin{itemize}
-                \item El usuario seleccionará un algoritmo de ordenamiento y visualizará el proceso paso a paso en la interfaz.
-                \item El sistema permitirá al usuario ajustar la velocidad de la visualización.
-            \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Construcción y visualización de árboles binarios}:
-    \begin{itemize}
-        \item \textbf{Función}: Permitir la creación y manipulación visual de árboles binarios.
-        \item \textbf{Requisitos funcionales}:
-            \begin{itemize}
-                \item El editor deberá permitir al usuario insertar nodos en un árbol binario y mostrar la estructura de forma clara.
-                \item El editor deberá permitir al usuario realizar recorridos preorden, inorden y postorden, mostrando los resultados.
-            \end{itemize}
-        \item \textbf{Proceso}:
-            \begin{itemize}
-                \item El usuario ingresará valores para los nodos y observará cómo se estructura el árbol binario.
-                \item Los resultados de los recorridos serán mostrados directamente en la interfaz.
-            \end{itemize}
-    \end{itemize}
-
-    \item \textbf{Resolución de problemas de asignación}:
-    \begin{itemize}
-        \item \textbf{Función}: Proveer herramientas para resolver problemas de asignación óptima considerando criterios de maximización o minimización.
-        \item \textbf{Requisitos funcionales}:
-            \begin{itemize}
-                \item El sistema deberá permitir la definición de matrices de asignación que representen relaciones entre tareas y recursos.
-                \item Los usuarios podrán ingresar manualmente los valores de la matriz o importarlos desde un archivo.
-                \item El sistema deberá implementar algoritmos de asignación para calcular soluciones óptimas basadas en los criterios seleccionados (maximización o minimización).
-                \item Los resultados deberán incluir las asignaciones óptimas y el costo total asociado, presentados de forma clara y comprensible.
-            \end{itemize}
-        \item \textbf{Proceso}:
-            \begin{itemize}
-                \item El usuario definirá una matriz de asignación ingresando los datos necesarios o cargándolos desde un archivo.
-                \item El sistema ejecutará el algoritmo de asignación correspondiente basado en el criterio seleccionado por el usuario.
-                \item Una vez procesada la asignación, el sistema mostrará los resultados en una tabla con las asignaciones óptimas y el costo total.
-            \end{itemize}
-    \end{itemize}
-    
-    \begin{itemize}
-        \item \textbf{Accesibilidad del editor}:
-        \begin{itemize}
-            \item \textbf{Función}: Garantizar la accesibilidad básica para todos los usuarios.
-            \item \textbf{Requisitos funcionales}:
-            \begin{itemize}
-                \item El editor deberá contar con un contraste de colores adecuado para asegurar la visibilidad de todos los elementos gráficos, especialmente en los grafos, matrices y estructuras visualizadas.
-                \item Los controles interactivos, como botones y menús, deberán ser lo suficientemente grandes y claros para facilitar su uso en dispositivos con diferentes tamaños de pantalla.
-                \item El sistema deberá proporcionar descripciones textuales (etiquetas o tooltips) en los elementos visuales clave para guiar a los usuarios en su interacción.
-            \end{itemize}
-            \item \textbf{Proceso}:
-            \begin{itemize}
-                \item Al cargar el editor, los elementos visuales y controles serán evaluados automáticamente para garantizar un contraste adecuado.
-                \item Los tooltips o descripciones se mostrarán al pasar el cursor sobre elementos clave, ayudando a los usuarios a comprender su propósito.
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
-   
 \end{itemize}
 
 
@@ -415,29 +277,15 @@ Estas especificaciones detallan cada función del distintos editores y el compor
 Las siguientes historias de usuario documentan los requisitos específicos y su relación con las especificaciones funcionales descritas en la sección de \textbf{Especificaciones Funcionales}. Cada historia de usuario puede consultarse en el \textit{Anexo A}, donde se detallan los parámetros y contexto para cada funcionalidad. Estas historias serán fundamentales para la creación de casos de prueba
 
 \begin{description}
-    \item[HU001-SignUp/SignIn-01] \hfill \\
-    Describe los requisitos para que un usuario nuevo pueda registrarse proporcionando un nombre de usuario, un correo electrónico y una contraseña segura. Esta historia se relaciona con la especificación funcional de \textbf{Creación de cuentas y acceso seguro}, garantizando que el usuario pueda crear una cuenta para acceder a la aplicación. \textit{\hyperref[tab:HU001-SignUp/SignIn-01]{Ver Anexo HU001-SignUp/SignIn-01}}
 
-    \item[HU002-SignUp/SignIn-02] \hfill \\
-    Documenta la necesidad de proporcionar mensajes de error claros si se introduce un correo electrónico inválido o una contraseña débil. Relacionada con la especificación funcional de \textbf{Creación de cuentas y acceso seguro}, asegurando una experiencia de usuario clara al corregir errores. \textit{\hyperref[tab:HU002-SignUp/SignIn-02]{Ver Anexo HU002-SignUp/SignIn-02}}
+    \item[HU006-GraphEditor] \hfill \\
+    Describe los requisitos para que el usuario pueda agregar nodos y aristas, y modificar sus valores dentro del editor gráfico. Esta historia de usuario se relaciona directamente con la especificación funcional de \textbf{Creación y visualización de grafos} ya que define cómo debe construirse y modificarse el grafo en la interfaz gráfica del editor. \textit{\hyperref[tab:HU006-GraphEditor]{Ver Anexo HU006-GraphEditor}}
 
-    \item[HU003-SignUp/SignIn-03] \hfill \\
-    Describe los requisitos para que un usuario registrado pueda iniciar sesión proporcionando su correo electrónico y contraseña. Relacionada con la especificación funcional de \textbf{Creación de cuentas y acceso seguro}, asegurando el acceso a las funcionalidades de la aplicación. \textit{\hyperref[tab:HU003-SignUp/SignIn-03]{Ver Anexo HU003-SignUp/SignIn-03}}
+    \item[HU007-AdjacentMatrix] \hfill \\
+    Documenta la necesidad del usuario de obtener la matriz de adyacencia del grafo generado. Esta historia respalda la especificación funcional de \textbf{Generación de la matriz de adyacencia} y establece que el sistema debe mostrar las conexiones entre nodos en un formato estructurado. \textit{\hyperref[tab:HU007-AdjacentMatrix]{Ver Anexo HU007-AdjacentMatrix}}
 
-    \item[HU004-Johnson-01] \hfill \\
-    Documenta los requisitos para construir un problema de ruta crítica (CPM) como un grafo con actividades en las aristas. Relacionada con la especificación funcional de \textbf{Optimización}, describiendo cómo debe implementarse el algoritmo de Johnson. \textit{\hyperref[tab:HU004-Johnson-01]{Ver Anexo HU004-Johnson-01}}
-
-    \item[HU005-Johnson-02] \hfill \\
-    Define los requisitos para que el usuario pueda descargar un grafo como archivo local para continuarlo más tarde. Relacionada con la especificación funcional de \textbf{Carga y descarga de grafos}, asegurando la preservación del trabajo del usuario. \textit{\hyperref[tab:HU005-Johnson-02]{Ver Anexo HU005-Johnson-02}}
-
-    \item[HU006-GraphEditor-01] \hfill \\
-    Describe los requisitos para que el usuario pueda agregar nodos y aristas, y modificar sus valores dentro del editor gráfico. Esta historia de usuario se relaciona directamente con la especificación funcional de \textbf{Creación y visualización de grafos} ya que define cómo debe construirse y modificarse el grafo en la interfaz gráfica del editor. \textit{\hyperref[tab:HU006-GraphEditor-01]{Ver Anexo HU006-GraphEditor-01}}
-
-    \item[HU007-AdjacentMatrix-01] \hfill \\
-    Documenta la necesidad del usuario de obtener la matriz de adyacencia del grafo generado. Esta historia respalda la especificación funcional de \textbf{Generación de la matriz de adyacencia} y establece que el sistema debe mostrar las conexiones entre nodos en un formato estructurado. \textit{\hyperref[tab:HU007-AdjacentMatrix-01]{Ver Anexo HU007-AdjacentMatrix-01}}
-
-    \item[HU008-FileManagement-01] \hfill \\
-    Define los requisitos para guardar el grafo en formato JSON y cargarlo posteriormente con todos sus elementos intactos. Esta historia está vinculada a la especificación funcional de \textbf{Carga y descarga de grafos}, asegurando que el usuario pueda conservar su trabajo sin pérdida de información. \textit{\hyperref[tab:HU008-FileManagement-01]{Ver Anexo HU008-FileManagement-01}}
+    \item[HU008-FileManagement] \hfill \\
+    Define los requisitos para guardar el grafo en formato JSON y cargarlo posteriormente con todos sus elementos intactos. Esta historia está vinculada a la especificación funcional de \textbf{Carga y descarga de grafos}, asegurando que el usuario pueda conservar su trabajo sin pérdida de información. \textit{\hyperref[tab:HU008-FileManagement]{Ver Anexo HU008-FileManagement}}
 
     \item[HU009-NorthWest-01] \hfill \\
     Documenta los requisitos para la generación automática de la matriz de costos con base en los pesos de las conexiones definidas por el usuario. Relacionada con la especificación funcional de \textbf{Generación de la matriz de costos}, esta historia establece cómo se debe reflejar la estructura de costos entre puntos de suministro y demanda. \textit{\hyperref[tab:HU009-NorthWest-01]{Ver Anexo HU009-NorthWest-01}}
@@ -448,72 +296,11 @@ Las siguientes historias de usuario documentan los requisitos específicos y su 
     \item[HU011-NorthWest-03] \hfill \\
     Especifica la capacidad del sistema para generar soluciones válidas según diversas configuraciones y criterios de optimización. Esta historia se relaciona con la especificación funcional de \textbf{Optimización}, asegurando que los resultados sean precisos y que el usuario pueda seleccionar el criterio de optimización deseado. \textit{\hyperref[tab:HU011-NorthWest-03]{Ver Anexo HU011-NorthWest-03}}
 
-    \item[HU012-Kruskal-01] \hfill \\
-    Define los requisitos para que el usuario pueda aplicar el algoritmo de Kruskal en el editor de grafos para encontrar el árbol de expansión mínimo o máximo. Relacionada con la especificación funcional de \textbf{Optimización}. \textit{\hyperref[tab:HU012-Kruskal-01]{Ver Anexo HU012-Kruskal-01}}
-
-    \item[HU013-Dijkstra-01] \hfill \\
-    Documenta los requisitos para que el algoritmo de Dijkstra devuelva el camino más corto en el grafo utilizando la menor cantidad de recursos posibles. Relacionada con la especificación funcional de \textbf{Optimización}. \textit{\hyperref[tab:HU013-Dijkstra-01]{Ver Anexo HU013-Dijkstra-01}}
-
-    \item[HU014-InvalidData-01] \hfill \\
-    Especifica la validación y manejo de datos no válidos en los algoritmos del sistema. Relacionada con la especificación funcional de \textbf{Creación y visualización de grafos}. \textit{\hyperref[tab:HU014-InvalidData-01]{Ver Anexo HU014-InvalidData-01}}
-
-    \item[HU015-Dashboard-01] \hfill \\
-    Describe los requisitos para que el dashboard se actualice dinámicamente cuando se modifiquen nodos o arcos en el grafo. Relacionada con la especificación funcional de \textbf{Creación y visualización de grafos}. \textit{\hyperref[tab:HU015-Dashboard-01]{Ver Anexo HU015-Dashboard-01}}
-
-    \item[HU016-AccesibilityAndNavigation-01] \hfill \\
-    Detalla los requisitos de accesibilidad para usuarios con discapacidades, asegurando que los elementos cumplan con estándares de contraste y sean intuitivos. Relacionada con la especificación funcional de \textbf{Accesibilidad del editor}, para garantizar que el sistema sea inclusivo. \textit{\hyperref[tab:HU016-AccesibilityAndNavigation-01]{Ver Anexo HU016-AccesibilityAndNavigation-01}}
-    
-    \item[HU017-Compet-01] \hfill \\
-    Define cómo el algoritmo Compet debe manejar grafos con valores extremos y negativos, garantizando resultados precisos. Relacionada con la especificación funcional de \textbf{Resolución de grafos complejos}. \textit{\hyperref[tab:HU017-Compet-01]{Ver Anexo HU017-Compet-01}}
-
-    \item[HU018-AccesibilityAndNavigation-02] \hfill \\
-    Documenta la necesidad de proporcionar textos de ayuda o "tooltips" que expliquen la función y pasos de uso de cada algoritmo. Relacionada con la especificación funcional de \textbf{Accesibilidad del editor}, asegurando que el usuario comprenda las funcionalidades del sistema. \textit{\hyperref[tab:HU018-AccesibilityAndNavigation-02]{Ver Anexo HU018-AccesibilityAndNavigation-02}}
-
-    \item[HU019-Sorts-01] \hfill \\
-    Define los requisitos para que el usuario pueda ingresar una lista de números o cargar un archivo y ordenarlos usando diferentes algoritmos. Relacionada con la especificación funcional de \textbf{Visualización interactiva de procesos de ordenamiento}. \textit{\hyperref[tab:HU019-Sorts-01]{Ver Anexo HU019-Sorts-01}}
-
-    \item[HU020-Sorts-02] \hfill \\
-    Especifica la capacidad del usuario de elegir entre diferentes algoritmos de ordenamiento (e.g., Selection Sort, Merge Sort) y observar sus pasos de ejecución. Relacionada con la especificación funcional de \textbf{Visualización interactiva de procesos de ordenamiento}. \textit{\hyperref[tab:HU020-Sorts-02]{Ver Anexo HU020-Sorts-02}}
-
-    \item[HU021-Sorts-03] \hfill \\
-    Documenta la necesidad de incluir una animación paso a paso que muestre cómo los algoritmos ordenan los datos. Relacionada con la especificación funcional de \textbf{Visualización interactiva de procesos de ordenamiento}. \textit{\hyperref[tab:HU021-Sorts-03]{Ver Anexo HU021-Sorts-03}}
-
-    \item[HU022-Sorts-04] \hfill \\
-    Define la funcionalidad de ajustar la velocidad de las animaciones para adaptarse a las necesidades del usuario. Relacionada con la especificación funcional de \textbf{Visualización interactiva de procesos de ordenamiento}. \textit{\hyperref[tab:HU022-Sorts-04]{Ver Anexo HU022-Sorts-04}}
-
-    \item[HU023-Sorts-05] \hfill \\
-    Documenta la opción de generar automáticamente una lista de números aleatorios para probar los algoritmos de ordenamiento sin necesidad de ingresar los datos manualmente. Relacionada con la especificación funcional de \textbf{Visualización interactiva de procesos de ordenamiento}. \textit{\hyperref[tab:HU023-Sorts-05]{Ver Anexo HU023-Sorts-05}}
-
-    \item[HU024-BinaryTrees-01] \hfill \\
-    Especifica los requisitos para guardar un arreglo y cargarlo en el módulo de árboles binarios, preservando los datos para análisis futuro. Relacionada con la especificación funcional de \textbf{Construcción y visualización de árboles binarios}. \textit{\hyperref[tab:HU024-BinaryTrees-01]{Ver Anexo HU024-BinaryTrees-01}}
-
-    \item[HU025-BinaryTrees-02] \hfill \\
-    Define cómo los usuarios pueden construir un árbol binario ingresando valores y visualizar su estructura de forma clara. Relacionada con la especificación funcional de \textbf{Construcción y visualización de árboles binarios}. \textit{\hyperref[tab:HU025-BinaryTrees-02]{Ver Anexo HU025-BinaryTrees-02}}
-
-    \item[HU026-BinaryTrees-03] \hfill \\
-    Documenta los requisitos para realizar recorridos preorden, inorden y postorden en un árbol binario, mostrando los resultados al usuario. Relacionada con la especificación funcional de \textbf{Construcción y visualización de árboles binarios}. \textit{\hyperref[tab:HU026-BinaryTrees-03]{Ver Anexo HU026-BinaryTrees-03}}
-    \item[HU027-BinaryTrees-04] \hfill \\
-    Especifica cómo los usuarios pueden construir y analizar árboles binarios sin necesidad de editar o eliminar nodos, facilitando la visualización. Relacionada con la especificación funcional de \textbf{Construcción y visualización de árboles binarios}. \textit{\hyperref[tab:HU027-BinaryTrees-04]{Ver Anexo HU027-BinaryTrees-04}}
-
-    \item[HU028-BinaryTrees-05] \hfill \\
-    Documenta la funcionalidad para centrar y ajustar automáticamente la vista del árbol binario, permitiendo una exploración completa sin desplazamientos excesivos. Relacionada con la especificación funcional de \textbf{Construcción y visualización de árboles binarios}. \textit{\hyperref[tab:HU028-BinaryTrees-05]{Ver Anexo HU028-BinaryTrees-05}}
-
-    \item[HU029-BinaryTrees-06] \hfill \\
-    Define los requisitos para guardar y cargar árboles binarios, asegurando que los usuarios puedan preservar su trabajo y continuar en futuras sesiones. Relacionada con la especificación funcional de \textbf{Construcción y visualización de árboles binarios}. \textit{\hyperref[tab:HU029-BinaryTrees-06]{Ver Anexo HU029-BinaryTrees-06}}
-
-    \item[HU030-Asignation-01] \hfill \\
-    Define los requisitos para que el sistema resuelva problemas de asignación. Relacionada con la especificación funcional de \textbf{Resolución de problemas de asignación}. \textit{\hyperref[tab:HU030-Asignation-01]{Ver Anexo HU030-Asignation-01}}
-
-    \item[HU031-Asignation-02] \hfill \\
-    Especifica los requisitos para visualizar los resultados de asignación de manera clara y comprensible. Relacionada con la especificación funcional de \textbf{Resolución de problemas de asignación}. \textit{\hyperref[tab:HU031-Asignation-02]{Ver Anexo HU031-Asignation-02}}
-
-    \item[HU032-Asignation-03] \hfill \\
-    Documenta la capacidad de elegir entre maximizar o minimizar la asignación, adaptándose a las necesidades del usuario. Relacionada con la especificación funcional de \textbf{Resolución de problemas de asignación}. \textit{\hyperref[tab:HU032-Asignation-03]{Ver Anexo HU032-Asignation-03}}
-
-    \item[HU033-Asignation-04] \hfill \\
-    Define la funcionalidad de seleccionar y ejecutar el algoritmo de asignación, permitiendo un cálculo eficiente. Relacionada con la especificación funcional de \textbf{Resolución de problemas de asignación}. \textit{\hyperref[tab:HU033-Asignation-04]{Ver Anexo HU033-Asignation-04}}
-
 \end{description}
+
+\subsubsection{Diagramas de Flujo de Datos y Procesos}
+
+Los diagramas de flujo de datos y procesos en el \hyperref[tab:flowchart]{Anexo B: Diagrama de Flujo de Proceso para el Editor Northwest} y el \hyperref[tab:dataflow]{Anexo B: Diagrama de Flujo de Datos para el Editor Northwest} resultan útiles para entender el funcionamiento del editor Northwest, y serán de gran utilidad para el Plan de Pruebas. Estos muestran cómo se gestiona la entrada de datos del grafo, la definición de datos y las posibles acciones, como la generación de matrices de adyacencia y costos, así como el guardado de datos en JSON. También ilustran el proceso de optimización, que culmina en una solución optimizada. Estos diagramas pueden ser de gran ayuda para visualizar los pasos y decisiones claves en la manipulación de grafos dentro del editor.
 
 \subsubsection{Arquitectura del Software}
 Esta arquitectura del sistema es fundamental para identificar los objetos de prueba dentro del plan de pruebas. La configuración actual consiste en una mezcla de arquitectura monolítica con microservicios debido al uso de múltiples servicios externos. Para ver el diagrama de arquitectura detallado, consulte el \hyperref[fig:architecture]{Anexo B: Diagrama de Arquitectura del Sistema}.
@@ -545,89 +332,41 @@ El equipo de desarrolladores responsables de la implementación de todo el siste
         \item Sebastián Orias Bellido
     \end{itemize}
 
-    \textbf{Responsabilidades:}
-    \begin{itemize}
-        \item Implementar funcionalidades del sistema según las especificaciones técnicas y funcionales.
-        \item Resolver defectos reportados por el equipo de QA y asegurar que las correcciones no afecten otros módulos.
-        \item Documentar el código y los cambios realizados para facilitar futuras actualizaciones.
-        \item Colaborar con los testers para garantizar que los entornos de prueba estén configurados correctamente.
-    \end{itemize}
-
-    \textbf{Impacto en el Proyecto:}  
-    La calidad y estabilidad del sistema dependen directamente de la experiencia y desempeño del equipo de desarrollo. Su capacidad para implementar soluciones rápidas y efectivas es crucial para cumplir con los objetivos del proyecto.
-
-
 \subsection{Equipo de Pruebas (QA)} 
-El equipo de QA tiene la responsabilidad de garantizar que el sistema cumpla con los requisitos funcionales y de calidad establecidos. Este equipo está compuesto por seis testers que trabajaron de manera colaborativa, sin un liderazgo centralizado, distribuyendo las tareas de forma equitativa y apoyándose mutuamente para cumplir los objetivos.
-
-\textbf{Miembros del Equipo:}
-\begin{itemize}
-    \item Campero Morales José Antonio
-    \item Campohermoso Berdeja Oscar
-    \item Carrasco Céspedes Miguel Alejandro
-    \item Martínez Acarapi Fabiola Alejandra
-    \item Montero Garrido Diana Aneliz
-    \item Zizold Sempertegui Gabriela Zulema Britta
-\end{itemize}
-
-\textbf{Responsabilidades:}
-\begin{itemize}
-    \item Diseñar, ejecutar y documentar casos de prueba para evaluar la funcionalidad y el rendimiento del sistema.
-    \item Identificar y reportar defectos, clasificándolos según su severidad y priorización.
-    \item Evaluar la interfaz del sistema para garantizar el cumplimiento de estándares de usabilidad y accesibilidad.
-    \item Proponer mejoras para optimizar la experiencia de usuario, especialmente en términos de claridad e intuitividad de la interfaz.
-    \item Colaborar estrechamente con los desarrolladores para validar las soluciones aplicadas a los defectos reportados.
-\end{itemize}
-
-\textbf{Impacto en el Proyecto:}  
-El equipo de QA desempeña un papel clave al identificar problemas tempranos y asegurar que el producto final cumpla con las expectativas de calidad. Su enfoque colaborativo ha permitido una cobertura de pruebas más amplia y efectiva.
+El equipo de pruebas está liderado por Oscar Campohermoso Berdeja, quien asume tanto el \textit{Rol de gestión de pruebas} como el \textit{Rol de pruebas}. Actualmente, está encargado de planificar, diseñar y ejecutar pruebas para asegurar el funcionamiento correcto del sistema. Sus tareas también incluyen la documentación de los resultados y la identificación de problemas o áreas de mejora.
 
 \subsection{Usuarios Finales} 
-Los usuarios finales del sistema son quienes interactuarán directamente con la plataforma. En este caso, los usuarios incluyen tanto estudiantes como docentes que utilizarán el sistema para fines educativos y prácticos.
-
-\textbf{Responsabilidades:}
-\begin{itemize}
-    \item Proporcionar retroalimentación sobre la usabilidad, funcionalidad y experiencia general del sistema.
-    \item Identificar posibles inconvenientes o áreas de mejora durante el uso del sistema.
-\end{itemize}
-
-\textbf{Impacto en el Proyecto:}  
-La retroalimentación de los usuarios finales es fundamental para garantizar que el sistema cumpla con sus expectativas y sea efectivo para los objetivos planteados.
-
+Los estudiantes y docentes de la materia de Análisis de Algoritmos utilizan el editor \textit{Northwest} como herramienta pedagógica. Su interés principal radica en la precisión de los resultados de optimización y en la facilidad de uso de la interfaz, aspectos clave para una experiencia de aprendizaje efectiva.
 
 \subsection{Stakeholders Académicos} 
 El profesor de la materia, Ing. Yamil Cárdenas, quien supervisa el uso del editor en el contexto académico. Su interés es que el editor cumpla con los objetivos educativos, permitiendo a los estudiantes experimentar con algoritmos de manera confiable e intuitiva.
-
-\textbf{Responsabilidades:}
-\begin{itemize}
-    \item Supervisar el uso del sistema en entornos académicos.
-    \item Asegurar que las funcionalidades del sistema estén alineadas con los objetivos educativos.
-    \item Proporcionar comentarios para futuras mejoras en base a las necesidades de los estudiantes y profesores.
-\end{itemize}
-
-\textbf{Impacto en el Proyecto:}  
-Los stakeholders académicos influyen en la dirección del desarrollo y en la priorización de funcionalidades, asegurando que el sistema sea útil y relevante en un entorno pedagógico.
 
 \section{\large Comunicación}
 
 \noindent La comunicación de los resultados y hallazgos se llevará a cabo mediante un informe de resultados que incluirá todos los aspectos evaluados y observaciones relevantes.
 
-    \subsection{Formularios y frecuencias de comunicación}
-        \noindent Para garantizar una comunicación eficiente, se establecerán los siguientes formularios y frecuencias de comunicación:
-        \begin{itemize}
-            \item \textbf{Reuniones semanales:} Se realizarán reuniones de seguimiento, donde se discutirán los avances, problemas encontrados y planes de acción. (\hyperref[]{ver en Anexos}).
-            \item \textbf{Reuniones mensuales:} Se realizarán evaluaciones del progreso general del proyecto y ajustes en la estrategia o recursos. (\hyperref[]{ver en Anexos}).
-            \item \textbf{Revisión de Defectos:} Los defectos se informarán por correo electrónico, con un resumen del impacto y la prioridad asignada. (\hyperref[]{ver en Anexos}).
-        \end{itemize}
+\begin{itemize}
+    \item \textbf{Informe final de resultados:} Los resultados se presentarán formalmente en un informe final, que abarcará:
+    \begin{itemize}
+        \item Un análisis completo de los defectos encontrados en cada etapa de la prueba, categorizados según el tipo de prueba realizada: funcionalidad, usabilidad y accesibilidad.
+        \item Métricas de desempeño de las pruebas, tales como la cantidad de casos de prueba ejecutados y la tasa de éxito, con visualizaciones para facilitar su interpretación.
+        \item Referencia directa a los Test Cases en anexos, que servirán como soporte detallado y herramienta de comunicación, permitiendo una revisión exhaustiva de cada caso probado.
+    \end{itemize}
 
-        \subsection{Plantillas de documentación}
-            \noindent Se utilizarán plantillas estandarizadas para la comunicación formal, controlando la uniformidad y claridad de los documentos. Las principales plantillas son las siguientes:
-            \begin{itemize}
-                \item \textbf{Plantilla de historias de usuario:} Esta plantilla define los requisitos desde la perspectiva del usuario final. Se utiliza la estructura: "Como [tipo de usuario], quiero [acción o funcionalidad] para [beneficio o valor agregado]".
-                \item \textbf{Plantilla de casos de prueba:} La plantilla de casos de prueba permite documentar cada una de las pruebas necesarias para validar el sistema.
-                \item \textbf{Plantilla de reporte de defectos:} Esta plantilla se utiliza para registrar y controlar los errores o defectos identificados durante las pruebas.
-                \item \textbf{Plantilla de reporte de riesgos:} La plantilla de reporte de riesgos permite identificar, evaluar y controlar los riesgos que podrían afectar el proyecto.
-            \end{itemize}
+    \item \textbf{Reporte de defectos:} Los defectos identificados serán documentados en reportes específicos según el tipo de prueba:
+    \begin{itemize}
+        \item \textbf{Reporte de defectos de pruebas funcionales}: Detallado en anexos, cubriendo hallazgos en la funcionalidad del editor Northwest (\hyperref[tab:reporte_defectos]{ver en Anexos}).
+        \item \textbf{Reporte de defectos de pruebas de accesibilidad}: Incluirá observaciones sobre la accesibilidad en la interfaz (\hyperref[tab:reporte_accesibilidad]{ver en Anexos}).
+        \item \textbf{Reporte de defectos de usabilidad}: Basado en heurísticas de Nielsen, con observaciones sobre la experiencia de usuario (\hyperref[tab:reporte_usabilidad]{ver en Anexos}).
+    \end{itemize}
+
+    
+    \item \textbf{Dashboard de métricas:} Como complemento visual, el informe incluirá un dashboard sencillo que resuma los siguientes indicadores:
+    \begin{itemize}
+        \item Número total de Test Cases ejecutados.
+        \item Proporción de casos exitosos, presentados mediante gráficos circulares para facilitar su interpretación.
+    \end{itemize}
+\end{itemize}
 
 \section{\large Registro de Riesgos}
 
@@ -670,6 +409,8 @@ Los riesgos del producto están relacionados con los requisitos funcionales y la
     \begin{itemize}
         \item Interfaz poco intuitiva: Una interfaz confusa podría dificultar el uso eficiente del editor, afectando la satisfacción de los usuarios y la efectividad de la herramienta como recurso de aprendizaje.
     \end{itemize}
+    
+    \item \textbf{Vulnerabilidades de seguridad:} La exposición de datos no protegidos podría comprometer la privacidad de la información de los usuarios y afectar la reputación del sistema.
 \end{itemize}
 
 \noindent Las consecuencias de estos riesgos incluyen insatisfacción del usuario, pérdida de confiabilidad en los resultados y posibles costos de mantenimiento adicionales, que podrían impactar negativamente en la percepción y uso del editor en un entorno académico.
@@ -700,6 +441,7 @@ Los riesgos del producto están relacionados con los requisitos funcionales y la
 
 \begin{itemize}
     \item \textbf{Inconsistencias en el ajuste automático} y \textbf{Rendimiento inadecuado} (Probabilidad Media, Impacto Alto): Son riesgos \textbf{Altos}, recomendando acciones de mitigación urgentes para optimizar estas funcionalidades.
+    \item \textbf{Vulnerabilidades de seguridad} (Probabilidad Alta, Impacto Alto): Se debe revisar la seguridad para proteger los datos de usuario.
     \item \textbf{Accesibilidad limitada} (Probabilidad Media, Impacto Medio): Clasificado como \textbf{Medio}, este riesgo requiere mejoras en la accesibilidad del editor.
     \item \textbf{Dependencia de una librería inestable} (Probabilidad Baja, Impacto Alto): Aunque la probabilidad es baja, el impacto es alto, lo que sugiere la necesidad de monitorear y actualizar la librería con precaución.
     \item \textbf{Interfaz y experiencia de usuario deficiente} (Probabilidad Alta, Impacto Medio): Clasificado como \textbf{Alto}, este riesgo requiere mejoras en la usabilidad y accesibilidad del editor.
@@ -741,14 +483,14 @@ La estimación final es 32 horas-persona con un error estándar de aproximadamen
 \clearpage
 \section{\large Enfoque de Prueba}
 
-\noindent El enfoque de prueba se centra en validar tanto los aspectos funcionales como no funcionales del sistema, asegurando que cumpla con los requisitos definidos y proporcione una experiencia de usuario satisfactoria.
+\noindent El enfoque de prueba para el editor \textit{Northwest} se centra en validar tanto los aspectos funcionales como no funcionales del sistema, asegurando que cumpla con los requisitos definidos y proporcione una experiencia de usuario satisfactoria.
 
 \subsection{Niveles de Prueba}
 Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes niveles:
 \begin{itemize}
     \item \textbf{Pruebas de Componentes}: Cada funcionalidad clave (como la creación de grafos, generación de matrices, y opciones de optimización) se probará de manera aislada para verificar su correcto funcionamiento.
     \item \textbf{Pruebas de Integración}: Validar la interacción entre componentes, especialmente entre la interfaz y los servicios backend, para asegurar que los datos fluyan correctamente.
-    \item \textbf{Pruebas de Sistema}: Se evaluará la funcionalidad del editor, considerando la ejecución fluida de los procesos de prueba, generación de soluciones de optimización, y verificación de resultados.
+    \item \textbf{Pruebas de Sistema}: Se evaluará la funcionalidad completa del editor, considerando la ejecución fluida de los procesos de prueba, generación de soluciones de optimización, y verificación de resultados.
 \end{itemize}
 
 \subsection{Tipos de Prueba}
@@ -761,15 +503,21 @@ Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes n
         \item \textbf{Validación de Creación y Visualización de Grafos}: Verifica que los grafos se creen correctamente con nodos y conexiones, y se visualicen de manera clara e intuitiva en la interfaz.
         \item \textbf{Carga y Descarga de Archivos}: Asegura que los grafos puedan ser guardados y recuperados sin pérdida de datos ni errores.
         \item \textbf{Generación de Matrices de Adyacencia y Costos}: Comprueba que el editor construya matrices precisas basadas en las conexiones y valores de los nodos.
-        \item \textbf{Optimización de Soluciones para diferentes algoritmos}: Valida que el editor produzca soluciones correctas según los distintos algoritmos de optimización seleccionados.
-        \item \textbf{Verificación de uso de Interfaz de Usuario (UI)}: Se realizarán pruebas automáticas de la interfaz gráfica para validar la interacción del usuario con el sistema, garantizando la correcta visualización, usabilidad y funcionalidad de los elementos de la interfaz.
-        \item \textbf{Verificación de llamadas API}: Se ejecutarán pruebas de los servicios API mediante Postman para garantizar la correcta comunicación entre el cliente y el servidor.
+        \item \textbf{Optimización de Soluciones}: Valida que el editor produzca soluciones correctas para los criterios de maximización y minimización.
     \end{itemize}
 
-    \item \textbf{Pruebas No Funcionales}: Estas pruebas evalúan los aspectos que afectan la experiencia del usuario, controlando que se cumpla con los criterios de calidad establecidos por la WCAG 2 AA.    
+    \item \textbf{Pruebas No Funcionales}: Estas pruebas evalúan los aspectos que afectan la experiencia del usuario y el rendimiento del editor, asegurando que el sistema sea accesible, fácil de usar y responda adecuadamente bajo carga. Las pruebas no funcionales incluyen:
     \begin{itemize}
         \item \textbf{Pruebas de Usabilidad}: Basadas en las heurísticas de Nielsen, estas pruebas aseguran que la interfaz sea intuitiva y satisfactoria para el usuario.
         \item \textbf{Pruebas de Accesibilidad}: Verifican el cumplimiento de estándares básicos de accesibilidad, asegurando que el editor sea utilizable por personas con distintas capacidades.
+        \item \textbf{Pruebas de Rendimiento}: Evaluarán, de manera específica, la capacidad de respuesta del sistema con grafos de tamaño y complejidad moderados, para asegurar que funcione correctamente bajo carga estándar.
+    \end{itemize}
+
+    \item \textbf{Pruebas de Caja Negra}: Estas pruebas se centran en validar el comportamiento del sistema sin analizar su lógica interna. Se utilizan para confirmar que las entradas proporcionadas generan las salidas esperadas, asegurando que el sistema cumpla con los requisitos funcionales sin considerar cómo se alcanzan los resultados. Son especialmente útiles para probar funcionalidades clave del editor como:
+    \begin{itemize}
+        \item \textbf{Validación de Resultados de Generación de Matrices}: La prueba introduce valores de entrada específicos (por ejemplo, conexiones y pesos) y verifica que el sistema genere correctamente matrices de adyacencia y de costos sin necesidad de analizar el código interno.
+        \item \textbf{Optimización de Soluciones}: Introduce datos de oferta y demanda para evaluar si el sistema produce soluciones correctas (maximización o minimización), basándose únicamente en las salidas obtenidas.
+        \item \textbf{Pruebas de Interfaz de Usuario}: Evalúa la funcionalidad de la interfaz para asegurarse de que los usuarios puedan crear grafos, visualizar matrices y obtener resultados sin errores visibles, abordando cualquier posible problema de interacción con el usuario.
     \end{itemize}
 \end{itemize}
 
@@ -780,82 +528,73 @@ Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes n
 \noindent Las técnicas de prueba aplicadas en este proyecto incluyen una combinación de técnicas de caja negra, caja blanca y herramientas específicas para la usabilidad y accesibilidad, para garantizar una validación exhaustiva del editor \textit{Northwest}.
 
 \begin{itemize}
-    \item \textbf{Técnicas de Caja Negra}: Se enfocan en la funcionalidad del software sin considerar la estructura interna. Estas pruebas evalúan si el software actúa según lo esperado en diferentes situaciones.
-    
+    \item \textbf{Técnicas de Caja Negra}:
     \begin{itemize}
-        \item \textbf{Partición de Equivalencias}: Se utilizará para validar que el sistema maneja adecuadamente diferentes categorías de entrada (por ejemplo, valores válidos e inválidos en campos como oferta y demanda), agrupando los datos en clases de equivalencia. Esta técnica permite reducir el número de casos de prueba necesarios al probar solo una entrada representativa por clase.
-        \item \textbf{Valores Límite}: Para verificar que los algoritmos respondan correctamente en los extremos de los datos de entrada, asegurando que no ocurran errores con valores cercanos a los límites aceptables.
+        \item \textbf{Pruebas de Equivalencia de Clases}: Se utilizará para validar que el sistema maneja adecuadamente diferentes categorías de entrada (por ejemplo, valores válidos e inválidos en campos como oferta y demanda), agrupando los datos en clases de equivalencia. Esta técnica permite reducir el número de casos de prueba necesarios al probar solo una entrada representativa por clase.
     \end{itemize}
 
     \item \textbf{Técnicas para Usabilidad y Accesibilidad}:
     \begin{itemize}
         \item \textbf{Pruebas Basadas en Listas de Verificación (Checklists)}: Enfocadas en usabilidad, estas pruebas se basarán en listas de verificación construidas a partir de heurísticas de usabilidad de Nielsen para evaluar la facilidad de uso de la interfaz. La lista incluirá aspectos como claridad de la interfaz, accesibilidad de los elementos y consistencia en el diseño.
-        \item \textbf{Pruebas de Accesibilidad con Axe DevTools}: Para verificar el cumplimiento de criterios de accesibilidad, se empleará la herramienta Axe DevTools, que permite realizar pruebas automáticas de accesibilidad en la interfaz y detectar posibles problemas, como bajo contraste de colores, falta de etiquetas en elementos interactivos y problemas de navegabilidad. Los resultados obtenidos con Axe DevTools se documentarán en el reporte de accesibilidad, asegurando que el sistema cumpla con estándares de accesibilidad propuestos por la WCAG 2 AA.
+        \item \textbf{Pruebas de Accesibilidad con Axe DevTools}: Para verificar el cumplimiento de criterios de accesibilidad, se empleará la herramienta Axe DevTools, que permite realizar pruebas automáticas de accesibilidad en la interfaz y detectar posibles problemas, como bajo contraste de colores, falta de etiquetas en elementos interactivos y problemas de navegabilidad. Los resultados obtenidos con Axe DevTools se documentarán en el reporte de accesibilidad, asegurando que el sistema cumpla con estándares básicos de accesibilidad.
     \end{itemize}
 \end{itemize}
 
 
 \subsection{Criterios de Entrada y Salida}
 \begin{itemize}
-    \item \textbf{Criterios de Entrada}: Para iniciar la fase de pruebas, deben cumplirse las siguientes condiciones:
+    \item \textbf{Criterios de Entrada}: Las pruebas estarán listas para ejecutarse cuando:
     \begin{itemize}
         \item Todos los servicios de backend estén configurados y ejecutándose en Docker.
-        \item El entorno de frontend esté disponible, ya sea ejecutándose en Docker o localmente.
-        \item La interfaz de usuario y los servicios backend estén disponibles y comunicándose correctamente.
+        \item El entorno de frontend esté disponible, ya sea ejecutándose en Docker o localmente mediante el comando \texttt{npm run dev}.
+        \item El proyecto esté en la rama \texttt{develop} para garantizar la estabilidad del entorno de pruebas.
         \item Todos los requisitos de datos de prueba estén definidos, incluyendo configuraciones específicas para nodos, matrices y otros parámetros requeridos.
-        \item Acceso a las historias de usuario para revisar requisitos y objetivos específicos de cada funcionalidad.
-        \item Se tienen habilitadas las herramientas necesarias para realizar las pruebas, como: Postman, herramientas de accesibilidad y de pruebas de interfaz.
+        \item La interfaz de usuario y los servicios backend estén disponibles y funcionando correctamente.
     \end{itemize}
     
     \item \textbf{Criterios de Salida}: Las pruebas se considerarán finalizadas cuando:
     \begin{itemize}
-        \item Se hayan ejecutado en su totalidad los casos de prueba propuestos y se hayan documentado sus resultados y observaciones.
-        \item Se haya finalizado el análisis de defectos encontrados y todos los hallazgos estén documentados en el informe de resultados.
+        \item Se hayan ejecutado al menos cinco Test Cases definidos y se hayan documentado sus resultados y observaciones.
         \item Todos los criterios de éxito para alcanzar el nivel \texttt{AA} en la normativa WCAG de accesibilidad hayan sido evaluados y cumplidos.
         \item Se haya completado el checklist de usabilidad basado en las heurísticas de Nielsen, asegurando una experiencia de usuario óptima.
-        \item Todas las métricas definidas se hayan recopilado para el análisis de resultados.
+        \item Se haya finalizado el análisis de defectos encontrados y todos los hallazgos estén documentados en el informe de resultados.
+        \item Todas las métricas definidas se hayan recopilado y se haya generado el dashboard de métricas para el análisis de resultados.
     \end{itemize}
 \end{itemize}
 
 \subsection{Independencia de las Pruebas}
-Dado que parte del equipo de desarrollo participa también en el proceso de pruebas, las pruebas no serán completamente independientes. Para mitigar posibles conflictos de interés, se establecerán procedimientos claros para la documentación y revisión de resultados, asegurando que las pruebas sean objetivas y confiables.
+Dado que el equipo de desarrollo participa también en el proceso de pruebas, las pruebas no serán completamente independientes. En este caso, Oscar Campohermoso Berdeja, quien participó en el desarrollo, también asume los roles de gestión y ejecución de pruebas. Para mitigar posibles conflictos de interés, se establecerán procedimientos claros para la documentación y revisión de resultados, asegurando que las pruebas sean objetivas y confiables.
 
 \subsection{Métricas a Ser Recopiladas}
-Para evaluar la efectividad y calidad de las pruebas, se emplearán las siguientes métricas:
+Durante la ejecución de las pruebas, se recopilarán las siguientes métricas:
 \begin{itemize}
+    \item \textbf{Número de Test Cases ejecutados} (totales, exitosos, fallidos).
     \item \textbf{Tasa de éxito de Test Cases} (porcentaje de pruebas exitosas).
-    \item \textbf{Cobertura de requisitos del usuario:} (porcentaje de requisitos del usuario evaluados).
     \item \textbf{Número de defectos identificados y categorizados} (funcionalidad, usabilidad, accesibilidad).
     \item \textbf{Tiempo total de ejecución de pruebas}, para estimar esfuerzos futuros.
-    \item \textbf{Defectos encontrados vs. corregidos}, para estimar esfuerzos en la corrección futura.
-
 \end{itemize}
 
 \subsection{Requisitos de Datos de Prueba}
-Para llevar a cabo las pruebas, los datos de prueba deben incluir:
+Los datos de prueba deben cubrir diferentes configuraciones de oferta y demanda, incluyendo:
 \begin{itemize}
-    \item Incluir diversas configuraciones de tamaño y complejidad de los grafos para abarcar un amplio espectro de escenarios.
-    \item Incluir casos con restricciones específicas para evaluar la robustez y flexibilidad de los algoritmos.
-    \item Los arcos deben contener valores que cubran rangos amplios, incluyendo pesos negativos, valores extremos y valores cercanos a los límites aceptables, para simular distintas situaciones de uso.
-    \item Se deben incluir datos de entrada no válidos para probar la capacidad de los algoritmos de manejar errores de forma controlada y sin interrupciones.
+    \item Casos de oferta y demanda balanceados y no balanceados para verificar el ajuste automático del sistema.
+    \item Configuraciones de matriz de costos con diferentes rangos de valores para probar maximización y minimización.
+    \item Valores de entrada válidos e inválidos para evaluar la interfaz y los mensajes de error en el formulario de entrada.
 \end{itemize}
 
 \subsection{Requisitos del Entorno de Prueba}
-Los servicios necesarios en el entorno de prueba incluyen:
+El entorno de prueba se configurará utilizando Docker para asegurar una ejecución estable, aislada y reproducible de los servicios necesarios. Esto permite que el entorno sea fácilmente replicable y minimiza las variaciones en el comportamiento de las pruebas. Los servicios necesarios en el entorno de prueba incluyen:
 
 \begin{itemize}
     \item \textbf{Backend implementado en FastAPI}: Este servicio maneja las solicitudes de optimización de transporte y debe estar configurado para responder a peticiones de la interfaz y los cálculos de matrices, asegurando un procesamiento eficiente y consistente de datos.
     \item \textbf{Servicios de almacenamiento}: Configurados para gestionar y almacenar archivos de configuración en formato JSON. Estos servicios garantizan la persistencia de datos y permiten la carga y recuperación de grafos y matrices sin pérdida de información.
     \item \textbf{Frontend desarrollado en Vue.js}: La interfaz gráfica del editor, desarrollada en Vue.js, permite la interacción del usuario con los elementos del editor. El frontend puede ejecutarse en Docker o de manera local, asegurando accesibilidad a todas las funcionalidades requeridas para la prueba.
-    \item \textbf{Buscador web}: Disponibilidad de un buscador de donde pueda realizarse el acceso al sistema.
-    \item \textbf{Herramientas de prueba}: Estas herramientas (tales como Postman, Axe DevTools y Playwright) deben estar activas para la ejecución de los test cases.
-
 \end{itemize}
 
-Además, para asegurar la integridad del entorno, todos los servicios deben estar conectados mediante una red interna en Docker, permitiendo una comunicación fluida entre los contenedores. Esta configuración facilitará la ejecución de pruebas automáticas y manuales en un entorno controlado, simulado y con condiciones similares a las de producción.
+Además, para asegurar la integridad del entorno, todos los servicios deben estar conectados mediante una red interna en Docker, permitiendo una comunicación fluida y segura entre los contenedores. Esta configuración facilitará la ejecución de pruebas automáticas y manuales en un entorno controlado, simulado y con condiciones similares a las de producción.
 
-\subsection{Desviación de la Política de pruebas y estrategia de pruebas de la empresa}
-Este plan de pruebas sigue los lineamientos establecidos por la política y estrategia de pruebas de los propietarios del software, cumpliendo con los estándares de calidad y verificación esperados.
+
+
 \newpage
 % Referencias
 \renewcommand\refname{\large\textbf{Referencias}}
@@ -870,58 +609,23 @@ Este plan de pruebas sigue los lineamientos establecidos por la política y estr
 \subsection{Anexo A: Historias de Usuario}
 \begin{table}[!ht]
     \centering
-    \caption{Historia de Usuario HU001-SignUp/SignIn-01}
-    \label{tab:HU001-SignUp/SignIn-01}
-    \userstory{HU001-SignUp/SignIn-01}{usuario nuevo}{poder registrarme proporcionando mi correo electrónico, nombre de usuario y contraseña,}{crear una cuenta y acceder a la aplicación.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/82}
+    \caption{Historia de Usuario HU006-GraphEditor}
+    \label{tab:HU006-GraphEditor}
+    \userstory{HU006-GraphEditor}{usuario de la aplicación}{poder agregar nodos, aristas y editar sus valores,}{poder construir y modificar gráficos de manera interactiva y visual.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/50}
 \end{table}
 
 \begin{table}[!ht]
     \centering
-    \caption{Historia de Usuario HU002-SignUp/SignIn-02}
-    \label{tab:HU002-SignUp/SignIn-02}
-    \userstory{HU002-SignUp/SignIn-02}{usuario que se está registrando}{recibir mensajes de error claros si introduzco un correo electrónico inválido o una contraseña débil,}{saber qué debo corregir antes de completar mi registro.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/83}
+    \caption{Historia de Usuario HU007-AdjacentMatrix}
+    \label{tab:HU007-AdjacentMatrix}
+    \userstory{HU007-AdjacentMatrix}{usuario de la aplicación}{obtener la matriz de adyacencia del grafo generado,}{poder visualizar las conexiones entre los nodos de forma estructurada y utilizar esta información posteriormente.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/51}
 \end{table}
 
 \begin{table}[!ht]
     \centering
-    \caption{Historia de Usuario HU003-SignUp/SignIn-03}
-    \label{tab:HU003-SignUp/SignIn-03}
-    \userstory{HU003-SignUp/SignIn-03}{usuario registrado}{ingresar mi correo electrónico y contraseña en una pantalla de inicio de sesión,}{acceder a mi cuenta y a las funcionalidades de la aplicación.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/84}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU004-Johnson-01}
-    \label{tab:HU004-Johnson-01}
-    \userstory{HU004-Johnson-01}{usuario}{construir una representación de un problema de ruta crítica (CPM) como un grafo con actividades en las aristas,}{identificar la ruta crítica utilizando el algoritmo de Johnson.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/48}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU005-Johnson-02}
-    \label{tab:HU005-Johnson-02}
-    \userstory{HU005-Johnson-02}{usuario}{descargar un grafo como archivo local,}{poder continuarlo más tarde.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/49}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU006-GraphEditor-01}
-    \label{tab:HU006-GraphEditor-01}
-    \userstory{HU006-GraphEditor-01}{usuario de la aplicación}{poder agregar nodos, aristas y editar sus valores,}{poder construir y modificar gráficos de manera interactiva y visual.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/50}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU007-AdjacentMatrix-01}
-    \label{tab:HU007-AdjacentMatrix-01}
-    \userstory{HU007-AdjacentMatrix-01}{usuario de la aplicación}{obtener la matriz de adyacencia del grafo generado,}{poder visualizar las conexiones entre los nodos de forma estructurada y utilizar esta información posteriormente.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/51}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU008-FileManagement-01}
-    \label{tab:HU008-FileManagement-01}
-    \userstory{HU008-FileManagement-01}{usuario de la aplicación}{poder guardar el grafo realizado en formato JSON,}{cargarlo posteriormente y abrirlo en el mismo estado en el que lo dejé, conservando todos los nodos, aristas y configuraciones.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/52}
+    \caption{Historia de Usuario HU008-FileManagement}
+    \label{tab:HU008-FileManagement}
+    \userstory{HU008-FileManagement}{usuario de la aplicación}{poder guardar el grafo realizado en formato JSON,}{cargarlo posteriormente y abrirlo en el mismo estado en el que lo dejé, conservando todos los nodos, aristas y configuraciones.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/52}
 \end{table}
 
 \begin{table}[!ht]
@@ -945,162 +649,98 @@ Este plan de pruebas sigue los lineamientos establecidos por la política y estr
     \userstory{HU011-NorthWest-03}{usuario del sistema}{generar soluciones válidas para las diferentes configuraciones que me da el sistema,}{poder confiar en la validez de los resultados y obtener diferentes resultados basados en el criterio de optimización que elija.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/55}
 \end{table}
 
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU012-Kruskal-01}
-    \label{tab:HU012-Kruskal-01}
-    \userstory{HU012-Kruskal-01}{usuario de la aplicación}{poder aplicar el algoritmo de Kruskal en el editor de grafos para encontrar el árbol de expansión mínimo o máximo,}{visualizar y analizar la ruta óptima entre los nodos seleccionados y obtener el valor total de la suma de los pesos de dicha ruta.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/57}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU013-Dijkstra-01}
-    \label{tab:HU013-Dijkstra-01}
-    \userstory{HU013-Dijkstra-01}{usuario del sistema}{que el algoritmo de Dijkstra me devuelva el camino más corto en el grafo con la menor cantidad de recursos posibles,}{visualizar y analizar la ruta óptima entre los nodos seleccionados y obtener el valor total de la suma de los pesos de dicha ruta.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/58}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU014-InvalidData-01}
-    \label{tab:HU014-InvalidData-01}
-    \userstory{HU014-InvalidData-01}{usuario administrador del sistema}{que el sistema valide y maneje los datos no válidos que se ingresan en los algoritmos,}{poder corregir los errores rápidamente y que el sistema no presente fallos graves.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/59}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU015-Dashboard-01}
-    \label{tab:HU015-Dashboard-01}
-    \userstory{HU015-Dashboard-01}{usuario del sistema}{que la interfaz del dashboard se actualice al modificar los nodos o arcos en el grafo,}{poder ver reflejados mis cambios inmediatamente y asegurarme de que el algoritmo calcule con los datos actualizados.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/60}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU016-AccesibilityAndNavigation-01}
-    \label{tab:HU016-AccesibilityAndNavigation-01}
-    \userstory{HU016-AccesibilityAndNavigation-01}{usuario con discapacidades}{que el sistema sea accesible y que el contraste de los elementos de la interfaz cumpla con estándares de accesibilidad,}{poder utilizar el sistema sin barreras visuales y facilitar mi interacción.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/61}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU017-Compet-01}
-    \label{tab:HU017-Compet-01}
-    \userstory{HU017-Compet-01}{usuario del sistema}{que el algoritmo de Compet procese grafos que incluyen nodos y arcos con valores extremos y negativos,}{poder verificar rutas que consideren correctamente estos valores y obtener soluciones precisas y optimizadas.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/62}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU018-AccesibilityAndNavigation-02}
-    \label{tab:HU018-AccesibilityAndNavigation-02}
-    \userstory{HU018-AccesibilityAndNavigation-02}{usuario del sistema}{que cada algoritmo cuente con textos de ayuda o "helps" que expliquen su función y pasos de uso,}{poder comprender cómo funciona cada algoritmo y cómo utilizarlo correctamente en el sistema.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/63}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU019-Sorts-01}
-    \label{tab:HU019-Sorts-01}
-    \userstory{HU019-Sorts-01}{usuario que quiere ordenar datos}{ingresar una lista de números (o cargar un archivo),}{que el sistema los ordene usando diferentes algoritmos de ordenamiento disponibles.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/64}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU020-Sorts-02}
-    \label{tab:HU020-Sorts-02}
-    \userstory{HU020-Sorts-02}{usuario que está probando el módulo de ordenamiento}{poder elegir entre varios algoritmos de ordenamiento (Selection Sort, Insertion Sort, Merge Sort, Shell Sort),}{observar y entender cómo funciona cada método visualmente.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/65}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU021-Sorts-03}
-    \label{tab:HU021-Sorts-03}
-    \userstory{HU021-Sorts-03}{usuario interesado en el módulo de ordenamiento}{ver una animación paso a paso que me muestre cómo se ordenan los elementos,}{aprender cómo el algoritmo organiza los datos.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/66}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU022-Sorts-04}
-    \label{tab:HU022-Sorts-04}
-    \userstory{HU022-Sorts-04}{usuario que observa la visualización del ordenamiento}{ajustar la velocidad de la animación,}{adaptar el ritmo de la visualización a mis necesidades.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/67}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU023-Sorts-05}
-    \label{tab:HU023-Sorts-05}
-    \userstory{HU023-Sorts-05}{usuario que desea probar los algoritmos de ordenamiento con diferentes conjuntos de datos}{generar automáticamente una lista de números aleatorios en el módulo de Sorts,}{poder ordenar fácilmente un conjunto de datos sin tener que ingresarlos.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/68}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU024-BinaryTrees-01}
-    \label{tab:HU024-BinaryTrees-01}
-    \userstory{HU024-BinaryTrees-01}{usuario que trabaja con datos específicos}{poder guardar un arreglo y cargarlo en el módulo,}{reutilizar datos sin tener que ingresarlos manualmente cada vez.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/69}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU025-BinaryTrees-02}
-    \label{tab:HU025-BinaryTrees-02}
-    \userstory{HU025-BinaryTrees-02}{usuario que quiere trabajar con estructuras de datos}{ingresar valores para construir un árbol binario visual,}{entender y ver la estructura resultante.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/70}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU026-BinaryTrees-03}
-    \label{tab:HU026-BinaryTrees-03}
-    \userstory{HU026-BinaryTrees-03}{usuario que estudia los árboles binarios}{ver los recorridos del árbol (preorden, inorden, postorden),}{entender cómo funcionan las diferentes formas de recorrer un árbol binario.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/71}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU027-BinaryTrees-04}
-    \label{tab:HU027-BinaryTrees-04}
-    \userstory{HU027-BinaryTrees-04}{usuario que interactúa con árboles binarios}{poder ingresar valores para construir el árbol,}{visualizar y analizar la estructura resultante sin la necesidad de editar o eliminar nodos.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/72}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU028-BinaryTrees-05}
-    \label{tab:HU028-BinaryTrees-05}
-    \userstory{HU028-BinaryTrees-05}{usuario que quiere explorar la estructura completa del árbol}{centrar y ajustar el gráfico,}{ver el árbol completo de forma clara sin tener que desplazarme mucho.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/73}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU029-BinaryTrees-06}
-    \label{tab:HU029-BinaryTrees-06}
-    \userstory{HU029-BinaryTrees-06}{usuario que quiere preservar su trabajo}{guardar la estructura del árbol binario y cargarla en futuras sesiones,}{continuar trabajando en el árbol o analizarlo en otro momento.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/74}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU030-Asignation-01}
-    \label{tab:HU030-Asignation-01}
-    \userstory{HU030-Asignation-01}{usuario}{tener una opción,}{resolver la asignación.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/78}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU031-Asignation-02}
-    \label{tab:HU031-Asignation-02}
-    \userstory{HU031-Asignation-02}{usuario}{visualizar el resultado de la asignación,}{recibir una respuesta.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/79}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU032-Asignation-03}
-    \label{tab:HU032-Asignation-03}
-    \userstory{HU032-Asignation-03}{usuario}{elegir entre Maximizar o Minimizar la Asignación,}{recibir una respuesta acorde a mis necesidades.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/80}
-\end{table}
-
-\begin{table}[!ht]
-    \centering
-    \caption{Historia de Usuario HU033-Asignation-04}
-    \label{tab:HU033-Asignation-04}
-    \userstory{HU033-Asignation-04}{usuario}{tener la opción del Algoritmo de Asignación,}{poder usarlo.}{https://github.com/go-to-hell/proyecto-grafos-front/issues/81}
-\end{table}
-
 \clearpage
-\subsection{Anexo B: Diagramas de Flujo y Arquitectura}    
+\subsection{Anexo B: Diagramas de Flujo y Arquitectura}
+\begin{figure}[H]
+    \centering
+    \caption{Diagrama de Flujo de Proceso para el Editor Northwest} \label{tab:flowchart}
+    \begin{tikzpicture}[node distance=2cm, every node/.style={rounded corners, draw, align=center, minimum width=2.5cm, minimum height=1cm}]
+    
+        % Nodes
+        \node (start) [fill=green!20] {Inicio};
+        \node (createGraph) [below of=start, fill=blue!20] {Crear Grafo};
+        \node (editGraph) [below of=createGraph, trapezium, trapezium left angle=70, trapezium right angle=110, fill=blue!10] {Editar nombre de Nodos \\ y agregar pesos a las Aristas};
+        \node (saveProgress1) [right of=editGraph, xshift=5cm, trapezium, trapezium left angle=70, trapezium right angle=110, fill=yellow!10] {Guardar Avance};
+        \node (generateAdjMatrix) [below of=editGraph, fill=blue!20] {Generar Matriz \\ de Adyacencia};
+        \node (saveProgress2) [right of=generateAdjMatrix, xshift=5cm, trapezium, trapezium left angle=70, trapezium right angle=110, fill=yellow!10] {Guardar Avance};
+        \node (generateCostMatrix) [below of=generateAdjMatrix, fill=blue!20] {Generar Matriz \\ de Costos};
+        \node (fillDemandSupply) [below of=generateCostMatrix, trapezium, trapezium left angle=70, trapezium right angle=110, fill=blue!10] {Llenar datos de Demanda \\ y Oferta};
+        \node (optimize) [below of=fillDemandSupply, diamond, aspect=2, yshift=-1cm, fill=orange!10] {Optimización \\ de Soluciones};
+        \node (minimize) [below of=optimize, xshift=-3cm, fill=blue!20] {Minimizar};
+        \node (maximize) [below of=optimize, xshift=3cm, fill=blue!20] {Maximizar};
+        \node (resultMinimize) [below of=minimize, fill=blue!10, trapezium, trapezium left angle=70, trapezium right angle=110] {Resultado \\ Esperado};
+        \node (resultMaximize) [below of=maximize, fill=blue!10, trapezium, trapezium left angle=70, trapezium right angle=110] {Resultado \\ Esperado};
+        \node (end) [fill=red!20, below of=optimize, yshift=-2cm] {Fin};
+        
+        % Arrows
+        \draw[->] (start) -- (createGraph);
+        \draw[->] (createGraph) -- (editGraph);
+        \draw[->] (editGraph) -- (generateAdjMatrix);
+        \draw[->] (editGraph) -- (saveProgress1);
+        \draw[->] (generateAdjMatrix) -- (generateCostMatrix);
+        \draw[->] (generateAdjMatrix) -- (saveProgress2);
+        \draw[->] (generateCostMatrix) -- (fillDemandSupply);
+        \draw[->] (fillDemandSupply) -- (optimize);
+        \draw[->] (optimize) -- (minimize);
+        \draw[->] (optimize) -- (maximize);
+        \draw[->] (minimize) -- (resultMinimize);
+        \draw[->] (maximize) -- (resultMaximize);
+        \draw[->] (resultMinimize) -- (end);
+        \draw[->] (resultMaximize) -- (end);
+    \end{tikzpicture}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \caption{Diagrama de Flujo de Datos para el Editor Northwest} \label{tab:dataflow}
+    \begin{tikzpicture}[node distance=2cm]
+
+        % Define styles for each type of node
+        \tikzstyle{data} = [rectangle, minimum width=2.8cm, minimum height=0.8cm, text centered, draw=black, fill=purple!20]
+        \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!20]
+        \tikzstyle{io} = [rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=orange!20]
+        \tikzstyle{output} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+        \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=yellow!20]
+        
+        % Define arrow style
+        \tikzstyle{arrow} = [thick,->,>=stealth]
+        
+        % Nodes
+        \node (input) [io] {Entrada de Grafo};
+        \node (graphData) [data, below of=input] {Datos de Grafo};
+   
+        
+        % "Seleccionar Acción" se convierte en un nodo que muestra las posibles opciones
+        \node (action) [process, below of=graphData, yshift=-0.5cm] {Definición de Datos};
+        
+        % Nodos de acciones en paralelo
+        \node (adjMatrix) [process, below left of=action, xshift=-5cm, yshift=-1.5cm] {Generar Matriz de Adyacencia};
+        \node (costMatrix) [process, below right of=action, xshift=5cm, yshift=-1.5cm] {Generar Matriz de Costos};
+        \node (saveJson) [io, below of=action, yshift=-1cm] {Guardar Datos en JSON};
+        
+        % Conexión de las matrices y la optimización
+        \node (saveAdjMatrix) [io, below of=adjMatrix, yshift=-1cm] {Guardar Datos en JSON};
+        \node (optimize) [process, below of=costMatrix, yshift=-1cm] {Proceso de Datos};
+        \node (output) [output, below of=optimize, yshift=-0.5cm] {Solución Optimizada};
+        
+        % Arrows
+        \draw [arrow] (input) -- (graphData);
+        \draw [arrow] (graphData) -- (action);
+        
+        % Opciones disponibles después de "Acciones Disponibles"
+        \draw [arrow] (action) -- (adjMatrix);
+        \draw [arrow] (action) -- (costMatrix);
+        \draw [arrow] (action) -- (saveJson);
+        
+        % Continuación de flujos
+        \draw [arrow] (adjMatrix) -- (saveAdjMatrix);
+        \draw [arrow] (costMatrix) -- (optimize);
+        \draw [arrow] (optimize) -- (output);
+
+    \end{tikzpicture}
+\end{figure}
+
 \begin{figure}[H]
     \centering
     \label{fig:architecture}
