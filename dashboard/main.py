@@ -110,7 +110,7 @@ app.layout = dbc.Container([
                             "con Postman (Exitosos) ",
                             dbc.Badge("0", color="danger", className="ms-1"),
                             html.I(className="bi bi-x-circle-fill text-danger me-2"),
-                            "con Playwright (Fallidos)"
+                            "con Postman (Fallidos)"
                         ]),
                         html.Li([
                             dbc.Badge("6", color="success", className="ms-1"),
