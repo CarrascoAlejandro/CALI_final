@@ -1001,15 +1001,19 @@ Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes n
 Dado que parte del equipo de desarrollo participa también en el proceso de pruebas, las pruebas no serán completamente independientes. Para mitigar posibles conflictos de interés, se establecerán procedimientos claros para la documentación y revisión de resultados, asegurando que las pruebas sean objetivas y confiables.
 
 \subsection{Métricas a Ser Recopiladas}
-Para evaluar la efectividad y calidad de las pruebas, se emplearán las siguientes métricas:
-\begin{itemize}
-    \item \textbf{Tasa de éxito de Test Cases} (porcentaje de pruebas exitosas).
-    \item \textbf{Cobertura de requisitos del usuario:} (porcentaje de requisitos del usuario evaluados).
-    \item \textbf{Número de defectos identificados y categorizados} (funcionalidad, usabilidad, accesibilidad).
-    \item \textbf{Tiempo total de ejecución de pruebas}, para estimar esfuerzos futuros.
-    \item \textbf{Defectos encontrados vs. corregidos}, para estimar esfuerzos en la corrección futura.
+Para evaluar la efectividad y calidad de las pruebas, se recopilarán las siguientes métricas, incluyendo aquellas derivadas del análisis de resultados:
 
+\begin{itemize}
+    \item \textbf{Tasa de éxito de Test Cases}: Porcentaje de pruebas exitosas sobre el total de casos ejecutados.
+    \item \textbf{Cobertura de requisitos del usuario}: Porcentaje de historias de usuario cubiertas por pruebas realizadas.
+    \item \textbf{Número y tipo de defectos identificados}: Total de defectos encontrados, categorizados según funcionalidad, usabilidad y accesibilidad.
+    \item \textbf{Defectos resueltos vs. pendientes}: Proporción de defectos corregidos en relación con los detectados.
+    \item \textbf{Tiempo total de ejecución de pruebas}: Tiempo en horas-persona requerido para completar las pruebas.
+    \item \textbf{Automatización de Test Cases}: Resultados de pruebas automatizadas, diferenciando las herramientas utilizadas y los resultados obtenidos.
+    \item \textbf{Tiempo Medio de Reparación (TMR)}: Tiempo promedio requerido para corregir defectos críticos, desde su detección hasta su resolución.
+    \item \textbf{Impacto de accesibilidad}: Alertas detectadas y corregidas en análisis realizados con herramientas como \textit{Axe Dev Tools}.
 \end{itemize}
+
 
 \subsection{Requisitos de Datos de Prueba}
 Para llevar a cabo las pruebas, los datos de prueba deben incluir:
