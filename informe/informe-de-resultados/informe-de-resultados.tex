@@ -23,6 +23,8 @@
 \usepackage{amsmath}
 \usepackage{pgfgantt}
 \usepackage{apacite}
+\usepackage{pdfpages}
+
 \usetikzlibrary{shapes.geometric, arrows, positioning}
 
 \selectlanguage{spanish}
@@ -86,9 +88,7 @@
 \listoftables
 \newpage
 
-% Cuerpo
 \pagenumbering{arabic}
-\newpage
 \section{\large Resumen de la prueba}
 Durante el proceso de pruebas, se ejecutaron 40 casos de prueba que abarcaron las funcionalidades clave del sistema descritas en las 33 historias de usuario existentes. Del total de casos de prueba, 33 fueron aceptados sin observaciones, cumpliendo con los criterios de aceptación establecidos y asegurando el correcto funcionamiento esperado. Sin embargo, 9 casos fallaron debido a problemas encontrados durante la ejecución, los cuales fueron documentados y reportados para su resolución. 
 
@@ -271,7 +271,6 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 \end{figure}
 
 
-\pagenumbering{arabic}
 \newpage
 \section{\large Riesgos no mitigados, defectos no corregidos}
 
@@ -409,11 +408,10 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 
 \subsection{Evaluación de defectos}
 
-Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento (\textbf{ver anexo \ref{sec:anexos}}). La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. 
-% FIXME: poner el anexo correcto
+Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento. La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. 
 
 
-\pagenumbering{arabic}
+
 \newpage
 
 \section{Accesibilidad y usabilidad}
@@ -423,7 +421,7 @@ Las pruebas de accesibilidad realizadas con Axe DevTools revelaron varios proble
 
 Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave del sistema, como la visibilidad del estado, el control y la libertad del usuario, la consistencia y estándares, entre otros. En general, se detectaron áreas de mejora en términos de consistencia visual, retroalimentación al usuario, y navegación, los cuales se detallan en los resultados adjuntos. Cabe destacar que el sistema cumple con algunos de los principios fundamentales, como la flexibilidad y la visibilidad en varias de sus opciones, lo cual es positivo para la experiencia de usuario.
 
-\noindent Para una descripción completa de los resultados obtenidos en cada ítem evaluado, por favor consulte los detalles (\hyperref[tab:reporte_usabilidad]{en Anexos})
+\noindent Para una descripción completa de los resultados obtenidos en cada ítem evaluado, por favor consulte los detalles (\hyperref[tab:reporte_usabilidad]{en el Anexo A})
 
 \newpage
 \section{Conclusiones}
@@ -467,8 +465,14 @@ Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave d
 
 \newpage
 \section{\large Anexos}
+\label{sec:anexos}
 
-\subsection{Anexo A: Reporte de Defectos de Usabilidad} \label{tab:reporte_usabilidad}
+\subsection{Anexo A: Reporte de Defectos de Usabilidad}
+
+\includepdf[pages=-]{AccesibilityIssues.pdf}
+
+\clearpage
+\subsection{Anexo A: Reporte de Defectos de Usabilidad}
 
 \begin{longtable}{|>{\raggedright\arraybackslash}p{10cm}|>{\centering\arraybackslash}p{3cm}|}
     \caption{Plantilla de Reporte de Usabilidad} \label{tab:reporte_usabilidad} \\
