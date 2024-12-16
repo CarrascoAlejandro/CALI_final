@@ -23,6 +23,7 @@
 \usepackage{pgfgantt}
 \usepackage{apacite}
 \usepackage{array}
+\usepackage{pdfpages}
 
 \usetikzlibrary{shapes.geometric, arrows, positioning, fit, calc}
 \selectlanguage{spanish}
@@ -1336,7 +1337,9 @@ Este plan de pruebas sigue los lineamientos establecidos por la política y estr
     \textbf{Estado ejecución} & \\ \hline
 \end{longtable}
 
-\subsection{Anexo E: Plantilla de Historias de Usuario}
+\includepdf[pages=-]{plannedtests.pdf}
+
+\subsection{Anexo F: Plantilla de Historias de Usuario}
 
 \begin{table}[!ht]
     \centering
@@ -1345,6 +1348,7 @@ Este plan de pruebas sigue los lineamientos establecidos por la política y estr
     \userstory{HU001-Codigo-01}{usuario}{...,}{...}{https://github.com/go-to-hell/proyecto-grafos-front/issues/81}
 \end{table}
 
+\subsection{Anexo G: Plantilla de Reporte de Usabilidad}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{10cm}|>{\centering\arraybackslash}p{3cm}|}
     \caption{Plantilla de Reporte de Usabilidad} \label{tab:reporte_usabilidad} \\
     \hline
