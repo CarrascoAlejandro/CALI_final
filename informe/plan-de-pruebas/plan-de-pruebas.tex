@@ -23,6 +23,7 @@
 \usepackage{pgfgantt}
 \usepackage{apacite}
 \usepackage{array}
+\usepackage{pdfpages}
 
 \usetikzlibrary{shapes.geometric, arrows, positioning, fit, calc}
 \selectlanguage{spanish}
@@ -1335,8 +1336,13 @@ Este plan de pruebas sigue los lineamientos establecidos por la política y estr
     \textbf{Documentación} & \\ \hline
     \textbf{Estado ejecución} & \\ \hline
 \end{longtable}
+\addcontentsline{toc}{subsection}{Anexo E: Pruebas Planificadas}
 
-\subsection{Anexo E: Plantilla de Historias de Usuario}
+% Define the section but make it invisible
+
+\includepdf[pages=-]{plannedtests.pdf}
+\phantomsection
+\subsection{Anexo F: Plantilla de Historias de Usuario}
 
 \begin{table}[!ht]
     \centering
@@ -1345,6 +1351,7 @@ Este plan de pruebas sigue los lineamientos establecidos por la política y estr
     \userstory{HU001-Codigo-01}{usuario}{...,}{...}{https://github.com/go-to-hell/proyecto-grafos-front/issues/81}
 \end{table}
 
+\subsection{Anexo G: Plantilla de Reporte de Usabilidad}
 \begin{longtable}{|>{\raggedright\arraybackslash}p{10cm}|>{\centering\arraybackslash}p{3cm}|}
     \caption{Plantilla de Reporte de Usabilidad} \label{tab:reporte_usabilidad} \\
     \hline
@@ -1472,140 +1479,5 @@ Este plan de pruebas sigue los lineamientos establecidos por la política y estr
     1 &  \\ \hline
     2 &  \\ \hline
 \end{longtable}
-
-
-    
-\clearpage
-\subsection{Anexo D: Casos de Prueba}
-
-\small % Slightly reduce the font size for better fit
-\renewcommand{\arraystretch}{1.0} % Slightly reduce the space between rows
-\setlength{\tabcolsep}{4pt} % Reduce space between columns
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-  \caption{Caso de prueba 1} \label{tab:casos_prueba1} \\
-  \hline
-  \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-01, HU006-GraphEditor}} \\ \hline
-  \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-  \endfirsthead
-  \hline
-  \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-  \endhead
-  TC1-NW & 2024-10-17 & Comprobar que, al crear los nodos y las conexiones, se genera automáticamente la matriz con los valores correctos de los pesos. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Los pesos asignados deben ser valores numéricos válidos y compatibles con el sistema. & ALTA \\ \hline
-  \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-  S1-NW & Crear 3 nodos de origen y 3 nodos de destino en el editor. & 2024-10-17 & Los 6 nodos son creados correctamente sin errores. & \\ \hline
-  S2-NW & Asignar conexiones entre ellos con pesos específicos para cada enlace. & 2024-10-17 & Las conexiones se establecen correctamente y los pesos asignados son visibles en la interfaz. & \\ \hline
-  S3-NW & Abrir el formulario "Northwest" para ver la matriz generada. & 2024-10-17 & La matriz generada muestra los valores de los pesos correctamente, coincidiendo con los valores de las conexiones creadas. & \\ \hline
-\end{longtable}
-
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 2} \label{tab:casos_prueba2} \\
-    \hline
-    \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-01, HU010-NorthWest-02}} \\ \hline
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY } \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC2-NW & 2024-10-17 & Verificar el comportamiento del sistema cuando la suma de la oferta y la demanda no es igual. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Los pesos asignados deben ser valores numéricos válidos y compatibles con El sistema. La oferta total debe ser mayor que  la demanda. & MEDIA                                                                                                     \\ \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-2-NW & Ingresar 100 unidades de oferta para los nodos de origen & 2024-10-17 & El sistema debe aceptar la cantidad de oferta sin mostrar errores. & \\ \hline
-    S2-2-NW & Ingresar 80 unidades de demanda para los nodos de destino. & 2024-10-17 & El sistema debe aceptar la cantidad de demanda sin mostrar errores. & \\ \hline
-    S3-2-NW & Ejecutar el cálculo utilizando el método de la esquina noroeste. & 2024-10-17 & El sistema debe detectar que la oferta y la demanda no están balanceadas y ajustar automáticamente la solución (por ejemplo, añadiendo un nodo ficticio) para resolver el problema de transporte sin errores. & \\ \hline
-\end{longtable}
-
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 3} \label{tab:casos_prueba3} \\
-    \hline
-    \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU010-NorthWest-02, HU010-NorthWest-03}} \\ \hline
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY } \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC3-NW & 2024-10-17 & Verificar que las opciones de maximizar y minimizar generen soluciones distintas. & El editor debe estar configurado correctamente, permitiendo crear y conectar nodos. Pesos numéricos válidos y matriz de costos conocida. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-3-NW & Configurar la matriz de costos. & 2024-10-17 & El sistema acepta la matriz de costos sin errores y la muestra correctamente. & \\ \hline
-    S2-3-NW & Seleccionar maximización y calcular. & 2024-10-17 & El sistema calcula y muestra la solución sin errores. &  \\ \hline
-    S3-3-NW & Verificar la solución en maximización. & 2024-10-17 & Solución visible y accesible en la interfaz. & \\ \hline
-    S4-3-NW & Seleccionar minimización y calcular. & 2024-10-17 & El sistema calcula y muestra la solución sin errores. & \\ \hline
-    S5-3-NW & Comparar ambas soluciones. & 2024-10-17 & \\ \hline
-\end{longtable}
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 4} \label{tab:casos_prueba4} \\
-    \hline
-    \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-01, HU010-NorthWest-03}} \\ \hline
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC4-NW & 2024-10-17 & Verificar que el sistema siempre genere una solución factible para diferentes configuraciones de oferta y demanda. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Los pesos asignados deben ser valores numéricos válidos y compatibles con El sistema. Varias configuraciones de oferta y demanda, incluyendo configuraciones balanceadas y no balanceadas. & ALTA                                                                                           \\ \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-4-NW & Ingresar diferentes valores de oferta y demanda (balanceados y no balanceados). & 2024-10-17 & El sistema debe aceptar los valores de oferta y demanda sin errores, independientemente de si están balanceados. &  \\ \hline
-    S2-4-NW & Ejecutar el cálculo del problema de transporte utilizando el módulo "Northwest". & 2024-10-17 & El sistema debe generar una solución válida y consistente, sin importar si la configuración de oferta y demanda está balanceada. & \\ \hline
-\end{longtable}
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 5} \label{tab:casos_prueba5} \\
-    \hline
-    \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU009-NorthWest-02}} \\ \hline
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC5-NW & 2024-10-17 & Asegurarse de que el formulario de entrada de datos sea intuitivo y que los campos obligatorios estén correctamente validados. & El editor debe estar configurado correctamente. Los nodos de origen y destino deben poder ser creados y conectados sin errores. Datos válidos e inválidos en el formulario de entrada, incluyendo campos vacíos y datos no numéricos en los campos de oferta y demanda. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-5-NW & Intentar enviar el formulario con algunos campos vacíos. & 2024-10-17 & El sistema debe mostrar mensajes de error específicos indicando que los campos obligatorios están vacíos. & \\ \hline
-    S2-5-NW & Ingresar datos no numéricos en los campos de oferta y demanda y enviar el formulario. & 2024-10-17 & El sistema debe mostrar mensajes de error indicando que los valores en oferta y demanda deben ser numéricos. & \\ \hline
-    S3-5-NW & Ingresar datos válidos en todos los campos y enviar el formulario, sin demanda y oferta. & 2024-10-17 & El sistema debe lanzar un mensaje de error porque los datos de demanda y oferta deberían ser obligatorios. & \\ \hline
-\end{longtable}
-
-\small % Slightly reduce the font size for better fit
-\renewcommand{\arraystretch}{1.0} % Slightly reduce the space between rows
-\setlength{\tabcolsep}{4pt} % Reduce space between columns
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 6} \label{tab:casos_prueba6} \\
-    \hline
-    \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU006-GraphEditor}} \\ \hline
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC6-NW & 2024-10-17 & Verificar que el editor permita a los usuarios definir nodos y conexiones con pesos, y que los grafos se visualicen de forma intuitiva en la interfaz. & Configuración inicial del editor sin grafos; usuarios con capacidad de definir nodos y conexiones. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-6-NW & Definir un nodo en el editor. & 2024-10-17 & El nodo debe aparecer inmediatamente en la visualización gráfica del editor. & \\ \hline
-    S2-6-NW & Ingresar datos válidos en todos los campos y enviar el formulario. & 2024-10-17 & La conexión debe visualizarse en el grafo en tiempo real, mostrando el peso asignado. & \\ \hline
-    S3-6-NW & Intentar crear una conexión con datos inconsistentes (por ejemplo, un peso no numérico). & 2024-10-17 & El sistema debe notificar al usuario sobre la inconsistencia en la entrada de datos, previniendo errores en la creación del grafo. & \\ \hline
-    S4-6-NW & Modificar la conexión o el nodo existente. & 2024-10-17 & La visualización del grafo debe actualizarse de inmediato para reflejar los cambios realizados. & \\ \hline
-\end{longtable}
-
-\small % Slightly reduce the font size for better fit
-\renewcommand{\arraystretch}{1.0} % Slightly reduce the space between rows
-\setlength{\tabcolsep}{4pt} % Reduce space between columns
-
-\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \caption{Caso de prueba 7} \label{tab:casos_prueba7} \\
-    \hline
-    \multicolumn{5}{|l|}{\textbf{USER STORY REFERENCE: HU008-FileManagement}} \\ \hline
-    \textbf{TEST CASE ID} & \textbf{TEST DATE} & \textbf{TEST DESCRIPTION} & \textbf{TEST CONDITIONS} & \textbf{SEVERITY} \\ \hline
-    \endfirsthead
-    \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    \endhead
-    TC7-NW & 2024-10-17 & Verificar que el editor permita cargar grafos desde el computador en formato JSON y descargar los grafos creados, con notificaciones de éxito o error en las operaciones. & Grafo guardado en formato JSON en el computador; editor configurado para cargar y descargar grafos. & ALTA \\ \hline
-    \textbf{STEP ID} & \textbf{STEP DESCRIPTION} & \textbf{TEST DATE} & \textbf{EXPECTED RESULTS} & \textbf{ACTUAL RESULTS} \\ \hline
-    S1-7-NW & Cargar un archivo JSON de grafo desde el computador al editor. & 2024-10-17 & El grafo debe aparecer correctamente en el editor, conservando todos los nodos y conexiones, y el sistema debe notificar que la carga fue exitosa. & \\ \hline
-    S2-7-NW & Intentar cargar un archivo JSON con datos incompletos o en formato incorrecto. & 2024-10-17 & El sistema debe mostrar un mensaje de error indicando el problema con el archivo, sin cargar datos incompletos en el editor. & \\ \hline
-    S3-7-NW & Descargar el grafo actualmente visualizado en el editor en formato JSON. & 2024-10-17 & El archivo debe descargarse correctamente, conservando toda la información de nodos y conexiones, y el sistema debe notificar que la descarga fue exitosa. & \\ \hline
-\end{longtable}
-
 
 \end{document}

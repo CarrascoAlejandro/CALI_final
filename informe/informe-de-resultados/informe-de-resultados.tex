@@ -23,6 +23,8 @@
 \usepackage{amsmath}
 \usepackage{pgfgantt}
 \usepackage{apacite}
+\usepackage{pdfpages}
+
 \usetikzlibrary{shapes.geometric, arrows, positioning}
 
 \selectlanguage{spanish}
@@ -86,9 +88,7 @@
 \listoftables
 \newpage
 
-% Cuerpo
 \pagenumbering{arabic}
-\newpage
 \section{\large Resumen de la prueba}
 Durante el proceso de pruebas, se ejecutaron 40 casos de prueba que abarcaron las funcionalidades clave del sistema descritas en las 33 historias de usuario existentes. Del total de casos de prueba, 33 fueron aceptados sin observaciones, cumpliendo con los criterios de aceptación establecidos y asegurando el correcto funcionamiento esperado. Sin embargo, 9 casos fallaron debido a problemas encontrados durante la ejecución, los cuales fueron documentados y reportados para su resolución. 
 
@@ -271,7 +271,6 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 \end{figure}
 
 
-\pagenumbering{arabic}
 \newpage
 \section{\large Riesgos no mitigados, defectos no corregidos}
 
@@ -411,9 +410,10 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 (
 Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento \textbf{ver Anexo B: Reporte de defectos}). La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. 
 
+Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento. La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. \textbf{ver Anexo B: Reporte de defectos})
 
 
-\pagenumbering{arabic}
+
 \newpage
 
 \section{Accesibilidad y usabilidad}
@@ -467,7 +467,13 @@ Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave d
 
 \newpage
 \section{\large Anexos}
+\label{sec:anexos}
 
+\subsection{Anexo A: Reporte de Defectos de Usabilidad}
+
+\includepdf[pages=-]{AccesibilityIssues.pdf}
+
+\clearpage
 \subsection{Anexo A: Reporte de Defectos de Usabilidad}
 
 \begin{longtable}{|>{\raggedright\arraybackslash}p{10cm}|>{\centering\arraybackslash}p{3cm}|}
