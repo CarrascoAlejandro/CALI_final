@@ -9,8 +9,8 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.COSMO])
 
 # Datos principales para el dashboard
 kpi_data = {
-    "Número de Total de Test Cases ejecutados": 42,
-    "Número de defectos identificados": 28,
+    "Número de Total de Test Cases ejecutados": 40,
+    "Número de defectos identificados": 30,
     "Tiempo total de ejecución de pruebas": "15 horas-persona"
 }
 
@@ -21,9 +21,9 @@ defect_data = pd.DataFrame({
         "Cuando se intenta solucionar el algoritmo de Johnson con un grafo incorrecto no sucede nada",
         "Cuando se intenta solucionar un grafo con un bucle, el algoritmo entra en un loop infinito"
     ],
-    "Fecha detección": ["2024-03-15", "2024-06-01", "2024-10-15"],
-    "Fecha resolución": ["2024-10-16", "2024-10-26", "2024-10-27"],
-    "TMR (días)": [215, 147, 12],
+    "Fecha detección": ["2024-03-15", "2024-10-15", "2024-10-15"],
+    "Fecha resolución": ["2024-06-01", "2024-10-27", "2024-10-27"],
+    "TMR (días)": [78, 11, 11],
     "Estado ejecución": ["Solved", "Solved", "Solved"]
 })
 
@@ -61,7 +61,7 @@ accessibility_fig = px.line(
 
 test_cases_data = pd.DataFrame({
     "Resultado": ["Exitosos", "Fallidos"],
-    "Cantidad": [33, 9]
+    "Cantidad": [33, 7]
 })
 
 test_cases_fig = px.pie(
@@ -102,13 +102,13 @@ app.layout = dbc.Container([
             dbc.Card([
                 dbc.CardBody([
                     html.H4("Test Cases Automatizados", className="card-title"),
-                    html.P("14 Test Cases están ahora automatizados:", className="card-text"),
+                    html.P("12 Test Cases están ahora automatizados:", className="card-text"),
                     html.Ul([
                         html.Li([
                             dbc.Badge("4", color="success", className="ms-1"),
                             html.I(className="bi bi-check-circle-fill text-success me-2"),
                             "con Postman (Exitosos) ",
-                            dbc.Badge("2", color="danger", className="ms-1"),
+                            dbc.Badge("0", color="danger", className="ms-1"),
                             html.I(className="bi bi-x-circle-fill text-danger me-2"),
                             "con Postman (Fallidos)"
                         ]),

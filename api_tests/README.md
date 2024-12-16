@@ -12,7 +12,7 @@ npm install --save-dev newman
 
 ### Correr pruebas
 ```bash
-newman run api_tests/ALGO-endpointTesting.postman_collection.json -e api_tests/Final_Calidad_Env.postman_environment.json
+newman run ALGO-endpointTesting.postman_collection.json -e Final_Calidad_Env.postman_environment
 ```
 ## Tareas Pendientes
 

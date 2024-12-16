@@ -42,7 +42,7 @@
 \affiliation{Universidad Católica Boliviana}
 \course{SIS-312: Gestión de Calidad de Sistemas}
 \professor{Lic. Cecilia Alvarado Monrroy}
-\duedate{\textbf{28 de octubre de 2024}}
+\duedate{\textbf{15 de diciembre de 2024}}
 
 \newcommand{\userstory}[5]{ % Change from 4 to 5 arguments
     \begin{center}
@@ -88,13 +88,17 @@
 
 % Cuerpo
 \pagenumbering{arabic}
-\section{\large Introducción}
+\section{\large Introducci\'on}
 
-\noindent El sistema desarrollado en la materia de Análisis de Algoritmos durante el periodo 1-2024 permite probar y analizar diversos tipos de algoritmos, cada uno implementado en un editor especializado. Estos editores están diseñados para adaptarse a las características específicas de cada algoritmo, permitiendo diferentes enfoques según los requisitos: algunos permiten la creación y visualización de grafos y la generación de matrices de adyacencia, mientras que otros, como los algoritmos de ordenamiento, se centran en la manipulación y visualización de datos ordenados. Este enfoque modular facilita un análisis práctico y enfocado en las propiedades de cada tipo de algoritmo.
+\noindent Este plan de pruebas tiene como objetivo definir y organizar las actividades de prueba para los m\'odulos principales de la aplicaci\'on \textit{Bajo Esquina}. Esta aplicaci\'on es un editor de grafos que ofrece una variedad de herramientas avanzadas para la creaci\'on, manipulaci\'on y an\'alisis de estructuras de grafos, as\'i como funcionalidades orientadas a la resoluci\'on de problemas reales en el \'ambito de los grafos y las estructuras de datos.
 
-\noindent El \textit{editor Northwest}, uno de los editores desarrollados, está diseñado específicamente para el método de la esquina noroeste (\textit{Northwest Corner Method}), una técnica utilizada para resolver problemas de transporte y asignación de recursos. Este método ofrece una solución inicial factible al distribuir suministros y demandas de manera efectiva, lo cual facilita la posterior optimización del costo total de transporte.
+\noindent Entre sus caracter\'isticas destacadas, la aplicaci\'on incluye un m\'odulo optimizado para calcular rutas \'optimas en la red de telef\'ericos de la ciudad de La Paz, Bolivia. Este m\'odulo est\'a dise\~nado para ayudar a los usuarios a optimizar trayectos considerando criterios como costo y tiempo. Adem\'as, la aplicaci\'on incluye diversas funcionalidades para la generaci\'on de grafos personalizados, la representaci\'on de matrices de adyacencia y costos, y una interfaz amigable para facilitar la interacci\'on con sus herramientas.
 
-\noindent La elección de este editor para el plan de pruebas responde al interés de explorar cómo este algoritmo puede generar soluciones iniciales basadas en condiciones específicas de oferta y demanda. Además, el editor Northwest permite la manipulación visual de grafos y la generación de la matriz de adyacencia, convirtiéndolo en una herramienta práctica tanto para el análisis como para la resolución de problemas de asignación. A continuación, se presenta un plan de pruebas para asegurar la funcionalidad completa y la robustez del editor Northwest.
+\noindent El prop\'osito de este plan de pruebas es asegurar que los m\'odulos desarrollados de distintos algoritmos implementados cumplan con los requisitos funcionales, ofrezcan una experiencia de usuario fluida y proporcionen resultados precisos y eficientes. Este enfoque busca garantizar la calidad del sistema mediante pruebas que eval\'uen su funcionalidad, robustez y usabilidad, asegurando que cumpla con los objetivos establecidos y satisfaga las expectativas de los usuarios finales.
+
+% \noindent El \textit{editor Northwest}, uno de los editores desarrollados, está diseñado específicamente para el método de la esquina noroeste (\textit{Northwest Corner Method}), una técnica utilizada para resolver problemas de transporte y asignación de recursos. Este método ofrece una solución inicial factible al distribuir suministros y demandas de manera efectiva, lo cual facilita la posterior optimización del costo total de transporte.
+
+% \noindent La elección de este editor para el plan de pruebas responde al interés de explorar cómo este algoritmo puede generar soluciones iniciales basadas en condiciones específicas de oferta y demanda. Además, el editor Northwest permite la manipulación visual de grafos y la generación de la matriz de adyacencia, convirtiéndolo en una herramienta práctica tanto para el análisis como para la resolución de problemas de asignación. A continuación, se presenta un plan de pruebas para asegurar la funcionalidad completa y la robustez del editor Northwest.
 
 \subsection{Alcance del Plan de Pruebas}
 
@@ -182,7 +186,7 @@ El presente plan de pruebas contempla diversas limitaciones que restringen el al
 
 \subsection{Base de la Prueba}
 \subsubsection{Descripción del Sistema}
-El proyecto Sistema de Grafos y Algoritmos es una aplicación web que permite a los usuarios crear, editar y visualizar grafos, así como realizar análisis a través de algoritmos clave en el ámbito de la teoría de grafos. Los usuarios pueden interactuar con el sistema a través de un editor visual, el cual les permite construir grafos al agregar, modificar o eliminar nodos y aristas.
+El proyecto "Bajo Esquina" es un sistema web que permite a los usuarios crear, editar y visualizar grafos, así como realizar análisis a través de algoritmos clave en el ámbito de la teoría de grafos. Los usuarios pueden interactuar con el sistema a través de un editor visual, el cual les permite construir grafos al agregar, modificar o eliminar nodos y aristas.
 
 \noindent El objetivo es ofrecer una plataforma que no solo facilite la creación y manipulación de grafos, sino que también permita aplicar algoritmos relevantes, manteniendo la integridad y precisión en los cálculos y la representación visual. Este sistema está diseñado para estudiantes, profesionales y cualquier usuario interesado en la teoría de grafos y su aplicación práctica, brindando una experiencia de usuario interactiva, intuitiva y funcional.
 
@@ -997,15 +1001,19 @@ Para asegurar la calidad del sistema, se realizarán pruebas en los siguientes n
 Dado que parte del equipo de desarrollo participa también en el proceso de pruebas, las pruebas no serán completamente independientes. Para mitigar posibles conflictos de interés, se establecerán procedimientos claros para la documentación y revisión de resultados, asegurando que las pruebas sean objetivas y confiables.
 
 \subsection{Métricas a Ser Recopiladas}
-Para evaluar la efectividad y calidad de las pruebas, se emplearán las siguientes métricas:
-\begin{itemize}
-    \item \textbf{Tasa de éxito de Test Cases} (porcentaje de pruebas exitosas).
-    \item \textbf{Cobertura de requisitos del usuario:} (porcentaje de requisitos del usuario evaluados).
-    \item \textbf{Número de defectos identificados y categorizados} (funcionalidad, usabilidad, accesibilidad).
-    \item \textbf{Tiempo total de ejecución de pruebas}, para estimar esfuerzos futuros.
-    \item \textbf{Defectos encontrados vs. corregidos}, para estimar esfuerzos en la corrección futura.
+Para evaluar la efectividad y calidad de las pruebas, se recopilarán las siguientes métricas, incluyendo aquellas derivadas del análisis de resultados:
 
+\begin{itemize}
+    \item \textbf{Tasa de éxito de Test Cases}: Porcentaje de pruebas exitosas sobre el total de casos ejecutados.
+    \item \textbf{Cobertura de requisitos del usuario}: Porcentaje de historias de usuario cubiertas por pruebas realizadas.
+    \item \textbf{Número y tipo de defectos identificados}: Total de defectos encontrados, categorizados según funcionalidad, usabilidad y accesibilidad.
+    \item \textbf{Defectos resueltos vs. pendientes}: Proporción de defectos corregidos en relación con los detectados.
+    \item \textbf{Tiempo total de ejecución de pruebas}: Tiempo en horas-persona requerido para completar las pruebas.
+    \item \textbf{Automatización de Test Cases}: Resultados de pruebas automatizadas, diferenciando las herramientas utilizadas y los resultados obtenidos.
+    \item \textbf{Tiempo Medio de Reparación (TMR)}: Tiempo promedio requerido para corregir defectos críticos, desde su detección hasta su resolución.
+    \item \textbf{Impacto de accesibilidad}: Alertas detectadas y corregidas en análisis realizados con herramientas como \textit{Axe Dev Tools}.
 \end{itemize}
+
 
 \subsection{Requisitos de Datos de Prueba}
 Para llevar a cabo las pruebas, los datos de prueba deben incluir:
