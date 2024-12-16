@@ -465,16 +465,42 @@ Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave d
 
 
 
-\newpage
-\section{\large Anexos}
+\addcontentsline{toc}{section}{Anexos}
+\phantomsection
+
 \label{sec:anexos}
 
-\subsection{Anexo A: Reporte de Defectos de Usabilidad}
+\addcontentsline{toc}{subsection}{Anexo A: Detalle Pruebas Ejecutadas}
+
+% Define the section but make it invisible
+
+\includepdf[pages=-]{tests.pdf}
+\phantomsection
+
+
+\addcontentsline{toc}{subsection}{Anexo B - Bugs identificados}
+
+% Define the section but make it invisible
+
+\includepdf[pages=-]{bugs.pdf}
+\phantomsection
+
+\addcontentsline{toc}{subsection}{Anexo C - Bugs Resueltos}
+
+% Define the section but make it invisible
+
+\includepdf[pages=-]{solvedBugs.pdf}
+\phantomsection
+
+\addcontentsline{toc}{subsection}{Anexo D - Reporte Análisis de Accesibilidad}
+
+% Define the section but make it invisible
 
 \includepdf[pages=-]{AccesibilityIssues.pdf}
+\phantomsection
 
 \clearpage
-\subsection{Anexo A: Reporte de Defectos de Usabilidad}
+\subsection{Anexo E: Reporte de Defectos de Usabilidad}
 
 \begin{longtable}{|>{\raggedright\arraybackslash}p{10cm}|>{\centering\arraybackslash}p{3cm}|}
     \caption{Plantilla de Reporte de Usabilidad} \label{tab:reporte_usabilidad} \\
