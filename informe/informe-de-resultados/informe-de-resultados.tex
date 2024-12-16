@@ -222,23 +222,38 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 
 \subsection{Resultados de las Métricas del Plan de Pruebas}
 
-\noindent Los resultados del plan de pruebas reflejan los siguientes indicadores clave:  
+\noindent Los resultados del plan de pruebas reflejan los siguientes indicadores clave:
 
 \begin{itemize}
-    \item \textbf{Número total de Test Cases ejecutados}: Se ejecutaron 40 casos de prueba, de los cuales el \textbf{82.5\%} (33 casos) fueron exitosos, mientras que 7 resultaron fallidos.
-    \item \textbf{Defectos identificados}: Durante las pruebas, se encontraron un total de 30 defectos. De estos, se corrigieron 3, representando un \textbf{10\% de bugs resueltos}.
-    \item \textbf{Tiempo total de ejecución}: Las pruebas requirieron un total de 15 horas-persona.
-    \item \textbf{Cobertura de pruebas}: 
+    \item \textbf{Número total de Test Cases ejecutados}:  
+    Se ejecutaron \textbf{40 casos de prueba}, de los cuales el \textbf{82.5\%} (33 casos) fueron exitosos, mientras que 7 resultaron fallidos.  
+    \textit{Este porcentaje muestra un alto grado de estabilidad en el sistema, aunque los casos fallidos indican áreas que requieren corrección para garantizar un funcionamiento completo.}
+
+    \item \textbf{Defectos identificados}:  
+    Durante las pruebas, se encontraron un total de \textbf{30 defectos}. De estos, se corrigieron \textbf{3}, representando un \textbf{10\% de bugs resueltos}.  
+    \textit{El bajo porcentaje de resolución de defectos sugiere que aún se necesita priorizar la corrección de errores para mejorar la calidad y estabilidad del sistema.}
+
+    \item \textbf{Tiempo total de ejecución}:  
+    Las pruebas requirieron un total de \textbf{15 horas-persona}.  
+    \textit{Este tiempo refleja un esfuerzo considerable en la ejecución de pruebas y demuestra la dedicación del equipo para validar el funcionamiento del sistema dentro de los plazos establecidos.}
+
+    \item \textbf{Cobertura de pruebas}:  
     \begin{itemize}
-        \item Historias de Usuario cubiertas: 26  
-        \item Historias de Usuario no cubiertas: 7
+        \item \textbf{Historias de Usuario cubiertas}: 26  
+        \textit{La cobertura del 79\% de las historias de usuario indica un alcance robusto de las pruebas funcionales en las funcionalidades clave del sistema.}
+        \item \textbf{Historias de Usuario no cubiertas}: 7  
+        \textit{Las historias de usuario no cubiertas representan áreas pendientes que deben ser validadas en futuras iteraciones para garantizar la completitud del producto.}
     \end{itemize}
-    \item \textbf{Automatización de Test Cases}: 
+
+    \item \textbf{Automatización de Test Cases}:  
     \begin{itemize}
-        \item Usando \textbf{Postman}: 4 casos exitosos, 0 fallidos.
-        \item Usando \textbf{Playwright}: 6 casos exitosos, 2 fallidos.
+        \item \textbf{Usando Postman}: 4 casos exitosos, 0 fallidos.  
+        \textit{Los resultados de Postman reflejan que las pruebas automatizadas para las APIs se ejecutaron con éxito y sin errores, lo que indica estabilidad en los servicios backend.}
+        \item \textbf{Usando Playwright}: 6 casos exitosos, 2 fallidos.  
+        \textit{El desempeño en Playwright sugiere que la automatización de pruebas de interfaz es efectiva en su mayoría, aunque los casos fallidos resaltan problemas específicos que deben abordarse.}
     \end{itemize}
 \end{itemize}
+
 
 \noindent Respecto a los defectos, el análisis del \textit{Tiempo Medio de Reparación} (\textit{TMR}) muestra que el promedio fue de \textbf{33 días y 8 horas}. La siguiente tabla detalla los defectos críticos identificados, sus fechas de resolución y el tiempo requerido para su corrección:  
 
