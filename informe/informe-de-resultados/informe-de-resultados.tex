@@ -23,6 +23,8 @@
 \usepackage{amsmath}
 \usepackage{pgfgantt}
 \usepackage{apacite}
+\usepackage{pdfpages}
+
 \usetikzlibrary{shapes.geometric, arrows, positioning}
 
 \selectlanguage{spanish}
@@ -86,9 +88,7 @@
 \listoftables
 \newpage
 
-% Cuerpo
 \pagenumbering{arabic}
-\newpage
 \section{\large Resumen de la prueba}
 Durante el proceso de pruebas, se ejecutaron 40 casos de prueba que abarcaron las funcionalidades clave del sistema descritas en las 33 historias de usuario existentes. Del total de casos de prueba, 33 fueron aceptados sin observaciones, cumpliendo con los criterios de aceptación establecidos y asegurando el correcto funcionamiento esperado. Sin embargo, 9 casos fallaron debido a problemas encontrados durante la ejecución, los cuales fueron documentados y reportados para su resolución. 
 
@@ -96,7 +96,7 @@ A lo largo de las pruebas, se identificaron 30 defectos en los distintos módulo
 
 Además, se identificaron 7 alertas de accesibilidad, agrupadas según el criterio WCAG afectado, lo cual refleja la evaluación de la accesibilidad del sistema. 
 
-\noindent Todos los reportes mencionados (Test Cases, reporte de errores y alertas de accesibilidad) se encuentran en los anexos.
+\noindent Todos los reportes mencionados (Test Cases, reporte de errores y alertas de accesibilidad) se encuentran en la sección de anexos.
 
 \section{\large Evaluación de la prueba}
 
@@ -286,7 +286,6 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 \end{figure}
 
 
-\pagenumbering{arabic}
 \newpage
 \section{\large Riesgos no mitigados, defectos no corregidos}
 
@@ -296,7 +295,7 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 
 \noindent Después de la evaluación completa del sistema y la ejecución de todas las pruebas planificadas, no se identificaron riesgos adicionales. Los riesgos previamente identificados se abordaron de forma adecuada mediante la implementación de controles y la ejecución de pruebas específicas, lo que permitió mitigar su impacto y probabilidad de ocurrencia.
 
-
+\noindent Los casos de prueba a mencionarse se encuentran en el \textbf{Anexo A: Detalle Pruebas Ejecutadas})
 \subsubsection{Riesgos del Producto}
 
 \begin{itemize}
@@ -423,22 +422,23 @@ A lo largo de las pruebas, se presentaron diversos impedimentos que requirieron 
 \end{itemize}
 
 \subsection{Evaluación de defectos}
+(
+Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento \textbf{ver Anexo B: Reporte de defectos}). La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. 
 
-Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento (\textbf{ver anexo \ref{sec:anexos}}). La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. 
-% FIXME: poner el anexo correcto
+Tras la ejecución de las pruebas, se identificaron un total de 30 defectos en el sistema. Estos defectos han sido documentados y reportados de manera detallada en la sección de anexos de este documento. La atención a estos defectos es fundamental para garantizar el correcto funcionamiento y la confiabilidad del sistema en futuras evaluaciones. \textbf{ver Anexo B: Reporte de defectos})
 
 
-\pagenumbering{arabic}
+
 \newpage
 
 \section{Accesibilidad y usabilidad}
 
-Las pruebas de accesibilidad realizadas con Axe DevTools revelaron varios problemas de accesibilidad, aunque en general, la cantidad de defectos encontrados no fue excesiva, lo cual es un indicio de que el sistema ya cuenta con una base relativamente sólida en términos de accesibilidad. Las pruebas que se llevaron a cabo se encuentran detalladas en el reporte de accesibilidad adjunto en anexos.
+Las pruebas de accesibilidad realizadas con Axe DevTools revelaron varios problemas de accesibilidad, aunque en general, la cantidad de defectos encontrados no fue excesiva, lo cual es un indicio de que el sistema ya cuenta con una base relativamente sólida en términos de accesibilidad. Las pruebas que se llevaron a cabo se encuentran detalladas en el reporte de accesibilidad adjunto en anexos. (\textbf{ver Anexo D: Reporte de Análisis de Accesibilidad}) y  (\textbf{Anexo A: Reporte de Defectos de Usabilidad})
 \subsection{Resultados Obtenidos en Pruebas de Usabilidad}
 
 Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave del sistema, como la visibilidad del estado, el control y la libertad del usuario, la consistencia y estándares, entre otros. En general, se detectaron áreas de mejora en términos de consistencia visual, retroalimentación al usuario, y navegación, los cuales se detallan en los resultados adjuntos. Cabe destacar que el sistema cumple con algunos de los principios fundamentales, como la flexibilidad y la visibilidad en varias de sus opciones, lo cual es positivo para la experiencia de usuario.
 
-\noindent Para una descripción completa de los resultados obtenidos en cada ítem evaluado, por favor consulte los detalles (\hyperref[tab:reporte_usabilidad]{en Anexos})
+\noindent Para una descripción completa de los resultados obtenidos en cada ítem evaluado, por favor consulte los detalles (\textbf{Anexo A: Reporte de Defectos de Usabilidad})
 
 \newpage
 \section{Conclusiones}
@@ -480,10 +480,42 @@ Las pruebas de usabilidad realizadas permitieron evaluar varios aspectos clave d
 
 
 
-\newpage
-\section{\large Anexos}
+\addcontentsline{toc}{section}{Anexos}
+\phantomsection
 
-\subsection{Anexo A: Reporte de Defectos de Usabilidad}
+\label{sec:anexos}
+
+\addcontentsline{toc}{subsection}{Anexo A: Detalle Pruebas Ejecutadas}
+
+% Define the section but make it invisible
+
+\includepdf[pages=-]{tests.pdf}
+\phantomsection
+
+
+\addcontentsline{toc}{subsection}{Anexo B - Bugs identificados}
+
+% Define the section but make it invisible
+
+\includepdf[pages=-]{bugs.pdf}
+\phantomsection
+
+\addcontentsline{toc}{subsection}{Anexo C - Bugs Resueltos}
+
+% Define the section but make it invisible
+
+\includepdf[pages=-]{solvedBugs.pdf}
+\phantomsection
+
+\addcontentsline{toc}{subsection}{Anexo D - Reporte Análisis de Accesibilidad}
+
+% Define the section but make it invisible
+
+\includepdf[pages=-]{AccesibilityIssues.pdf}
+\phantomsection
+
+\clearpage
+\subsection{Anexo E: Reporte de Defectos de Usabilidad}
 
 \begin{longtable}{|>{\raggedright\arraybackslash}p{10cm}|>{\centering\arraybackslash}p{3cm}|}
     \caption{Plantilla de Reporte de Usabilidad} \label{tab:reporte_usabilidad} \\
